@@ -16,3 +16,4 @@ jobs:
         uses: fossas/fossa-action@v1.7.0
         with:
           api-key: ${{ secrets.FOSSA_TOKEN }}
+          run-tests: true
