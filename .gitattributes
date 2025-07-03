@@ -11,3 +11,4 @@
 /.gitignore export-ignore
 /CHANGELOG.md export-ignore
 /LICENSE.md export-ignore
+/phpunit.xml export-ignore
