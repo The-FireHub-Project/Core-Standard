@@ -1,2 +1,13 @@
 # JetBrains
 .idea/
+
+# Composer dependencies resolver
+composer.lock
+
+# Phar
+/phar/**
+!/phar/*.phar
+!/phar/*.phar.pubkey
+
+# Vendor
+/vendor/
