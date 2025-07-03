@@ -1,5 +1,8 @@
 # Security Policies and Procedures
 
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/The-FireHub-Project/Core-Standard/badge)](https://securityscorecards.dev/viewer/?uri=github.com/The-FireHub-Project/Core-Standard)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FThe-FireHub-Project%2FCore-Standard.svg?type=shield&issueType=security)](https://app.fossa.com/projects/git%2Bgithub.com%2FThe-FireHub-Project%2FCore-Standard?ref=badge_shield&issueType=security)
+
 - [Supported Versions](#supported-versions)
 - [Reporting a Vulnerability](#reporting-a-vulnerability)
 - [Disclosure Policy](#disclosure-policy)
