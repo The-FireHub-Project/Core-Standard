@@ -1,0 +1,59 @@
+{
+    "name": "firehub/core-standard",
+    "description": "FireHub Web Application Framework - Standard Edition",
+    "type": "library",
+    "keywords": ["php", "framework", "core", "standard", "firehub"],
+    "homepage": "https://the-firehub-project.github.io/Core/",
+    "license": "OSL-3.0",
+    "require": {
+        "php": "^8.4",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.0",
+        "ext-zip": "*",
+        "ext-openssl": "*",
+        "ext-apcu": "*"
+    },
+    "suggest": {
+        "php-64bit": "^8.4",
+        "ext-apcu": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Danijel Galić",
+            "email": "danijel.galic@outlook.com",
+            "homepage": "https://github.com/dieselxxx",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "danijel.galic@outlook.com",
+        "issues": "https://github.com/The-FireHub-Project/Core-Standard/issues",
+        "security": "https://github.com/The-FireHub-Project/Core-Standard/security/policy",
+        "forum": "https://github.com/orgs/The-FireHub-Project/discussions",
+        "wiki": "https://github.com/The-FireHub-Project/Core-Standard/wiki",
+        "source": "https://github.com/The-FireHub-Project/Core-Standard",
+        "docs": "https://the-firehub-project.github.io/Core-Standard/"
+    },
+    "funding": [
+        {
+            "type": "patreon",
+            "url": "https://www.patreon.com/firehub"
+        }
+    ],
+    "config": {
+        "process-timeout": 300,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "disable-tls": false,
+        "secure-http": true,
+        "vendor-dir": "vendor",
+        "bin-dir": "vendor/bin",
+        "prepend-autoloader": false,
+        "sort-packages": true
+    }
+}
