@@ -16,6 +16,7 @@
 [![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/develop-pre-alpha-m1?style=flat&labelColor=30363d)](https://github.com/The-FireHub-Project/Core-Standard/commits/develop-pre-alpha-m1/)
 [![GitHub contributors](https://img.shields.io/github/contributors/The-FireHub-Project/Core-Standard?style=flat&labelColor=30363d)](https://github.com/The-FireHub-Project/Core-Standard/graphs/contributors)
 [![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fthe-firehub-project.github.io%2F?style=flat&labelColor=30363d)](https://the-firehub-project.github.io/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15804459.svg)](https://doi.org/10.5281/zenodo.15804459)
 
 FireHub is a powerful web application framework with elegant syntax.
 
