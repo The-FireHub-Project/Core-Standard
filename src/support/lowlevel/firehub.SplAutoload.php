@@ -71,8 +71,8 @@ final class SplAutoload {
      * The autoload function that will be unregistered.
      * </p>
      *
-     * @throws \FireHub\Core\Support\Exceptions\Autoload\UnregisterAutoloaderException If failed to unregister autoloader
-     * implementation.
+     * @throws \FireHub\Core\Support\Exceptions\Autoload\UnregisterAutoloaderException If failed to unregister
+     * autoloader implementation.
      *
      * @return true True if autoloader was unregistered.
      */
