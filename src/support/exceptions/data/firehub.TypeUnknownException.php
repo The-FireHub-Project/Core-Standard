@@ -12,21 +12,23 @@
  * @version GIT: $Id$ Blob checksum.
  */
 
-namespace FireHub\Core\Support\Exceptions\Autoload;
+namespace FireHub\Core\Support\Exceptions\Data;
 
-use FireHub\Core\Support\Exceptions\AutoloadException;
+use FireHub\Core\Support\Exceptions\DataException;
 
 /**
- * ### Autoload Unregister Autoloader Exception
+ * ### Data type is unknown
  * @since 1.0.0
+ *
+ * @method $this withInternalType (string $type) ### Internal type name
  */
-class UnregisterAutoloaderException extends AutoloadException {
+class TypeUnknownException extends DataException {
 
     /**
      * @inheritDoc
      *
      * @since 1.0.0
      */
-    protected $message = 'Failed to unregister a callback function as an autoloader.';
+    protected $message = 'Data type is unknown.';
 
 }

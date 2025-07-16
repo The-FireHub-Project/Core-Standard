@@ -19,6 +19,34 @@ use Exception as InternalException;
 class Exception extends InternalException {
 
     /**
+     * ### Holds additional information for the current error
+     * @since 1.0.0
+     *
+     * @var array<non-empty-string, array<array-key, mixed>>
+     */
+    private(set) array $info = [];
+
+    /**
+     * ### The error message
+     * @since 1.0.0
+     *
+     * @var mixed
+     */
+    protected $message = '';
+
+    /**
+     * ### Constructor
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    final public function __construct () {
+
+        parent::__construct();
+
+    }
+
+    /**
      * ### Sets the exception message
      * @since 1.0.0
      *
@@ -67,6 +95,27 @@ class Exception extends InternalException {
     public function withCode (int $code):static {
 
         $this->code = $code;
+
+        return $this;
+
+    }
+
+    /**
+     * ### Invoking methods to set property
+     * @since 1.0.0
+     *
+     * @param non-empty-string $method <p>
+     * Method name.
+     * </p>
+     * @param array<array-key, mixed> $arguments <p>
+     * List of arguments.
+     * </p>
+     *
+     * @return $this This exception instance.
+     */
+    final public function __call (string $method, array $arguments):static {
+
+        $this->info[$method] = $arguments;
 
         return $this;
 

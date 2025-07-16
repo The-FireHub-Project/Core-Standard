@@ -12,21 +12,12 @@
  * @version GIT: $Id$ Blob checksum.
  */
 
-namespace FireHub\Core\Support\Exceptions\Autoload;
+namespace FireHub\Core\Support\Exceptions;
 
-use FireHub\Core\Support\Exceptions\AutoloadException;
+use FireHub\Core\Components\Error\Exception;
 
 /**
- * ### Autoload Unregister Autoloader Exception
+ * ### Data Exception
  * @since 1.0.0
  */
-class UnregisterAutoloaderException extends AutoloadException {
-
-    /**
-     * @inheritDoc
-     *
-     * @since 1.0.0
-     */
-    protected $message = 'Failed to unregister a callback function as an autoloader.';
-
-}
+class DataException extends Exception {}
