@@ -14,7 +14,9 @@
 
 namespace FireHub\Core\Components\Error;
 
-use Exception as InternalException;
+use Exception as InternalException, Throwable;
+
+use function array_key_first;
 
 class Exception extends InternalException {
 
@@ -22,7 +24,7 @@ class Exception extends InternalException {
      * ### Holds additional information for the current error
      * @since 1.0.0
      *
-     * @var array<non-empty-string, array<array-key, mixed>>
+     * @var array<non-empty-string, mixed>
      */
     private(set) array $info = [];
 
@@ -38,11 +40,15 @@ class Exception extends InternalException {
      * ### Constructor
      * @since 1.0.0
      *
+     * @param null|Throwable $previous [optional] <p>
+     * The previous throwable used for the exception chaining.
+     * </p>
+     *
      * @return void
      */
-    final public function __construct () {
+    final public function __construct (?Throwable $previous = null) {
 
-        parent::__construct();
+        parent::__construct(previous: $previous);
 
     }
 
@@ -65,6 +71,24 @@ class Exception extends InternalException {
     }
 
     /**
+     * ### Prepend a message to the exception message
+     * @since 1.0.0
+     *
+     * @param string $message <p>
+     * The exception message to prepend.
+     * </p>
+     *
+     * @return $this This exception instance.
+     */
+    public function prependMessage (string $message):static {
+
+        $this->message = $message.' '.$this->getMessage();
+
+        return $this;
+
+    }
+
+    /**
      * ### Append a message to the exception message
      * @since 1.0.0
      *
@@ -76,7 +100,7 @@ class Exception extends InternalException {
      */
     public function appendMessage (string $message):static {
 
-        $this->message = $this->getMessage().$message;
+        $this->message = $this->getMessage().' '.$message;
 
         return $this;
 
@@ -115,7 +139,9 @@ class Exception extends InternalException {
      */
     final public function __call (string $method, array $arguments):static {
 
-        $this->info[$method] = $arguments;
+        $key = array_key_first($arguments);
+
+        $this->info[$method] = isset($key) ? $arguments[$key] : '';
 
         return $this;
 
