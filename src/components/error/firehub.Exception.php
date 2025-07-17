@@ -49,7 +49,7 @@ class Exception extends InternalException {
      */
     final public function __construct (?Throwable $previous = null) {
 
-        parent::__construct(previous: $previous);
+        parent::__construct(message: $this->message, previous: $previous);
 
     }
 
