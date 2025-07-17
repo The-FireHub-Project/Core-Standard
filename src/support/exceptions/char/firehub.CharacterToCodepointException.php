@@ -13,23 +13,21 @@
  * @version GIT: $Id$ Blob checksum.
  */
 
-namespace FireHub\Core\Support\Exceptions\Data;
+namespace FireHub\Core\Support\Exceptions\Char;
 
-use FireHub\Core\Support\Exceptions\DataException;
+use FireHub\Core\Support\Exceptions\CharException;
 
 /**
- * ### Data type is unknown
+ * ### Character to codepoint conversion exception
  * @since 1.0.0
- *
- * @method $this withInternalType (string $type) ### Internal type name
  */
-class TypeUnknownException extends DataException {
+class CharacterToCodepointException extends CharException {
 
     /**
      * @inheritDoc
      *
      * @since 1.0.0
      */
-    protected string $default_message = 'Data type is unknown.';
+    protected string $default_message = "Character couldn't be converted to codepoint.";
 
 }

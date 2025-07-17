@@ -7,29 +7,22 @@
  * @copyright 2025 FireHub Web Application Framework
  * @license <https://opensource.org/licenses/OSL-3.0> OSL Open Source License version 3
  *
- * @php-version 7.4
+ * @php-version 5.0
  * @package Core\Support
  *
  * @version GIT: $Id$ Blob checksum.
  */
 
-namespace FireHub\Core\Support\Exceptions\Data;
+namespace FireHub\Core\Support\Exceptions;
 
-use FireHub\Core\Support\Exceptions\DataException;
+use FireHub\Core\Support\Enums\String\Encoding;
+use FireHub\Core\Components\Error\Exception;
 
 /**
- * ### Data type is unknown
+ * ### Character exception
  * @since 1.0.0
  *
- * @method $this withInternalType (string $type) ### Internal type name
+ * @method $this withCharacter (string $character) ### Character
+ * @method $this withEncoding (?Encoding $encoding) ### Encoding
  */
-class TypeUnknownException extends DataException {
-
-    /**
-     * @inheritDoc
-     *
-     * @since 1.0.0
-     */
-    protected string $default_message = 'Data type is unknown.';
-
-}
+class CharException extends Exception {}

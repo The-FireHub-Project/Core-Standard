@@ -33,9 +33,9 @@ class Exception extends InternalException {
      * ### The error message
      * @since 1.0.0
      *
-     * @var mixed
+     * @var string
      */
-    protected $message = '';
+    protected string $default_message = '';
 
     /**
      * ### Constructor
@@ -49,7 +49,7 @@ class Exception extends InternalException {
      */
     final public function __construct (?Throwable $previous = null) {
 
-        parent::__construct(message: $this->message, previous: $previous);
+        parent::__construct(message: $this->default_message, previous: $previous);
 
     }
 
