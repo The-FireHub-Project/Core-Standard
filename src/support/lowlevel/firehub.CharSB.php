@@ -7,7 +7,7 @@
  * @copyright 2025 FireHub Web Application Framework
  * @license <https://opensource.org/licenses/OSL-3.0> OSL Open Source License version 3
  *
- * @php-version 5.3
+ * @php-version 7.4
  * @package Core\Support
  *
  * @version GIT: $Id$ Blob checksum.
