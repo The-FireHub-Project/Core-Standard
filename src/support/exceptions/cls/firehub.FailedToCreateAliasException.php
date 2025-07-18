@@ -25,6 +25,11 @@ use FireHub\Core\Support\Exceptions\ClsException;
  */
 class FailedToCreateAliasException extends ClsException {
 
+    /**
+     * @inheritDoc
+     *
+     * @since 1.0.0
+     */
     protected string $default_message = "Failed to create alias for class.";
 
 }

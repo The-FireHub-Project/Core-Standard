@@ -7,29 +7,20 @@
  * @copyright 2025 FireHub Web Application Framework
  * @license <https://opensource.org/licenses/OSL-3.0> OSL Open Source License version 3
  *
- * @php-version 7.4
+ * @php-version 5.0
  * @package Core\Support
  *
  * @version GIT: $Id$ Blob checksum.
  */
 
-namespace FireHub\Core\Support\Exceptions\Cls;
+namespace FireHub\Core\Support\Exceptions;
 
-use FireHub\Core\Support\Exceptions\ClsException;
+use FireHub\Core\Components\Error\Exception;
 
 /**
- * ### Class not found exception
+ * ### Constant exception
  * @since 1.0.0
  *
- * @method $this withAutoloadEnabled (bool $enabled) ### Is autoload enabled
+ * @method $this withName (string $name) ### Constant name
  */
-class NotFoundException extends ClsException {
-
-    /**
-     * @inheritDoc
-     *
-     * @since 1.0.0
-     */
-    protected string $default_message = "Class not found.";
-
-}
+class ConstantException extends Exception {}

@@ -13,23 +13,21 @@
  * @version GIT: $Id$ Blob checksum.
  */
 
-namespace FireHub\Core\Support\Exceptions\Cls;
+namespace FireHub\Core\Support\Exceptions\Constant;
 
-use FireHub\Core\Support\Exceptions\ClsException;
+use FireHub\Core\Support\Exceptions\ConstantException;
 
 /**
- * ### Class not found exception
+ * ### Constant not defined exception
  * @since 1.0.0
- *
- * @method $this withAutoloadEnabled (bool $enabled) ### Is autoload enabled
  */
-class NotFoundException extends ClsException {
+class NotDefinedException extends ConstantException {
 
     /**
      * @inheritDoc
      *
      * @since 1.0.0
      */
-    protected string $default_message = "Class not found.";
+    protected string $default_message = "Constant is not defined.";
 
 }
