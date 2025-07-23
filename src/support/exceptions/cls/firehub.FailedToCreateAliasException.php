@@ -21,7 +21,7 @@ use FireHub\Core\Support\Exceptions\ClsException;
  * ### Failed to create alias exception
  * @since 1.0.0
  *
- * @method $this withAliasName (string $name) ### Alias nme
+ * @method $this withAliasName (string $name) ### Alias name
  */
 class FailedToCreateAliasException extends ClsException {
 
