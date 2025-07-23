@@ -142,7 +142,7 @@ class Exception extends InternalException {
 
         $key = array_key_first($arguments);
 
-        $this->info[$method] = isset($key) ? $arguments[$key] : '';
+        $this->info[$method] = $arguments[$key] ?? '';
 
         return $this;
 
