@@ -14,6 +14,9 @@
 - Create Func low-level support class ([#32](https://github.com/The-FireHub-Project/Core-Standard/issues/32), [0afab06](https://github.com/The-FireHub-Project/Core-Standard/pull/23/commits/0afab06))
 - Create Iterables and Iterator low-level support classes ([#33](https://github.com/The-FireHub-Project/Core-Standard/issues/33), [3e0b34c](https://github.com/The-FireHub-Project/Core-Standard/pull/23/commits/3e0b34c))
 - Create Arr low-level support class ([#34](https://github.com/The-FireHub-Project/Core-Standard/issues/34), [1df70d8](https://github.com/The-FireHub-Project/Core-Standard/pull/23/commits/1df70d8))
+- Create Str low-level support class ([#35](https://github.com/The-FireHub-Project/Core-Standard/issues/35), [a2036dc](https://github.com/The-FireHub-Project/Core-Standard/pull/23/commits/a2036dc))
+- Create Num low-level support class ([#36](https://github.com/The-FireHub-Project/Core-Standard/issues/36), [4415174](https://github.com/The-FireHub-Project/Core-Standard/pull/23/commits/4415174))
+- Create DateAndTime low-level support class ([#40](https://github.com/The-FireHub-Project/Core-Standard/issues/40), [96d8d0a](https://github.com/The-FireHub-Project/Core-Standard/pull/23/commits/96d8d0a))
 
 ## [v0.1.1](https://github.com/The-FireHub-Project/Core-Standard/compare/v0.1.0...v0.1.1) – (2025-07-07)
 
