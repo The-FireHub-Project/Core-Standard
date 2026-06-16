@@ -1,0 +1,48 @@
+{
+  "name": "the-firehub-project/core-standard",
+  "description": "The essential PHP core for clean, domain-driven architecture.",
+  "type": "library",
+  "keywords": ["php", "framework", "core", "firehub", "standard"],
+  "homepage": "https://the-firehub-project.github.io/core-standard",
+  "license": "Apache-2.0",
+  "require": {
+    "php": "^8.5"
+  },
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Danijel Galić",
+      "email": "danijel.galic@outlook.com",
+      "homepage": "https://github.com/dieselxxx",
+      "role": "Owner"
+    }
+  ],
+  "support": {
+    "email": "danijel.galic@outlook.com",
+    "issues": "https://github.com/The-FireHub-Project/Core-Standard/issues",
+    "forum": "https://github.com/orgs/The-FireHub-Project/discussions",
+    "wiki": "https://github.com/The-FireHub-Project/Core-Standard/wiki",
+    "source": "https://github.com/The-FireHub-Project/Core-Standard",
+    "docs": "https://the-firehub-project.github.io/Core-Standard",
+    "security": "https://github.com/The-FireHub-Project/Core-Standard/security/policy"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/The-FireHub-Project"
+    }
+  ],
+  "config": {
+    "prepend-autoloader": false,
+    "optimize-autoloader": true,
+    "platform-check": true
+  },
+  "extra": {
+    "firehub": {
+      "layer": "core",
+      "edition": "standard",
+      "role": "foundation",
+      "criticality": "critical"
+    }
+  }
+}
