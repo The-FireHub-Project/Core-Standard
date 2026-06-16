@@ -114,18 +114,13 @@ For security reporting and guidelines, please refer to our [SECURITY.md](https:/
 <p>
   <a href="https://github.com/The-FireHub-Project/Core-Standard/issues?q=is%3Aissue%20state%3Aopen">
     <img
-      src="https://img.shields.io/github/issues/The-FireHub-Project/Core-Standard/status%3A%20In%20Progress?style=flat&logo=github&logoColor=959da5&label=in%20progress%20issues&labelColor=31373e"
+      src="https://img.shields.io/github/issues/The-FireHub-Project/Core-Standard?style=flat&logo=github&logoColor=959da5&label=in%20progress%20issues&labelColor=31373e"
       alt="GitHub in-progress issues"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22priority%3A%20Critical%22">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/issues?q=is%3Aissue">
     <img
-      src="https://img.shields.io/github/issues/The-FireHub-Project/Core-Standard/priority%3A%20Critical?style=flat&logo=github&logoColor=959da5&label=critical%20issues&labelColor=31373e"
-      alt="GitHub opened critical issues"
-  /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/issues?q=is%3Aissue%20state%3Aopen">
-    <img
-      src="https://img.shields.io/github/issues/The-FireHub-Project/Core-Standard?style=flat&logo=github&logoColor=959da5&label=total%20issues&labelColor=31373e"
-      alt="GitHub opened issues"
+      src="https://img.shields.io/github/issues-search?query=repo%3AThe-FireHub-Project%2FCore-Standard&style=flat&logo=github&logoColor=959da5&label=total%20issues&labelColor=31373e"
+      alt="GitHub total issues"
   /></a>
   <a href="https://github.com/The-FireHub-Project/Core-Standard/issues?q=is%3Apr%20is%3Aopen">
     <img
