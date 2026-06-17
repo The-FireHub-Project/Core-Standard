@@ -33,7 +33,7 @@
       src="https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/develop?style=flat&logo=github&logoColor=959da5&label=commit%20activity%20(branch)&labelColor=31373e"
       alt="GitHub activity (branch)"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/master...develops/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/master...develop/">
     <img
       src="https://img.shields.io/github/commits-difference/The-FireHub-Project/Core-Standard?base=master&head=develop&style=flat&logo=github&logoColor=959da5&label=ahead%20master&labelColor=31373e"
       alt="GitHub commit difference between two branches"
