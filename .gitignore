@@ -16,3 +16,8 @@ Thumbs.db
 # =========================
 /vendor/
 composer.lock
+
+# =========================
+# Build / Tooling artifacts
+# =========================
+/.build/
