@@ -23,19 +23,19 @@
 </h1>
 
 <p>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/develop/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/chore/phpstan-phpunit-setup/">
     <img
-      src="https://img.shields.io/github/last-commit/The-FireHub-Project/Core-Standard/develop?style=flat&logo=github&logoColor=959da5&label=last%20commit%20(branch)&labelColor=31373e"
+      src="https://img.shields.io/github/last-commit/The-FireHub-Project/Core-Standard/chore/phpstan-phpunit-setup?style=flat&logo=github&logoColor=959da5&label=last%20commit%20(branch)&labelColor=31373e"
       alt="GitHub last commit (branch)"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/develop/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/chore/phpstan-phpunit-setup/">
     <img
-      src="https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/develop?style=flat&logo=github&logoColor=959da5&label=commit%20activity%20(branch)&labelColor=31373e"
+      src="https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/chore/phpstan-phpunit-setup?style=flat&logo=github&logoColor=959da5&label=commit%20activity%20(branch)&labelColor=31373e"
       alt="GitHub activity (branch)"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/master...develop/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/develop...chore/phpstan-phpunit-setup/">
     <img
-      src="https://img.shields.io/github/commits-difference/The-FireHub-Project/Core-Standard?base=master&head=develop&style=flat&logo=github&logoColor=959da5&label=ahead%20master&labelColor=31373e"
+      src="https://img.shields.io/github/commits-difference/The-FireHub-Project/Core-Standard?base=develop&head=chore/phpstan-phpunit-setup&style=flat&logo=github&logoColor=959da5&label=ahead%20develop&labelColor=31373e"
       alt="GitHub commit difference between two branches"
   /></a>
 </p>
@@ -45,47 +45,92 @@ Standard provides the base classes, kernel, domain layer, and minimal runtime ut
 
 ---
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Development Branch
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Introduce PHPStan and PHPUnit infrastructure – Development Branch
 
-⚠️ **This is the `develop` branch**
+⚠️ **This is the `development` branch**
 
 - Unstable
 - APIs may change without notice
 - Not intended for production use
 
+### Related
+
+- Milestone: **Development v1**
+- Target Release: **v0.0.0**
+- Repository: FireHub Core Standard
+
+### Pull request
+
+<p>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/4/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/title/The-FireHub-Project/Core-Standard/4?style=flat&logo=github&logoColor=959da5&label=title&labelColor=31373e"
+      alt="GitHub pull request title"
+  /></a>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/4/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/author/The-FireHub-Project/Core-Standard/4?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub pull request author"
+  /></a>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/4/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/age/The-FireHub-Project/Core-Standard/4?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub pull request created"
+  /></a>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/4/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/comments/The-FireHub-Project/Core-Standard/4?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub pull request comments"
+  /></a>
+</p>
+
+### Milestone
+
+<p>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/milestone/1/">
+    <img
+      src="https://img.shields.io/github/milestones/progress-percent/The-FireHub-Project/Core-Standard/1?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub milestone details"
+  /></a>
+</p>
+
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Branch Purpose
 
-The `develop` branch is the **primary integration branch** for all ongoing development.
+Introduce foundational development tooling into FireHub Core by setting up:
 
-It serves as the staging area where:
-- Feature branches are merged
-- Bug fixes are integrated
-- Experimental work is stabilized
-- Code is prepared for upcoming releases
+- PHPStan static analysis configuration
+- PHPUnit testing framework bootstrap
+- Baseline structure for future CI enforcement
 
-All **release branches** are created **from `develop`**.
+This branch establishes the initial quality assurance layer for the Core repository.
 
-## Stability Guarantee
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Architectural Goal
 
-❌ No backward compatibility guarantee  
-❌ APIs may change without notice  
-❌ Behavior may be incomplete or inconsistent  
-❌ Breaking changes are expected
+To decouple Core implementation logic from quality enforcement mechanisms, by introducing a dedicated tooling layer that:
 
-This branch is intended **only for contributors and advanced testers**.
+- Enforces type safety and architectural consistency (PHPStan)
+- Enables deterministic regression testing (PHPUnit)
+- Prepares Core for CI/CD quality gates without affecting runtime behavior
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Composer Usage (Not Recommended)
+This ensures that Core remains:
 
-For internal testing only:
+- framework-agnostic at runtime
+- strictly validated at development time
+- stable for long-term evolution
 
-```json
-{
-  "require": {
-    "the-firehub-project/core-standard": "dev-develop"
-  }
-}
-```
-⚠️ Never use dev-develop in production.
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Core Concept
+
+> “Core is not validated by runtime behavior, but by enforced static guarantees.”
+
+This branch introduces the idea that:
+
+- Core correctness is proactively enforced (static analysis + tests)
+- not reactively discovered in production
+
+It formalizes the principle:
+
+- Runtime = execution layer
+- Tooling = correctness layer
 
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Authors and Contributors
 
