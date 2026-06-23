@@ -9,6 +9,7 @@
 /.editorconfig export-ignore
 /.gitattributes export-ignore
 /.gitignore export-ignore
+/phpstan.neon export-ignore
 
 # Explicit text file types
 *.php    text
