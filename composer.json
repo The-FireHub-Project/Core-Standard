@@ -8,6 +8,10 @@
   "require": {
     "php": "^8.5"
   },
+  "require-dev": {
+    "phpstan/phpstan": "^2.0",
+    "the-firehub-project/phpstan-rules": "dev-develop"
+  },
   "minimum-stability": "stable",
   "authors": [
     {
