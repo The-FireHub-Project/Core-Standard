@@ -38,4 +38,4 @@ identifiers:
     value: "https://github.com/The-FireHub-Project/Core-Standard"
     description: The GitHub URL of this version.
   - type: other
-    value: "packagist:firehub/core-standard"
+    value: "packagist:the-firehub-project/core-standard"
