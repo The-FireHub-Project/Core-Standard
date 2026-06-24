@@ -23,19 +23,19 @@
 </h1>
 
 <p>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/develop/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/architecture/error-exception-base/">
     <img
-      src="https://img.shields.io/github/last-commit/The-FireHub-Project/Core-Standard/develop?style=flat&logo=github&logoColor=959da5&label=last%20commit%20(branch)&labelColor=31373e"
+      src="https://img.shields.io/github/last-commit/The-FireHub-Project/Core-Standard/architecture/error-exception-base?style=flat&logo=github&logoColor=959da5&label=last%20commit%20(branch)&labelColor=31373e"
       alt="GitHub last commit (branch)"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/develop/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/architecture/error-exception-base/">
     <img
-      src="https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/develop?style=flat&logo=github&logoColor=959da5&label=commit%20activity%20(branch)&labelColor=31373e"
+      src="https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/architecture/error-exception-base?style=flat&logo=github&logoColor=959da5&label=commit%20activity%20(branch)&labelColor=31373e"
       alt="GitHub activity (branch)"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/master...develop/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/develop...architecture/error-exception-base/">
     <img
-      src="https://img.shields.io/github/commits-difference/The-FireHub-Project/Core-Standard?base=master&head=develop&style=flat&logo=github&logoColor=959da5&label=ahead%20master&labelColor=31373e"
+      src="https://img.shields.io/github/commits-difference/The-FireHub-Project/Core-Standard?base=develop&head=architecture/error-exception-base&style=flat&logo=github&logoColor=959da5&label=ahead%20develop&labelColor=31373e"
       alt="GitHub commit difference between two branches"
   /></a>
 </p>
@@ -45,47 +45,93 @@ Standard provides the base classes, kernel, domain layer, and minimal runtime ut
 
 ---
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Development Branch
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Error And Exception Base Abstraction – Development Branch
 
-⚠️ **This is the `develop` branch**
+⚠️ **This is the `development` branch**
 
 - Unstable
 - APIs may change without notice
 - Not intended for production use
 
+### Related
+
+- Milestone: **Development v1**
+- Target Release: **v0.0.0**
+- Repository: FireHub Core Standard
+
+### Pull request
+
+<p>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/8/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/title/The-FireHub-Project/Core-Standard/8?style=flat&logo=github&logoColor=959da5&label=title&labelColor=31373e"
+      alt="GitHub pull request title"
+  /></a>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/8/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/author/The-FireHub-Project/Core-Standard/8?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub pull request author"
+  /></a>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/8/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/age/The-FireHub-Project/Core-Standard/8?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub pull request created"
+  /></a>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/8/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/comments/The-FireHub-Project/Core-Standard/8?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub pull request comments"
+  /></a>
+</p>
+
+### Milestone
+
+<p>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/milestone/1/">
+    <img
+      src="https://img.shields.io/github/milestones/progress-percent/The-FireHub-Project/Core-Standard/1?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub milestone details"
+  /></a>
+</p>
+
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Branch Purpose
 
-The `develop` branch is the **primary integration branch** for all ongoing development.
+This branch introduces the **core error and exception abstraction layer** for the FireHub Core-Standard ecosystem.
 
-It serves as the staging area where:
-- Feature branches are merged
-- Bug fixes are integrated
-- Experimental work is stabilized
-- Code is prepared for upcoming releases
+It defines how all framework-level failures are represented, structured, and propagated across the FireHub architecture, establishing a unified foundation for error handling across:
 
-All **release branches** are created **from `develop`**.
+- Core Standard
+- Core Professional
+- Core Enterprise
+- Runtime Foundation (consumers and execution layer)
+- Testing infrastructure
 
-## Stability Guarantee
+This is a foundational architectural step that replaces direct dependency on PHP native `\Error` and `\Exception` usage inside FireHub Core.
 
-❌ No backward compatibility guarantee  
-❌ APIs may change without notice  
-❌ Behavior may be incomplete or inconsistent  
-❌ Breaking changes are expected
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Architectural Goal
 
-This branch is intended **only for contributors and advanced testers**.
+Establish a **unified FireHub-native error handling model** that:
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Composer Usage (Not Recommended)
+- Separates system-level errors from domain-level exceptions
+- Provides consistent inheritance roots for all framework failures
+- Decouples FireHub from direct PHP `Throwable` hierarchy usage
+- Enables structured and extensible error classification in future layers (Runtime, Adapters, Capabilities)
+- Ensures predictable error propagation across all FireHub components
 
-For internal testing only:
+This layer becomes the **contractual foundation** for all error handling inside the FireHub ecosystem.
 
-```json
-{
-  "require": {
-    "the-firehub-project/core-standard": "dev-develop"
-  }
-}
-```
-⚠️ Never use dev-develop in production.
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Core Concept
+
+A FireHub Error System is defined as:
+
+> A structured, framework-level abstraction over PHP’s native error and exception system, designed to enforce consistent failure semantics across all architectural layers.
+
+It introduces two primary abstractions:
+
+- `FireHub\Core\Error\FireHubError` → system-level and structural failures
+- `FireHub\Core\Error\FireHubException` → runtime and domain-level failures
+
+Together they form the **FireHub error contract layer**, ensuring all failures are typed, predictable, and architecturally consistent.
 
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Authors and Contributors
 
