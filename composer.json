@@ -10,9 +10,21 @@
   },
   "require-dev": {
     "phpstan/phpstan": "^2.0",
-    "the-firehub-project/phpstan-rules": "dev-develop"
+    "the-firehub-project/phpstan-rules": "dev-develop",
+
+    "the-firehub-project/testing": "dev-develop"
   },
   "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "FireHub\\Core\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "FireHub\\Tests\\Core\\": "tests/"
+    }
+  },
   "authors": [
     {
       "name": "Danijel Galić",
