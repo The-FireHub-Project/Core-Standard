@@ -8,34 +8,46 @@
  * @license https://opensource.org/license/Apache-2-0 Apache License, Version 2.0
  *
  * @php-version >=8.2
- * @package Core\Tests
+ * @package Core
  */
 
-namespace FireHub\Tests\Core\Stubs\Type;
+namespace FireHub\Core\Exception;
 
 use FireHub\Core\Type\ValueObject;
 use FireHub\Core\Exception\Runtime\System\Invariant\InvalidCodeValueException;
 
 /**
- * ### Dummy int Value Object
+ * ### Error code value object
  * @since 1.0.0
+ *
+ * @template TValue of int
+ *
+ * @extends \FireHub\Core\Type\ValueObject<TValue>
  */
-readonly class DummyIntVO extends ValueObject {
+final readonly class Code extends ValueObject {
 
     /**
      * ### Constructor
      * @since 1.0.0
      *
-     * @param int $value
+     * @uses \FireHub\Core\Type\ValueObject::guard() As a guard.
+     *
+     * @param TValue $value <p>
+     * The error code.
+     * </p>
+     *
+     * @throws \FireHub\Core\Exception\Runtime\System\Invariant\InvalidCodeValueException If the condition is not met.
+     * @throws \FireHub\Core\Exception\FireHubException If the condition is not met.
+     * @throws \FireHub\Core\Type\Exception\ValueObjectException If the exception is not a FireHubException.
      *
      * @return void
      */
     public function __construct (
-        private int $value = 1
+        private int $value
     ) {
 
         $this->guard(
-            fn() => $this->value > 0,
+            fn() => $value >= 0,
             fn() => new InvalidCodeValueException('Value must be positive.')
         );
 

@@ -47,7 +47,7 @@ final class ValueObjectTest extends FireHubTestCase {
         $a = new DummyStringVO($a);
         $b = new DummyStringVO($b);
 
-        $this::assertEquals($expected, $a->equals($b));
+        $this::assertSame($expected, $a->equals($b));
 
     }
 
@@ -67,7 +67,7 @@ final class ValueObjectTest extends FireHubTestCase {
         $a = new $a;
         $b = new $b;
 
-        $this::assertEquals($expected, $a->sameAs($b));
+        $this::assertSame($expected, $a->sameAs($b));
 
     }
 

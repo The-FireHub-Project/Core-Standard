@@ -14,7 +14,7 @@
 namespace FireHub\Tests\Core\Stubs\Type;
 
 use FireHub\Core\Type\ValueObject;
-use InvalidArgumentException;
+use FireHub\Core\Exception\Runtime\System\Invariant\InvalidCodeValueException;
 
 /**
  * ### Dummy string Value Object
@@ -36,7 +36,7 @@ readonly class DummyStringVO extends ValueObject {
 
         $this->guard(
             fn() => $this->value !== '',
-            fn() => new InvalidArgumentException('Value cannot be empty.')
+            fn() => new InvalidCodeValueException('Value cannot be empty.')
         );
 
     }
