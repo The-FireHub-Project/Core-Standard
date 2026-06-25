@@ -16,7 +16,7 @@ jobs:
       phpVersion: '8.5'
       phpExtensions: ${{ vars.PHP_EXTENSIONS }}
       tools: "phpunit:13.x"
-      suits: '["unit"]'
+      suites: '["unit"]'
     secrets:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
