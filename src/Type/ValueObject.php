@@ -13,6 +13,9 @@
 
 namespace FireHub\Core\Type;
 
+use FireHub\Core\Exception\FireHubException;
+use FireHub\Core\Type\Exception\ValueObjectException;
+
 /**
  * ### Base Value Object
  *
@@ -87,14 +90,29 @@ abstract readonly class ValueObject {
      * @param callable():bool $condition <p>
      * The validation condition to evaluate.
      * </p>
-     * @param callable():\Exception $exception <p>
+     * @param callable():\FireHub\Core\Exception\FireHubException $exception <p>
      * Exception to be thrown when the condition fails.
      * </p>
+     *
+     * @throws \FireHub\Core\Exception\FireHubException If the condition is not met.
+     * @throws \FireHub\Core\Type\Exception\ValueObjectException If the exception is not a FireHubException.
+     *
      * @return void
      */
     final protected function guard (callable $condition, callable $exception):void {
 
-        if ($condition() === false) throw $exception();
+        if ($condition() === false) {
+
+            $e = $exception();
+
+            if (!$e instanceof FireHubException)
+                throw new ValueObjectException(
+                    'Guard exception must return instance of FireHubException.'
+                );
+
+            throw $e;
+
+        }
 
     }
 
