@@ -22,6 +22,10 @@
   /></a>
 </h1>
 
+[![PHPStan](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml/badge.svg?branch=architecture%2Ferror-exception-base)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml)
+[![PHPUnit](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml/badge.svg?branch=architecture%2Ferror-exception-base)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml)
+[![Codecov](https://codecov.io/gh/The-FireHub-Project/Core-Standard/branch/architecture%2Ferror-exception-base/graph/badge.svg?token=XW2YEONF51)](https://app.codecov.io/gh/The-FireHub-Project/Core-Standard/tree/architecture%2Ferror-exception-base)
+
 <p>
   <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/architecture/error-exception-base/">
     <img
