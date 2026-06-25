@@ -7,6 +7,12 @@
     <testsuite name="unit">
       <directory>tests/Unit</directory>
     </testsuite>
+    <testsuite name="integration">
+      <directory>tests/Integration</directory>
+    </testsuite>
+    <testsuite name="smoke">
+      <directory>tests/Smoke</directory>
+    </testsuite>
   </testsuites>
   <source>
     <include>

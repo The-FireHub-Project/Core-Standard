@@ -5,7 +5,7 @@ on:
     branches:
       - master
       - develop
-      - 'v*'
+      - 'release/v*'
 
 permissions: read-all
 
