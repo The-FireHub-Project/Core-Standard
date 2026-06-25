@@ -28,6 +28,10 @@ readonly class DummyIntVO extends ValueObject {
      *
      * @param int $value
      *
+     * @throws \FireHub\Core\Exception\Runtime\System\Invariant\InvalidCodeValueException
+     * @throws \FireHub\Core\Exception\FireHubException
+     * @throws \FireHub\Core\Type\Exception\ValueObjectException
+     *
      * @return void
      */
     public function __construct (

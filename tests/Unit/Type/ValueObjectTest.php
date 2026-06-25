@@ -15,8 +15,9 @@ namespace FireHub\Tests\Core\Unit\Type;
 
 use FireHub\Testing\FireHubTestCase;
 use FireHub\Core\Type\ValueObject;
+use FireHub\Core\Type\Exception\ValueObjectException;
 use FireHub\Tests\Core\Stubs\Type\ {
-    DummyIntVO, DummyStringVO
+    DummyIntVO, DummyStringVO, DummyVOInvalidGuardException
 };
 use PHPUnit\Framework\Attributes\ {
     CoversClass, Group, Small, TestWith
@@ -68,6 +69,19 @@ final class ValueObjectTest extends FireHubTestCase {
         $b = new $b;
 
         $this::assertSame($expected, $a->sameAs($b));
+
+    }
+
+    /**
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    public function testCreateWithInvalidValue ():void {
+
+        $this->expectException(ValueObjectException::class);
+
+        new DummyVOInvalidGuardException('');
 
     }
 
