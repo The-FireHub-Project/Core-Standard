@@ -22,24 +22,24 @@
   /></a>
 </h1>
 
-[![PHPStan](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml/badge.svg?branch=architecture%2Fcore-constants-layer)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml)
-[![PHPUnit](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml/badge.svg?branch=architecture%2Fcore-constants-layer)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml)
-[![Codecov](https://codecov.io/gh/The-FireHub-Project/Core-Standard/branch/architecture%2Fcore-constants-layer/graph/badge.svg?token=XW2YEONF51)](https://app.codecov.io/gh/The-FireHub-Project/Core-Standard/tree/architecture%2Fcore-constants-layer)
+[![PHPStan](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml/badge.svg?branch=develop)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml)
+[![PHPUnit](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml/badge.svg?branch=develop)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml)
+[![Codecov](https://codecov.io/gh/The-FireHub-Project/Core-Standard/branch/develop/graph/badge.svg?token=XW2YEONF51)](https://app.codecov.io/gh/The-FireHub-Project/Core-Standard/tree/develop)
 
 <p>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/architecture/core-constants-layer/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/develop/">
     <img
-      src="https://img.shields.io/github/last-commit/The-FireHub-Project/Core-Standard/architecture/core-constants-layer?style=flat&logo=github&logoColor=959da5&label=last%20commit%20(branch)&labelColor=31373e"
+      src="https://img.shields.io/github/last-commit/The-FireHub-Project/Core-Standard/develop?style=flat&logo=github&logoColor=959da5&label=last%20commit%20(branch)&labelColor=31373e"
       alt="GitHub last commit (branch)"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/architecture/core-constants-layer/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/develop/">
     <img
-      src="https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/architecture/core-constants-layer?style=flat&logo=github&logoColor=959da5&label=commit%20activity%20(branch)&labelColor=31373e"
+      src="https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/develop?style=flat&logo=github&logoColor=959da5&label=commit%20activity%20(branch)&labelColor=31373e"
       alt="GitHub activity (branch)"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/develop...architecture/core-constants-layer/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/master...develop/">
     <img
-      src="https://img.shields.io/github/commits-difference/The-FireHub-Project/Core-Standard?base=develop&head=architecture/core-constants-layer&style=flat&logo=github&logoColor=959da5&label=ahead%20develop&labelColor=31373e"
+      src="https://img.shields.io/github/commits-difference/The-FireHub-Project/Core-Standard?base=master&head=develop&style=flat&logo=github&logoColor=959da5&label=ahead%20master&labelColor=31373e"
       alt="GitHub commit difference between two branches"
   /></a>
 </p>
@@ -49,94 +49,47 @@ Standard provides the base classes, kernel, domain layer, and minimal runtime ut
 
 ---
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Core Constant Layer – Development Branch
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Development Branch
 
-⚠️ **This is the `development` branch**
+⚠️ **This is the `develop` branch**
 
 - Unstable
 - APIs may change without notice
 - Not intended for production use
 
-### Related
-
-- Milestone: **Development v1**
-- Target Release: **v0.0.0**
-- Repository: FireHub Core Standard
-
-### Pull request
-
-<p>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/10/">
-    <img
-      src="https://img.shields.io/github/pulls/detail/title/The-FireHub-Project/Core-Standard/10?style=flat&logo=github&logoColor=959da5&label=title&labelColor=31373e"
-      alt="GitHub pull request title"
-  /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/10/">
-    <img
-      src="https://img.shields.io/github/pulls/detail/author/The-FireHub-Project/Core-Standard/10?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
-      alt="GitHub pull request author"
-  /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/10/">
-    <img
-      src="https://img.shields.io/github/pulls/detail/age/The-FireHub-Project/Core-Standard/10?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
-      alt="GitHub pull request created"
-  /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/10/">
-    <img
-      src="https://img.shields.io/github/pulls/detail/comments/The-FireHub-Project/Core-Standard/10?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
-      alt="GitHub pull request comments"
-  /></a>
-</p>
-
-### Milestone
-
-<p>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/milestone/1/">
-    <img
-      src="https://img.shields.io/github/milestones/progress-percent/The-FireHub-Project/Core-Standard/1?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
-      alt="GitHub milestone details"
-  /></a>
-</p>
-
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Branch Purpose
 
-This branch introduces a structured Core Constants Layer within the FireHub Core-Standard framework. It defines how system-level constants (such as numeric boundaries, memory limits, and precision constraints) are organized, namespaced, and exposed across the Core layer.
+The `develop` branch is the **primary integration branch** for all ongoing development.
 
-The goal is to eliminate scattered magic values and enforce a consistent, discoverable constant system across the framework.
+It serves as the staging area where:
+- Feature branches are merged
+- Bug fixes are integrated
+- Experimental work is stabilized
+- Code is prepared for upcoming releases
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Architectural Goal
+All **release branches** are created **from `develop`**.
 
-To establish a unified and scalable constants architecture inside FireHub\Core\Constant, ensuring:
+## Stability Guarantee
 
-- strict separation between system constants and runtime logic
-- clear domain grouping of constants (System, Memory, Numeric, etc.)
-- immutability and stateless design for all constant definitions
-- predictable and reusable framework-level constraints
-- long-term extensibility for Runtime, Adapter, and Capability layers
+❌ No backward compatibility guarantee  
+❌ APIs may change without notice  
+❌ Behavior may be incomplete or inconsistent  
+❌ Breaking changes are expected
 
-This ensures that Core defines system truth in a structured and enforceable way.
+This branch is intended **only for contributors and advanced testers**.
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Core Concept
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Composer Usage (Not Recommended)
 
-The Core Constants Layer is a **static, namespaced contract system** that defines immutable framework rules.
+For internal testing only:
 
-Key principles:
-
-- Constants are grouped by domain responsibility
-- Each group is represented by a dedicated final class
-- No behavior, only definitions
-- No mixing with Value Objects or Exceptions
-- Serves as the single source of truth for system-level constraints
-
-### Example structure
-
+```json
+{
+  "require": {
+    "the-firehub-project/core-standard": "dev-develop"
+  }
+}
 ```
-FireHub\Core\Constant\System\IntegerLimits
-FireHub\Core\Constant\Memory\MemoryLimits
-FireHub\Core\Constant\Numeric\NumericLimits
-```
-
-This layer represents **framework-level invariants that never change at runtime**.
+⚠️ Never use dev-develop in production.
 
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Authors and Contributors
 
