@@ -39,6 +39,10 @@ final class ValueObjectTest extends FireHubTestCase {
      * @param string $b
      * @param bool $expected
      *
+     * @throws \FireHub\Core\Exception\Runtime\System\Invariant\InvalidCodeValueException
+     * @throws \FireHub\Core\Exception\FireHubException
+     * @throws \FireHub\Core\Type\Exception\ValueObjectException
+     *
      * @return void
      */
     #[TestWith(['x', 'x', true])]

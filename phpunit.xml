@@ -12,5 +12,8 @@
     <include>
       <directory suffix=".php">src</directory>
     </include>
+    <exclude>
+      <file>src/Core/Boundary/Lifecycle/NonInstantiable.php</file>
+    </exclude>
   </source>
 </phpunit>
