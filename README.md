@@ -83,7 +83,7 @@ Standard provides the base classes, kernel, domain layer, and minimal runtime ut
   /></a>
   <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/10/">
     <img
-      src="https://img.shields.io/github/pulls/detail/comments/The-FireHub-Project/Core-Standard/10W?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      src="https://img.shields.io/github/pulls/detail/comments/The-FireHub-Project/Core-Standard/10?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
       alt="GitHub pull request comments"
   /></a>
 </p>
