@@ -16,7 +16,6 @@ namespace FireHub\Core\Foundation\Constant\Environment\Php;
 use FireHub\Core\Boundary\Lifecycle\NonInstantiable;
 
 use const PHP_BUILD_DATE;
-use const PHP_BUILD_PROVIDER;
 use const PHP_EXTRA_VERSION;
 use const PHP_MAJOR_VERSION;
 use const PHP_MINOR_VERSION;
@@ -82,11 +81,5 @@ final class VersionInfo {
      * @since 1.0.0
      */
     public const string BUILD_DATE = PHP_BUILD_DATE;
-
-    /**
-     * ### PHP build provider or distribution identifier
-     * @since 1.0.0
-     */
-    public const string BUILD_PROVIDER = PHP_BUILD_PROVIDER;
 
 }

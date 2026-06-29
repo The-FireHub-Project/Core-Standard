@@ -44,7 +44,6 @@ final class VersionInfoTest extends FireHubTestCase {
     #[TestWith([PHP_VERSION_ID, VersionInfo::VERSION_ID])]
     #[TestWith([PHP_EXTRA_VERSION, VersionInfo::EXTRA_VERSION])]
     #[TestWith([PHP_BUILD_DATE, VersionInfo::BUILD_DATE])]
-    #[TestWith([PHP_BUILD_PROVIDER, VersionInfo::BUILD_PROVIDER])]
     public function testValuesAreCorrect (int|string $expected, int|string $actual):void {
 
         self::assertSame($expected, $actual);
