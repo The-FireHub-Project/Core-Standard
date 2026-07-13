@@ -50,6 +50,7 @@ final class DomainExceptionTest extends FireHubTestCase {
 
         $exception = new DummyDomainException(
             $message,
+            [],
             new Code($code),
             $previous
         );

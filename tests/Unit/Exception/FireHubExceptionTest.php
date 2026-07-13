@@ -45,6 +45,7 @@ final class FireHubExceptionTest extends FireHubTestCase {
 
         $exception = new DummyException(
             $message,
+            [],
             $code,
             $previous
         );
@@ -62,9 +63,9 @@ final class FireHubExceptionTest extends FireHubTestCase {
      */
     public function testItSupportsExceptionChaining ():void {
 
-        $root = new DummyException('root', 0);
-        $mid = new DummyException('mid', 0, $root);
-        $top = new DummyException('top', 0, $mid);
+        $root = new DummyException('root', [], 0);
+        $mid = new DummyException('mid', [], 0, $root);
+        $top = new DummyException('top', [], 0, $mid);
 
         $this->assertSame($mid, $top->getPrevious());
         $this->assertSame($root, $top->getPrevious()->getPrevious());

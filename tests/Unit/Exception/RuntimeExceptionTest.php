@@ -50,6 +50,7 @@ final class RuntimeExceptionTest extends FireHubTestCase {
 
         $exception = new DummyRuntimeException(
             $message,
+            [],
             new Code($code),
             $previous
         );

@@ -50,6 +50,7 @@ final class SecurityExceptionTest extends FireHubTestCase {
 
         $exception = new DummySecurityException(
             $message,
+            [],
             new Code($code),
             $previous
         );
