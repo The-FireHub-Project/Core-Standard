@@ -33,24 +33,26 @@ final class FireHubExceptionTest extends FireHubTestCase {
      * @since 1.0.0
      *
      * @param string $message
+     * @param array $context
      * @param int $code
      *
      * @return void
      */
-    #[TestWith(['error message', 123])]
-    #[TestWith(['', 0])]
-    public function testCreate (string $message, int $code):void {
+    #[TestWith(['error message', ['key' => 'value'], 123])]
+    #[TestWith(['', [], 0])]
+    public function testCreate (string $message, array $context, int $code):void {
 
         $previous = new DummyException('previous');
 
         $exception = new DummyException(
             $message,
-            [],
+            $context,
             $code,
             $previous
         );
 
         $this->assertSame($message, $exception->getMessage());
+        $this->assertSame($context, $exception->getContext());
         $this->assertSame($code, $exception->getCode());
         $this->assertSame($previous, $exception->getPrevious());
 
