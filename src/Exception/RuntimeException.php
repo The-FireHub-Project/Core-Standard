@@ -37,9 +37,11 @@ abstract class RuntimeException extends FireHubException {
      * The Exception message to throw.
      * </p>
      * @param array<non-empty-string, mixed> $context [optional] <p>
-     * Holds structured, machine-readable metadata associated with the exception instance.<br>
+     * Holds structured, machine-readable metadata associated with the exception instance.
+     *
      * Context data is intended for logging, debugging, monitoring, and transport layers, and must not replace the
-     * human-readable exception message.<br>
+     * human-readable exception message.
+     *
      * Keys must be non-empty strings to ensure predictable normalization and serialization.
      * </p>
      * @param null|\FireHub\Core\Exception\Code<non-negative-int> $code [optional] <p>
