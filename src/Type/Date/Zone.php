@@ -14,12 +14,12 @@
 namespace FireHub\Core\Type\Date;
 
 /**
- * ### PHP Runtime Timezone Identifier
+ * ### Supported time zones
  *
- * Represents valid timezone identifiers supported by the PHP runtime.
+ * Represents supported IANA time zone identifiers used throughout the FireHub ecosystem.
  *
- * This enum provides a type-safe representation of timezone identifiers used by date and time operations throughout
- * the FireHub Runtime layer.
+ * This enumeration provides a type-safe representation of timezone identifiers and prevents
+ * usage of raw timezone strings across Core and Runtime layers.
  * @since 1.0.0
  */
 enum Zone:string {
