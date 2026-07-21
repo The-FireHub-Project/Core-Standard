@@ -315,7 +315,7 @@ enum Zone:string {
      * ### Africa/Porto-Novo time zone
      * @since 1.0.0
      */
-    case AFRICA_PORTO_NOVO = 'Africa/Porto_Novo';
+    case AFRICA_PORTO_NOVO = 'Africa/Porto-Novo';
 
     /**
      * ### Africa/Sao Tome time zone
