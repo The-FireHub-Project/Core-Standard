@@ -33,8 +33,6 @@ abstract class DomainException extends FireHubException {
      * ### Constructor
      * @since 1.0.0
      *
-     * @uses \FireHub\Core\Exception\Code::value() As a exception code.
-     *
      * @param null|string $message [optional] <p>
      * The Exception message to throw.
      * </p>

@@ -47,16 +47,16 @@ abstract readonly class ValueObject {
      *
      * Compares this Value Object with another instance of the same type using strict
      * class comparison and value equality semantics.
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Type\ValueObject::value() To compare the VO values.
+     * @uses \FireHub\Core\Type\ValueObject::sameAs() To compare the VO types.
+     *
      * @param self<TValue> $other <p>
      * The Value Object to compare against.
      * </p>
      *
      * @return bool True if the VOs are equal, false otherwise.
-     *@uses \FireHub\Core\Type\ValueObject::value() To compare the VO values.
-     *
-     * @since 1.0.0
-     *
-     * @uses \FireHub\Core\Type\ValueObject::sameAs() To compare the VO types.
      */
     final public function equals (self $other):bool {
 
