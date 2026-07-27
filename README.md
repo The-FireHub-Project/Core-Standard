@@ -22,24 +22,24 @@
   /></a>
 </h1>
 
-[![PHPStan](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml/badge.svg?branch=architecture%2Fruntime-support)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml)
-[![PHPUnit](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml/badge.svg?branch=architecture%2Fruntime-support)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml)
-[![Codecov](https://codecov.io/gh/The-FireHub-Project/Core-Standard/branch/architecture%2Fruntime-support/graph/badge.svg?token=XW2YEONF51)](https://app.codecov.io/gh/The-FireHub-Project/Core-Standard/tree/architecture%2Fruntime-support)
+[![PHPStan](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml/badge.svg?branch=develop)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml)
+[![PHPUnit](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml/badge.svg?branch=develop)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml)
+[![Codecov](https://codecov.io/gh/The-FireHub-Project/Core-Standard/branch/develop/graph/badge.svg?token=XW2YEONF51)](https://app.codecov.io/gh/The-FireHub-Project/Core-Standard/tree/develop)
 
 <p>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/architecture/runtime-support/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/develop/">
     <img
-      src="https://img.shields.io/github/last-commit/The-FireHub-Project/Core-Standard/architecture/runtime-support?style=flat&logo=github&logoColor=959da5&label=last%20commit%20(branch)&labelColor=31373e"
+      src="https://img.shields.io/github/last-commit/The-FireHub-Project/Core-Standard/develop?style=flat&logo=github&logoColor=959da5&label=last%20commit%20(branch)&labelColor=31373e"
       alt="GitHub last commit (branch)"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/architecture/runtime-support/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/develop/">
     <img
-      src="https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/architecture/runtime-support?style=flat&logo=github&logoColor=959da5&label=commit%20activity%20(branch)&labelColor=31373e"
+      src="https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/develop?style=flat&logo=github&logoColor=959da5&label=commit%20activity%20(branch)&labelColor=31373e"
       alt="GitHub activity (branch)"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/develop...architecture/runtime-support/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/master...develop/">
     <img
-      src="https://img.shields.io/github/commits-difference/The-FireHub-Project/Core-Standard?base=develop&head=architecture/runtime-support&style=flat&logo=github&logoColor=959da5&label=ahead%20develop&labelColor=31373e"
+      src="https://img.shields.io/github/commits-difference/The-FireHub-Project/Core-Standard?base=master&head=develop&style=flat&logo=github&logoColor=959da5&label=ahead%20master&labelColor=31373e"
       alt="GitHub commit difference between two branches"
   /></a>
 </p>
@@ -49,66 +49,47 @@ Standard provides the base classes, kernel, domain layer, and minimal runtime ut
 
 ---
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Runtime Support – Development Branch
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Development Branch
 
-⚠️ **This is the `development` branch**
+⚠️ **This is the `develop` branch**
 
 - Unstable
 - APIs may change without notice
 - Not intended for production use
 
-### Related
-
-- Milestone: **Development v1**
-- Target Release: **v0.0.0**
-- Repository: FireHub Core Standard
-
-### Pull request
-
-<p>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/12/">
-    <img
-      src="https://img.shields.io/github/pulls/detail/title/The-FireHub-Project/Core-Standard/12?style=flat&logo=github&logoColor=959da5&label=title&labelColor=31373e"
-      alt="GitHub pull request title"
-  /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/12/">
-    <img
-      src="https://img.shields.io/github/pulls/detail/author/The-FireHub-Project/Core-Standard/12?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
-      alt="GitHub pull request author"
-  /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/12/">
-    <img
-      src="https://img.shields.io/github/pulls/detail/age/The-FireHub-Project/Core-Standard/12?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
-      alt="GitHub pull request created"
-  /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/12/">
-    <img
-      src="https://img.shields.io/github/pulls/detail/comments/The-FireHub-Project/Core-Standard/12?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
-      alt="GitHub pull request comments"
-  /></a>
-</p>
-
-### Milestone
-
-<p>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/milestone/1/">
-    <img
-      src="https://img.shields.io/github/milestones/progress-percent/The-FireHub-Project/Core-Standard/1?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
-      alt="GitHub milestone details"
-  /></a>
-</p>
-
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Branch Purpose
 
-Establish the architectural contracts, shared abstractions, and foundational framework components required to support the FireHub Runtime Foundation while maintaining a strict separation between framework contracts and runtime implementation.
+The `develop` branch is the **primary integration branch** for all ongoing development.
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Architectural Goal
+It serves as the staging area where:
+- Feature branches are merged
+- Bug fixes are integrated
+- Experimental work is stabilized
+- Code is prepared for upcoming releases
 
-Define Core Standard as the single source of architectural truth by introducing reusable contracts, base abstractions, exception hierarchies, constants, enums, and boundary components that enable Runtime Foundation without containing execution logic.
+All **release branches** are created **from `develop`**.
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Core Concept
+## Stability Guarantee
 
-Core defines WHAT the framework is. Runtime defines HOW it executes. Core Standard provides contracts and architectural foundations, while Runtime Foundation delivers the concrete PHP runtime implementations built upon those contracts.
+❌ No backward compatibility guarantee  
+❌ APIs may change without notice  
+❌ Behavior may be incomplete or inconsistent  
+❌ Breaking changes are expected
+
+This branch is intended **only for contributors and advanced testers**.
+
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Composer Usage (Not Recommended)
+
+For internal testing only:
+
+```json
+{
+  "require": {
+    "the-firehub-project/core-standard": "dev-develop"
+  }
+}
+```
+⚠️ Never use dev-develop in production.
 
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Authors and Contributors
 
