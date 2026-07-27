@@ -17,6 +17,16 @@ namespace FireHub\Core\Meta\Enum\FileSystem;
  * ### File permission modes
  *
  * Represents file permissions using read, write, and execute modes.
+ *
+ * Permission values follow the Unix file permission bitmask convention:
+ * - Execute = 1
+ * - Write = 2
+ * - Read = 4
+ *
+ * Combined permissions are created by adding these values together.
+ *
+ * For example, read and write permissions equal 6 (4 + 2).
+ *
  * @since 1.0.0
  */
 enum Permission:int {

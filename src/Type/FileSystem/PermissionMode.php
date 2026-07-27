@@ -73,4 +73,43 @@ final readonly class PermissionMode extends ValueObject {
 
     }
 
+    /**
+     * ### Get the permission mode in octal notation
+     *
+     * Returns the Unix file permission mode as a four-digit octal string.
+     *
+     * The returned value is suitable for display, serialization, or conversion to a decimal bitmask.
+     * @since 1.0.0
+     *
+     * @return non-empty-string The permission mode in octal notation.
+     */
+    public function octal ():string {
+
+        return '0'
+            . $this->owner->value
+            . $this->group->value
+            . $this->other->value;
+
+    }
+
+    /**
+     * ### Get the permission mode as a decimal bitmask
+     *
+     * Returns the Unix file permission mode as a decimal bitmask.
+     *
+     * The returned value is suitable for APIs that expect a numeric permission mask, such as chmod().
+     * @since 1.0.0
+     *
+     * @return non-negative-int The permission mode as a decimal bitmask.
+     */
+    public function decimal ():int {
+
+        /** @var non-negative-int */
+        return
+            ($this->owner->value << 6)
+            | ($this->group->value << 3)
+            | $this->other->value;
+
+    }
+
 }
