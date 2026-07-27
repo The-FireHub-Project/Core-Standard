@@ -33,23 +33,26 @@ final class FireHubExceptionTest extends FireHubTestCase {
      * @since 1.0.0
      *
      * @param string $message
+     * @param array $context
      * @param int $code
      *
      * @return void
      */
-    #[TestWith(['error message', 123])]
-    #[TestWith(['', 0])]
-    public function testCreate (string $message, int $code):void {
+    #[TestWith(['error message', ['key' => 'value'], 123])]
+    #[TestWith(['', [], 0])]
+    public function testCreate (string $message, array $context, int $code):void {
 
         $previous = new DummyException('previous');
 
         $exception = new DummyException(
             $message,
+            $context,
             $code,
             $previous
         );
 
         $this->assertSame($message, $exception->getMessage());
+        $this->assertSame($context, $exception->getContext());
         $this->assertSame($code, $exception->getCode());
         $this->assertSame($previous, $exception->getPrevious());
 
@@ -62,9 +65,9 @@ final class FireHubExceptionTest extends FireHubTestCase {
      */
     public function testItSupportsExceptionChaining ():void {
 
-        $root = new DummyException('root', 0);
-        $mid = new DummyException('mid', 0, $root);
-        $top = new DummyException('top', 0, $mid);
+        $root = new DummyException('root', [], 0);
+        $mid = new DummyException('mid', [], 0, $root);
+        $top = new DummyException('top', [], 0, $mid);
 
         $this->assertSame($mid, $top->getPrevious());
         $this->assertSame($root, $top->getPrevious()->getPrevious());
