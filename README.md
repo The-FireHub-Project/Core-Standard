@@ -22,24 +22,24 @@
   /></a>
 </h1>
 
-[![PHPStan](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml/badge.svg?branch=develop)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml)
-[![PHPUnit](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml/badge.svg?branch=develop)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml)
-[![Codecov](https://codecov.io/gh/The-FireHub-Project/Core-Standard/branch/develop/graph/badge.svg?token=XW2YEONF51)](https://app.codecov.io/gh/The-FireHub-Project/Core-Standard/tree/develop)
+[![PHPStan](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml/badge.svg?branch=architecture%2Ferror-exception-base)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPStan.yml)
+[![PHPUnit](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml/badge.svg?branch=architecture%2Ferror-exception-base)](https://github.com/The-FireHub-Project/Core-Standard/actions/workflows/PHPUnit.yml)
+[![Codecov](https://codecov.io/gh/The-FireHub-Project/Core-Standard/branch/architecture%2Ferror-exception-base/graph/badge.svg?token=XW2YEONF51)](https://app.codecov.io/gh/The-FireHub-Project/Core-Standard/tree/architecture%2Ferror-exception-base)
 
 <p>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/develop/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/architecture/foundation-support/">
     <img
-      src="https://img.shields.io/github/last-commit/The-FireHub-Project/Core-Standard/develop?style=flat&logo=github&logoColor=959da5&label=last%20commit%20(branch)&labelColor=31373e"
+      src="https://img.shields.io/github/last-commit/The-FireHub-Project/Core-Standard/architecture/foundation-support?style=flat&logo=github&logoColor=959da5&label=last%20commit%20(branch)&labelColor=31373e"
       alt="GitHub last commit (branch)"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/develop/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/commits/architecture/foundation-support/">
     <img
-      src="https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/develop?style=flat&logo=github&logoColor=959da5&label=commit%20activity%20(branch)&labelColor=31373e"
+      src="https://img.shields.io/github/commit-activity/m/The-FireHub-Project/Core-Standard/architecture/foundation-support?style=flat&logo=github&logoColor=959da5&label=commit%20activity%20(branch)&labelColor=31373e"
       alt="GitHub activity (branch)"
   /></a>
-  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/master...develop/">
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/compare/develop...architecture/foundation-support/">
     <img
-      src="https://img.shields.io/github/commits-difference/The-FireHub-Project/Core-Standard?base=master&head=develop&style=flat&logo=github&logoColor=959da5&label=ahead%20master&labelColor=31373e"
+      src="https://img.shields.io/github/commits-difference/The-FireHub-Project/Core-Standard?base=develop&head=architecture/foundation-support&style=flat&logo=github&logoColor=959da5&label=ahead%20develop&labelColor=31373e"
       alt="GitHub commit difference between two branches"
   /></a>
 </p>
@@ -49,47 +49,98 @@ Standard provides the base classes, kernel, domain layer, and minimal runtime ut
 
 ---
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Development Branch
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Foundation Support – Development Branch
 
-⚠️ **This is the `develop` branch**
+⚠️ **This is the `development` branch**
 
 - Unstable
 - APIs may change without notice
 - Not intended for production use
 
+### Related
+
+- Milestone: **Development v1**
+- Target Release: **v0.0.0**
+- Repository: FireHub Core Standard
+
+### Pull request
+
+<p>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/14/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/title/The-FireHub-Project/Core-Standard/14?style=flat&logo=github&logoColor=959da5&label=title&labelColor=31373e"
+      alt="GitHub pull request title"
+  /></a>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/14/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/author/The-FireHub-Project/Core-Standard/14?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub pull request author"
+  /></a>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/14/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/age/The-FireHub-Project/Core-Standard/14?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub pull request created"
+  /></a>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/pull/14/">
+    <img
+      src="https://img.shields.io/github/pulls/detail/comments/The-FireHub-Project/Core-Standard/14?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub pull request comments"
+  /></a>
+</p>
+
+### Milestone
+
+<p>
+  <a href="https://github.com/The-FireHub-Project/Core-Standard/milestone/1/">
+    <img
+      src="https://img.shields.io/github/milestones/progress-percent/The-FireHub-Project/Core-Standard/1?style=flat&logo=github&logoColor=959da5&labelColor=31373e"
+      alt="GitHub milestone details"
+  /></a>
+</p>
+
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Branch Purpose
 
-The `develop` branch is the **primary integration branch** for all ongoing development.
+Define and introduce the Core architectural contracts required to support the FireHub Foundation layer.
 
-It serves as the staging area where:
-- Feature branches are merged
-- Bug fixes are integrated
-- Experimental work is stabilized
-- Code is prepared for upcoming releases
+This branch establishes the contract boundary between Core and Foundation by introducing minimal, implementation-independent abstractions that allow high-level APIs to be built without violating dependency direction.
 
-All **release branches** are created **from `develop`**.
+The purpose is to prepare Core for future Foundation components such as Str, DateTime, Uuid, Uri, Path, and other developer-facing APIs.
 
-## Stability Guarantee
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Architectural Goal
 
-❌ No backward compatibility guarantee  
-❌ APIs may change without notice  
-❌ Behavior may be incomplete or inconsistent  
-❌ Breaking changes are expected
+Establish a clear architectural separation between contracts, execution logic, and high-level developer APIs.
 
-This branch is intended **only for contributors and advanced testers**.
+The goal is to ensure that:
 
-## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Composer Usage (Not Recommended)
+- Core remains the single source of architectural truth.
+- Foundation provides high-level object-oriented implementations.
+- Runtime remains responsible only for low-level execution.
+- Applications consume expressive APIs without depending on internal implementation details.
 
-For internal testing only:
+This branch defines the dependency model:
 
-```json
-{
-  "require": {
-    "the-firehub-project/core-standard": "dev-develop"
-  }
-}
-```
-⚠️ Never use dev-develop in production.
+Core
+↓
+Foundation
+↓
+Runtime
+
+where Core defines contracts, Foundation implements developer APIs, and Runtime provides execution primitives.
+
+## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Core Concept
+
+Introduce minimal Core contracts for fundamental high-level abstractions while keeping implementation details outside the Core layer.
+
+Core contracts represent stable architectural concepts and define only the behavior required by the ecosystem.
+
+Foundation implementations provide the complete developer experience through:
+
+- Object-oriented APIs
+- Immutable value-based objects where applicable
+- Fluent interfaces
+- Rich domain-oriented operations
+
+The Core layer defines what an abstraction is, while Foundation defines how developers use it.
 
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Authors and Contributors
 
