@@ -13,9 +13,6 @@
 
 namespace FireHub\Core\Type;
 
-use FireHub\Core\Type\Str\Encoding;
-use Stringable;
-
 /**
  * ### Defines the base string Value Object type within the FireHub ecosystem
  *
@@ -30,51 +27,6 @@ use Stringable;
  *
  * @template TValue of string
  *
- * @extends \FireHub\Core\Type\ValueObject<TValue>
+ * @extends \FireHub\Core\Type\StringValue<TValue>
  */
-abstract readonly class Str extends ValueObject implements Stringable {
-
-    /**
-     * @inheritDoc
-     *
-     * @since 1.0.0
-     */
-    abstract public function value ():string;
-
-    /**
-     * ### Returns the encoding of the string
-     * @since 1.0.0
-     *
-     * @return \FireHub\Core\Type\Str\Encoding The encoding of the string.
-     */
-    abstract public function encoding ():Encoding;
-
-    /**
-     * ### Returns a new instance with the specified encoding
-     * @since 1.0.0
-     *
-     * @param \FireHub\Core\Type\Str\Encoding $encoding<p>
-     * The encoding to set.
-     * </p>
-     *
-     * @return static The new instance with provided encoding.
-     */
-    abstract public function withEncoding (Encoding $encoding):static;
-
-    /**
-     * ### Returns the string representation of the value
-     *
-     * Provides the native PHP string representation of the Value Object.
-     * @since 1.0.0
-     *
-     * @uses \FireHub\Core\Type\ValueObject::value() To get the string value.
-     *
-     * @return TValue The string representation of the value.
-     */
-    public function __toString ():string {
-
-        return $this->value();
-
-    }
-
-}
+abstract readonly class Str extends StringValue {}
