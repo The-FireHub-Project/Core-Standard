@@ -29,4 +29,14 @@ namespace FireHub\Core\Type;
  *
  * @extends \FireHub\Core\Type\StringValue<TValue>
  */
-abstract readonly class Str extends StringValue {}
+abstract readonly class Str extends StringValue {
+
+    /**
+     * ### Converts the string to the list of Chars
+     * @since 1.0.0
+     *
+     * @return list<\FireHub\Core\Type\Char<non-empty-string>>
+     */
+    abstract public function toChars ():array;
+
+}
