@@ -19,7 +19,7 @@ namespace FireHub\Core\Type;
  * This abstract class represents the foundation for all numeric-based Value Objects.
  *
  * It provides immutable numeric value semantics while allowing concrete implementations to define specific numeric
- * behavior for integer and floating-point values.
+ * behavior for different numeric representations, such as integers and decimal values.
  *
  * The class keeps the Core layer focused on defining the numeric value contract, while concrete implementations belong
  * to higher-level layers such as Foundation.
