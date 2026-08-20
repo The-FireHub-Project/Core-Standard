@@ -13,6 +13,8 @@
 
 namespace FireHub\Core\Type;
 
+use FireHub\Core\Type\Char\Codepoint;
+
 /**
  * ### Defines the base character Value Object type within the FireHub ecosystem
  *
@@ -35,8 +37,8 @@ abstract readonly class Char extends StringValue {
      * ### Returns the Unicode code point for the character
      * @since 1.0.0
      *
-     * @return non-negative-int The Unicode code point for the character.
+     * @return \FireHub\Core\Type\Char\Codepoint<non-negative-int> The Unicode code point for the character.
      */
-    abstract public function codepoint ():int;
+    abstract public function codepoint ():Codepoint;
 
 }
