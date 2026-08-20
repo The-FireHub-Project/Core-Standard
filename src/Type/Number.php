@@ -32,6 +32,48 @@ namespace FireHub\Core\Type;
 abstract readonly class Number extends ValueObject {
 
     /**
+     * ### Checks if the number is positive
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Type\Number::value() To get the value.
+     *
+     * @return bool Whether the number is positive.
+     */
+    public function isPositive ():bool {
+
+        return $this->value() > 0;
+
+    }
+
+    /**
+     * ### Checks if the number is negative
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Type\Number::value() To get the value.
+     *
+     * @return bool Whether the number is negative.
+     */
+    public function isNegative ():bool {
+
+        return $this->value() < 0;
+
+    }
+
+    /**
+     * ### Checks if the number is zero
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Type\Number::value() To get the value.
+     *
+     * @return bool Whether the number is zero.
+     */
+    public function isZero ():bool {
+
+        return (float)$this->value() === 0.0;
+
+    }
+
+    /**
      * @inheritDoc
      *
      * @since 1.0.0

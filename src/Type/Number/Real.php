@@ -37,6 +37,30 @@ use FireHub\Core\Type\Number;
 abstract readonly class Real extends Number {
 
     /**
+     * ### Checks if the number is finite
+     * @since 1.0.0
+     *
+     * @return bool Whether the number is finite.
+     */
+    abstract public function isFinite ():bool;
+
+    /**
+     * ### Checks if the number is infinite
+     * @since 1.0.0
+     *
+     * @return bool Whether the number is infinite.
+     */
+    abstract public function isInfinite ():bool;
+
+    /**
+     * ### Checks if the number is NaN (Not a Number)
+     * @since 1.0.0
+     *
+     * @return bool Whether the number is NaN.
+     */
+    abstract public function isNaN ():bool;
+
+    /**
      * @inheritDoc
      *
      * @since 1.0.0
