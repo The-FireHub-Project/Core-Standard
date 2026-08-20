@@ -35,17 +35,29 @@ abstract readonly class Boolean extends ValueObject {
      * ### Checks if the value is true
      * @since 1.0.0
      *
+     * @uses \FireHub\Core\Type\Boolean::value() To get the value.
+     *
      * @return bool Returns true if the value is true, false otherwise.
      */
-    abstract public function isTrue ():bool;
+    public function isTrue ():bool {
+
+        return $this->value()=== true;
+
+    }
 
     /**
      * ### Checks if the value is false
      * @since 1.0.0
      *
+     * @uses \FireHub\Core\Type\Boolean::isTrue() To check if the value is true.
+     *
      * @return bool Returns true if the value is false, false otherwise.
      */
-    abstract public function isFalse ():bool;
+    public function isFalse ():bool {
+
+        return $this->value() === false;
+
+    }
 
     /**
      * @inheritDoc
