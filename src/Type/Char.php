@@ -29,4 +29,14 @@ namespace FireHub\Core\Type;
  *
  * @extends \FireHub\Core\Type\StringValue<TValue>
  */
-abstract readonly class Char extends StringValue {}
+abstract readonly class Char extends StringValue {
+
+    /**
+     * ### Returns the Unicode code point for the character
+     * @since 1.0.0
+     *
+     * @return non-negative-int The Unicode code point for the character.
+     */
+    abstract public function codepoint ():int;
+
+}
