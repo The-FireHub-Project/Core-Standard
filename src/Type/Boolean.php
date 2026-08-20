@@ -32,6 +32,22 @@ namespace FireHub\Core\Type;
 abstract readonly class Boolean extends ValueObject {
 
     /**
+     * ### Checks if the value is true
+     * @since 1.0.0
+     *
+     * @return bool Returns true if the value is true, false otherwise.
+     */
+    abstract public function isTrue ():bool;
+
+    /**
+     * ### Checks if the value is false
+     * @since 1.0.0
+     *
+     * @return bool Returns true if the value is false, false otherwise.
+     */
+    abstract public function isFalse ():bool;
+
+    /**
      * @inheritDoc
      *
      * @since 1.0.0
