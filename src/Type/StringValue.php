@@ -67,7 +67,7 @@ abstract readonly class StringValue extends ValueObject implements Stringable {
      * Provides the native PHP string representation of the Value Object.
      * @since 1.0.0
      *
-     * @uses \FireHub\Core\Type\ValueObject::value() To get the string value.
+     * @uses \FireHub\Core\Type\StringValue::value() To get the string value.
      *
      * @return TValue The string representation of the value.
      */
