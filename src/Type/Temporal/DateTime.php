@@ -14,6 +14,7 @@
 namespace FireHub\Core\Type\Temporal;
 
 use FireHub\Core\Type\ValueObject;
+use FireHub\Core\Type\Date\Zone;
 use Stringable;
 
 /**
@@ -40,6 +41,26 @@ abstract readonly class DateTime extends ValueObject implements Stringable {
      * @since 1.0.0
      */
     abstract public function value ():string;
+
+    /**
+     * ### Returns the timezone of the date and time value
+     * @since 1.0.0
+     *
+     * @return \FireHub\Core\Type\Date\Zone The timezone of the date and time value.
+     */
+    abstract public function zone ():Zone;
+
+    /**
+     * ### Returns a new instance with the specified timezone
+     * @since 1.0.0
+     *
+     * @param \FireHub\Core\Type\Date\Zone $encoding <p>
+     * The timezone to set.
+     * </p>
+     *
+     * @return static The new instance with provided timezone.
+     */
+    abstract public function withZone (Zone $encoding):static;
 
     /**
      * ### Returns the string representation of the value
