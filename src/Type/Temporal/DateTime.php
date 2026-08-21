@@ -54,13 +54,13 @@ abstract readonly class DateTime extends ValueObject implements Stringable {
      * ### Returns a new instance with the specified timezone
      * @since 1.0.0
      *
-     * @param \FireHub\Core\Type\Date\Zone $encoding <p>
+     * @param \FireHub\Core\Type\Date\Zone $zone <p>
      * The timezone to set.
      * </p>
      *
      * @return static The new instance with provided timezone.
      */
-    abstract public function withZone (Zone $encoding):static;
+    abstract public function withZone (Zone $zone):static;
 
     /**
      * ### Returns the string representation of the value
