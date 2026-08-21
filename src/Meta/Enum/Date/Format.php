@@ -11,7 +11,7 @@
  * @package Core
  */
 
-namespace FireHub\Core\Meta\Enum\Temporal;
+namespace FireHub\Core\Meta\Enum\Date;
 
 /**
  * ### Provides predefined date and time formatting standards
