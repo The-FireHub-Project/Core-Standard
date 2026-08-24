@@ -17,22 +17,20 @@ use FireHub\Core\Type\ValueObject;
 use Stringable;
 
 /**
- * ### Defines the base date and time Value Object type within the FireHub ecosystem
+ * ### Represents a timezone value
  *
- * This abstract class represents the foundation for all date and time-based Value Objects.
+ * The Timezone value object represents either a named timezone identified by an IANA timezone identifier or a fixed
+ * UTC offset.
  *
- * It provides immutable date and time value semantics while allowing concrete implementations to define specific
- * behavior for representing and manipulating combined date and time values.
- *
- * The class keeps the Core layer focused on defining the date and time value contract, while concrete implementations
- * belong to higher-level layers such as Foundation.
+ * A named timezone is represented by predefined {@see Zone} value, while a fixed timezone is represented by its UTC
+ * offset in seconds.
  * @since 1.0.0
  *
- * @template TValue of non-empty-string
+ * @template TValue of non-empty-string|\FireHub\Core\Type\Date\Zone::*
  *
  * @extends \FireHub\Core\Type\ValueObject<TValue>
  */
-abstract readonly class DateTime extends ValueObject implements Stringable {
+abstract readonly class Timezone extends ValueObject implements Stringable {
 
     /**
      * @inheritDoc
@@ -47,7 +45,7 @@ abstract readonly class DateTime extends ValueObject implements Stringable {
      * Provides the native PHP string representation of the Value Object.
      * @since 1.0.0
      *
-     * @uses \FireHub\Core\Type\Temporal\DateTime::value() To get the string value.
+     * @uses \FireHub\Core\Type\Temporal\Timezone::value() To get the string value.
      *
      * @return TValue The string representation of the value.
      */
