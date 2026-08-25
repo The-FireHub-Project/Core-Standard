@@ -26,7 +26,7 @@ use Stringable;
  * offset in seconds.
  * @since 1.0.0
  *
- * @template TValue of non-empty-string|\FireHub\Core\Type\Date\Zone::*
+ * @template TValue of non-empty-string
  *
  * @extends \FireHub\Core\Type\ValueObject<TValue>
  */
