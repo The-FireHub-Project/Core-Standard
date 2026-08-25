@@ -13,7 +13,9 @@
 
 namespace FireHub\Core\Type\Geo;
 
-use FireHub\Core\Boundary\Type\Geo\M49;
+use FireHub\Core\Boundary\Type\Geo\ {
+    M49, ISO3166
+};
 
 /**
  * ### Defines the world's countries
@@ -25,7 +27,7 @@ use FireHub\Core\Boundary\Type\Geo\M49;
  * data that may change over time.
  * @since 1.0.0
  */
-enum Country:string implements M49 {
+enum Country:string implements M49, ISO3166 {
 
     /**
      * @since 1.0.0
@@ -1278,6 +1280,104 @@ enum Country:string implements M49 {
     case ZIMBABWE = 'Zimbabwe';
 
     /**
+     * ### Get county from alpha 2 code
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Type\Geo\Country::alpha2() To check alpha 2 code for country.
+     *
+     * @return self|false Returns country if found or `false` if country not found.
+     */
+    public static function fromAlpha2 (string $code):self|false {
+
+        foreach (self::cases() as $case)
+            if ($case->alpha2() === $code) return $case;
+
+        return false;
+
+    }
+
+    /**
+     * ### Get county from alpha 3 code
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Type\Geo\Country::alpha3() To check alpha 3 code for country.
+     *
+     * @return self|false Returns country if found or `false` if country not found.
+     */
+    public static function fromAlpha3 (string $code):self|false {
+
+        foreach (self::cases() as $case)
+            if ($case->alpha3() === $code) return $case;
+
+        return false;
+
+    }
+
+    /**
+     * ### Get all country's from a provided region
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Type\Geo\Country::is() To check if the country is a region.
+     *
+     * @param \FireHub\Core\Boundary\Type\Geo\M49 $region <p>
+     * The region to filter by.
+     * </p>
+     *
+     * @return \FireHub\Core\Type\Geo\Country[] List of country's.
+     */
+    public static function casesFrom (M49 $region):array {
+
+        $cases = [];
+
+        foreach (self::cases() as $case)
+            if ($case->is($region)) $cases[] = $case;
+
+        return $cases;
+
+    }
+
+    /**
+     * ### Get all country's from a provided continent or ocean
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Type\Geo\Country::continentOrOcean() To check a country's continent or ocean.
+     *
+     * @param \FireHub\Core\Type\Geo\Continent|\FireHub\Core\Type\Geo\Ocean $continent_or_ocean <p>
+     * Continent or ocean to filter by.
+     * </p>
+     *
+     * @return \FireHub\Core\Type\Geo\Country[] List of country's.
+     */
+    public static function casesFromContinentOrOcean (Continent|Ocean $continent_or_ocean):array {
+
+        $cases = [];
+
+        foreach (self::cases() as $case)
+            if ($case->continentOrOcean() === $continent_or_ocean) $cases[] = $case;
+
+        return $cases;
+
+    }
+
+    /**
+     * ### Check if the country is a region
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Type\Geo\Country::check() To check country's region.
+     *
+     * @param \FireHub\Core\Boundary\Type\Geo\M49 $region <p>
+     * The region to check for.
+     * </p>
+     *
+     * @return bool True if country is a region type, false otherwise.
+     */
+    public function is (M49 $region):bool {
+
+        return $this->check($region, $this);
+
+    }
+
+    /**
      * @inheritDoc
      *
      * @since 1.0.0
@@ -1630,6 +1730,659 @@ enum Country:string implements M49 {
             self::KAZAKHSTAN, self::KYRGYZSTAN, self::TAJIKISTAN, self::TURKMENISTAN, self::UZBEKISTAN
                 => SubRegion::CENTRAL_ASIA
         };
+
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @since 1.0.0
+     */
+    public function alpha2 ():string {
+
+        return match ($this) {
+            self::AFGHANISTAN => 'AF',
+            self::ALAND_ISLANDS => 'AX',
+            self::ALBANIA => 'AL',
+            self::ALGERIA => 'DZ',
+            self::AMERICAN_SAMOA => 'AS',
+            self::ANDORRA => 'AD',
+            self::ANGOLA => 'AO',
+            self::ANGUILLA => 'AI',
+            self::ANTARCTICA => 'AQ',
+            self::ANTIGUA_AND_BARBUDA => 'AG',
+            self::ARGENTINA => 'AR',
+            self::ARMENIA => 'AM',
+            self::ARUBA => 'AW',
+            self::AUSTRALIA => 'AU',
+            self::AUSTRIA => 'AT',
+            self::AZERBAIJAN => 'AZ',
+            self::BAHAMAS => 'BS',
+            self::BAHRAIN => 'BH',
+            self::BANGLADESH => 'BD',
+            self::BARBADOS => 'BB',
+            self::BELARUS => 'BY',
+            self::BELGIUM => 'BE',
+            self::BELIZE => 'BZ',
+            self::BENIN => 'BJ',
+            self::BERMUDA => 'BM',
+            self::BHUTAN => 'BT',
+            self::BOLIVIA_PLURINATIONAL_STATE_OF => 'BO',
+            self::BONAIRE_SINT_EUSTATIUS_AND_SABA => 'BQ',
+            self::BOSNIA_AND_HERZEGOVINA => 'BA',
+            self::BOTSWANA => 'BW',
+            self::BOUVET_ISLAND => 'BV',
+            self::BRAZIL => 'BR',
+            self::BRITISH_INDIAN_OCEAN_TERRITORY => 'IO',
+            self::BRUNEI_DARUSSALAM => 'BN',
+            self::BULGARIA => 'BG',
+            self::BURKINA_FASO => 'BF',
+            self::BURUNDI => 'BI',
+            self::CABO_VERDE => 'CV',
+            self::CAMBODIA => 'KH',
+            self::CAMEROON => 'CM',
+            self::CANADA => 'CA',
+            self::CAYMAN_ISLANDS => 'KY',
+            self::CENTRAL_AFRICAN_REPUBLIC => 'CF',
+            self::CHAD => 'TD',
+            self::CHILE => 'CL',
+            self::CHINA => 'CN',
+            self::CHRISTMAS_ISLAND => 'CX',
+            self::COCOS_KEELING_ISLANDS => 'CC',
+            self::COLOMBIA => 'CO',
+            self::COMOROS => 'KM',
+            self::CONGO => 'CG',
+            self::CONGO_DEMOCRATIC_REPUBLIC_OF_THE => 'CD',
+            self::COOK_ISLANDS => 'CK',
+            self::COSTA_RICA => 'CR',
+            self::COTE_D_IVOIRE => 'CI',
+            self::CROATIA => 'HR',
+            self::CUBA => 'CU',
+            self::CURACAO => 'CW',
+            self::CYPRUS => 'CY',
+            self::CZECHIA => 'CZ',
+            self::DENMARK => 'DK',
+            self::DJIBOUTI => 'DJ',
+            self::DOMINICA => 'DM',
+            self::DOMINICAN_REPUBLIC => 'DO',
+            self::ECUADOR => 'EC',
+            self::EGYPT => 'EG',
+            self::EL_SALVADOR => 'SV',
+            self::EQUATORIAL_GUINEA => 'GQ',
+            self::ERITREA => 'ER',
+            self::ESTONIA => 'EE',
+            self::ESWATINI => 'SZ',
+            self::ETHIOPIA => 'ET',
+            self::FALKLAND_ISLANDS_MALVINAS => 'FK',
+            self::FAROE_ISLANDS => 'FO',
+            self::FIJI => 'FJ',
+            self::FINLAND => 'FI',
+            self::FRANCE => 'FR',
+            self::FRENCH_GUIANA => 'GF',
+            self::FRENCH_POLYNESIA => 'PF',
+            self::FRENCH_SOUTHERN_TERRITORIES => 'TF',
+            self::GABON => 'GA',
+            self::GAMBIA => 'GM',
+            self::GEORGIA => 'GE',
+            self::GERMANY => 'DE',
+            self::GHANA => 'GH',
+            self::GIBRALTAR => 'GI',
+            self::GREECE => 'GR',
+            self::GREENLAND => 'GL',
+            self::GRENADA => 'GD',
+            self::GUADELOUPE => 'GP',
+            self::GUAM => 'GU',
+            self::GUATEMALA => 'GT',
+            self::GUERNSEY => 'GG',
+            self::GUINEA => 'GN',
+            self::GUINEA_BISSAU => 'GW',
+            self::GUYANA => 'GY',
+            self::HAITI => 'HT',
+            self::HEARD_ISLAND_AND_MCDONALD_ISLANDS => 'HM',
+            self::HOLY_SEE => 'VA',
+            self::HONDURAS => 'HN',
+            self::HONG_KONG => 'HK',
+            self::HUNGARY => 'HU',
+            self::ICELAND => 'IS',
+            self::INDIA => 'IN',
+            self::INDONESIA => 'ID',
+            self::IRAN_ISLAMIC_REPUBLIC_OF => 'IR',
+            self::IRAQ => 'IQ',
+            self::IRELAND => 'IE',
+            self::ISLE_OF_MAN => 'IM',
+            self::ISRAEL => 'IL',
+            self::ITALY => 'IT',
+            self::JAMAICA => 'JM',
+            self::JAPAN => 'JP',
+            self::JERSEY => 'JE',
+            self::JORDAN => 'JO',
+            self::KAZAKHSTAN => 'KZ',
+            self::KENYA => 'KE',
+            self::KIRIBATI => 'KI',
+            self::KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF => 'KP',
+            self::KOREA_REPUBLIC_OF => 'KR',
+            self::KOSOVO => 'XK',
+            self::KUWAIT => 'KW',
+            self::KYRGYZSTAN => 'KG',
+            self::LAO_PEOPLES_DEMOCRATIC_REPUBLIC => 'LA',
+            self::LATVIA => 'LV',
+            self::LEBANON => 'LB',
+            self::LESOTHO => 'LS',
+            self::LIBERIA => 'LR',
+            self::LIBYA => 'LY',
+            self::LIECHTENSTEIN => 'LI',
+            self::LITHUANIA => 'LT',
+            self::LUXEMBOURG => 'LU',
+            self::MACAO => 'MO',
+            self::MADAGASCAR => 'MG',
+            self::MALAWI => 'MW',
+            self::MALAYSIA => 'MY',
+            self::MALDIVES => 'MV',
+            self::MALI => 'ML',
+            self::MALTA => 'MT',
+            self::MARSHALL_ISLANDS => 'MH',
+            self::MARTINIQUE => 'MQ',
+            self::MAURITANIA => 'MR',
+            self::MAURITIUS => 'MU',
+            self::MAYOTTE => 'YT',
+            self::MEXICO => 'MX',
+            self::MICRONESIA_FEDERATED_STATES_OF => 'FM',
+            self::MOLDOVA_REPUBLIC_OF => 'MD',
+            self::MONACO => 'MC',
+            self::MONGOLIA => 'MN',
+            self::MONTENEGRO => 'ME',
+            self::MONTSERRAT => 'MS',
+            self::MOROCCO => 'MA',
+            self::MOZAMBIQUE => 'MZ',
+            self::MYANMAR => 'MM',
+            self::NAMIBIA => 'NA',
+            self::NAURU => 'NR',
+            self::NEPAL => 'NP',
+            self::NETHERLANDS_KINGDOM_OF_THE => 'NL',
+            self::NEW_CALEDONIA => 'NC',
+            self::NEW_ZEALAND => 'NZ',
+            self::NICARAGUA => 'NI',
+            self::NIGER => 'NE',
+            self::NIGERIA => 'NG',
+            self::NIUE => 'NU',
+            self::NORFOLK_ISLAND => 'NF',
+            self::NORTH_MACEDONIA => 'MK',
+            self::NORTHERN_MARIANA_ISLANDS => 'MP',
+            self::NORWAY => 'NO',
+            self::OMAN => 'OM',
+            self::PAKISTAN => 'PK',
+            self::PALAU => 'PW',
+            self::PALESTINE_STATE_OF => 'PS',
+            self::PANAMA => 'PA',
+            self::PAPUA_NEW_GUINEA => 'PG',
+            self::PARAGUAY => 'PY',
+            self::PERU => 'PE',
+            self::PHILIPPINES => 'PH',
+            self::PITCAIRN => 'PN',
+            self::POLAND => 'PL',
+            self::PORTUGAL => 'PT',
+            self::PUERTO_RICO => 'PR',
+            self::QATAR => 'QA',
+            self::REUNION => 'RE',
+            self::ROMANIA => 'RO',
+            self::RUSSIAN_FEDERATION => 'RU',
+            self::RWANDA => 'RW',
+            self::SAINT_BARTHELEMY => 'BL',
+            self::SAINT_HELENA_ASCENSION_AND_TRISTAN_DA_CUNHA => 'SH',
+            self::SAINT_KITTS_AND_NEVIS => 'KN',
+            self::SAINT_LUCIA => 'LC',
+            self::SAINT_MARTIN_FRENCH_PART => 'MF',
+            self::SAINT_PIERRE_AND_MIQUELON => 'PM',
+            self::SAINT_VINCENT_AND_THE_GRENADINES => 'VC',
+            self::SAMOA => 'WS',
+            self::SAN_MARINO => 'SM',
+            self::SAO_TOME_AND_PRINCIPE => 'ST',
+            self::SAUDI_ARABIA => 'SA',
+            self::SENEGAL => 'SN',
+            self::SERBIA => 'RS',
+            self::SEYCHELLES => 'SC',
+            self::SIERRA_LEONE => 'SL',
+            self::SINGAPORE => 'SG',
+            self::SINT_MAARTEN_DUTCH_PART => 'SX',
+            self::SLOVAKIA => 'SK',
+            self::SLOVENIA => 'SI',
+            self::SOLOMON_ISLANDS => 'SB',
+            self::SOMALIA => 'SO',
+            self::SOUTH_AFRICA => 'ZA',
+            self::SOUTH_GEORGIA_AND_THE_SOUTH_SANDWICH_ISLANDS => 'GS',
+            self::SOUTH_SUDAN => 'SS',
+            self::SPAIN => 'ES',
+            self::SRI_LANKA => 'LK',
+            self::SUDAN => 'SD',
+            self::SURINAME => 'SR',
+            self::SVALBARD_AND_JAN_MAYEN => 'SJ',
+            self::SWEDEN => 'SE',
+            self::SWITZERLAND => 'CH',
+            self::SYRIAN_ARAB_REPUBLIC => 'SY',
+            self::TAIWAN_PROVINCE_OF_CHINA => 'TW',
+            self::TAJIKISTAN => 'TJ',
+            self::TANZANIA_UNITED_REPUBLIC_OF => 'TZ',
+            self::THAILAND => 'TH',
+            self::TIMOR_LESTE => 'TL',
+            self::TOGO => 'TG',
+            self::TOKELAU => 'TK',
+            self::TONGA => 'TO',
+            self::TRINIDAD_AND_TOBAGO => 'TT',
+            self::TUNISIA => 'TN',
+            self::TURKIYE => 'TR',
+            self::TURKMENISTAN => 'TM',
+            self::TURKS_AND_CAICOS_ISLANDS => 'TC',
+            self::TUVALU => 'TV',
+            self::UGANDA => 'UG',
+            self::UKRAINE => 'UA',
+            self::UNITED_ARAB_EMIRATES => 'AE',
+            self::UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND => 'GB',
+            self::UNITED_STATES_MINOR_OUTLYING_ISLANDS => 'UM',
+            self::UNITED_STATES_OF_AMERICA => 'US',
+            self::URUGUAY => 'UY',
+            self::UZBEKISTAN => 'UZ',
+            self::VANUATU => 'VU',
+            self::VENEZUELA_BOLIVARIAN_REPUBLIC_OF => 'VE',
+            self::VIET_NAM => 'VN',
+            self::VIRGIN_ISLANDS_BRITISH => 'VG',
+            self::VIRGIN_ISLANDS_US => 'VI',
+            self::WALLIS_AND_FUTUNA => 'WF',
+            self::WESTERN_SAHARA => 'EH',
+            self::YEMEN => 'YE',
+            self::ZAMBIA => 'ZM',
+            self::ZIMBABWE => 'ZW'
+        };
+
+    }
+
+    /**
+     * @inheritDoc
+     *
+     * @since 1.0.0
+     */
+    public function alpha3 ():string {
+
+        return match ($this) {
+            self::AFGHANISTAN => 'AFG',
+            self::ALAND_ISLANDS => 'ALA',
+            self::ALBANIA => 'ALB',
+            self::ALGERIA => 'DZA',
+            self::AMERICAN_SAMOA => 'ASM',
+            self::ANDORRA => 'AND',
+            self::ANGOLA => 'AGO',
+            self::ANGUILLA => 'AIA',
+            self::ANTARCTICA => 'ATA',
+            self::ANTIGUA_AND_BARBUDA => 'ATG',
+            self::ARGENTINA => 'ARG',
+            self::ARMENIA => 'ARM',
+            self::ARUBA => 'ABW',
+            self::AUSTRALIA => 'AUS',
+            self::AUSTRIA => 'AUT',
+            self::AZERBAIJAN => 'AZE',
+            self::BAHAMAS => 'BHS',
+            self::BAHRAIN => 'BHR',
+            self::BANGLADESH => 'BGD',
+            self::BARBADOS => 'BRB',
+            self::BELARUS => 'BLR',
+            self::BELGIUM => 'BEL',
+            self::BELIZE => 'BLZ',
+            self::BENIN => 'BEN',
+            self::BERMUDA => 'BMU',
+            self::BHUTAN => 'BTN',
+            self::BOLIVIA_PLURINATIONAL_STATE_OF => 'BOL',
+            self::BONAIRE_SINT_EUSTATIUS_AND_SABA => 'BES',
+            self::BOSNIA_AND_HERZEGOVINA => 'BIH',
+            self::BOTSWANA => 'BWA',
+            self::BOUVET_ISLAND => 'BVT',
+            self::BRAZIL => 'BRA',
+            self::BRITISH_INDIAN_OCEAN_TERRITORY => 'IOT',
+            self::BRUNEI_DARUSSALAM => 'BRN',
+            self::BULGARIA => 'BGR',
+            self::BURKINA_FASO => 'BFA',
+            self::BURUNDI => 'BDI',
+            self::CABO_VERDE => 'CPV',
+            self::CAMBODIA => 'KHM',
+            self::CAMEROON => 'CMR',
+            self::CANADA => 'CAN',
+            self::CAYMAN_ISLANDS => 'CYM',
+            self::CENTRAL_AFRICAN_REPUBLIC => 'CAF',
+            self::CHAD => 'TCD',
+            self::CHILE => 'CHL',
+            self::CHINA => 'CHN',
+            self::CHRISTMAS_ISLAND => 'CXR',
+            self::COCOS_KEELING_ISLANDS => 'CCK',
+            self::COLOMBIA => 'COL',
+            self::COMOROS => 'COM',
+            self::CONGO => 'COG',
+            self::CONGO_DEMOCRATIC_REPUBLIC_OF_THE => 'COD',
+            self::COOK_ISLANDS => 'COK',
+            self::COSTA_RICA => 'CRI',
+            self::COTE_D_IVOIRE => 'CIV',
+            self::CROATIA => 'HRV',
+            self::CUBA => 'CUB',
+            self::CURACAO => 'CUW',
+            self::CYPRUS => 'CYP',
+            self::CZECHIA => 'CZE',
+            self::DENMARK => 'DNK',
+            self::DJIBOUTI => 'DJI',
+            self::DOMINICA => 'DMA',
+            self::DOMINICAN_REPUBLIC => 'DOM',
+            self::ECUADOR => 'ECU',
+            self::EGYPT => 'EGY',
+            self::EL_SALVADOR => 'SLV',
+            self::EQUATORIAL_GUINEA => 'GNQ',
+            self::ERITREA => 'ERI',
+            self::ESTONIA => 'EST',
+            self::ESWATINI => 'SWZ',
+            self::ETHIOPIA => 'ETH',
+            self::FALKLAND_ISLANDS_MALVINAS => 'FLK',
+            self::FAROE_ISLANDS => 'FRO',
+            self::FIJI => 'FJI',
+            self::FINLAND => 'FIN',
+            self::FRANCE => 'FRA',
+            self::FRENCH_GUIANA => 'GUF',
+            self::FRENCH_POLYNESIA => 'PYF',
+            self::FRENCH_SOUTHERN_TERRITORIES => 'ATF',
+            self::GABON => 'GAB',
+            self::GAMBIA => 'GMB',
+            self::GEORGIA => 'GEO',
+            self::GERMANY => 'DEU',
+            self::GHANA => 'GHA',
+            self::GIBRALTAR => 'GIB',
+            self::GREECE => 'GRC',
+            self::GREENLAND => 'GRL',
+            self::GRENADA => 'GRD',
+            self::GUADELOUPE => 'GLP',
+            self::GUAM => 'GUM',
+            self::GUATEMALA => 'GTM',
+            self::GUERNSEY => 'GGY',
+            self::GUINEA => 'GIN',
+            self::GUINEA_BISSAU => 'GNB',
+            self::GUYANA => 'GUY',
+            self::HAITI => 'HTI',
+            self::HEARD_ISLAND_AND_MCDONALD_ISLANDS => 'HMD',
+            self::HOLY_SEE => 'VAT',
+            self::HONDURAS => 'HND',
+            self::HONG_KONG => 'HKG',
+            self::HUNGARY => 'HUN',
+            self::ICELAND => 'ISL',
+            self::INDIA => 'IND',
+            self::INDONESIA => 'IDN',
+            self::IRAN_ISLAMIC_REPUBLIC_OF => 'IRN',
+            self::IRAQ => 'IRQ',
+            self::IRELAND => 'IRL',
+            self::ISLE_OF_MAN => 'IMN',
+            self::ISRAEL => 'ISR',
+            self::ITALY => 'ITA',
+            self::JAMAICA => 'JAM',
+            self::JAPAN => 'JPN',
+            self::JERSEY => 'JEY',
+            self::JORDAN => 'JOR',
+            self::KAZAKHSTAN => 'KAZ',
+            self::KENYA => 'KEN',
+            self::KIRIBATI => 'KIR',
+            self::KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF => 'PRK',
+            self::KOREA_REPUBLIC_OF => 'KOR',
+            self::KOSOVO => 'UNK',
+            self::KUWAIT => 'KWT',
+            self::KYRGYZSTAN => 'KGZ',
+            self::LAO_PEOPLES_DEMOCRATIC_REPUBLIC => 'LAO',
+            self::LATVIA => 'LVA',
+            self::LEBANON => 'LBN',
+            self::LESOTHO => 'LSO',
+            self::LIBERIA => 'LBR',
+            self::LIBYA => 'LBY',
+            self::LIECHTENSTEIN => 'LIE',
+            self::LITHUANIA => 'LTU',
+            self::LUXEMBOURG => 'LUX',
+            self::MACAO => 'MAC',
+            self::MADAGASCAR => 'MDG',
+            self::MALAWI => 'MWI',
+            self::MALAYSIA => 'MYS',
+            self::MALDIVES => 'MDV',
+            self::MALI => 'MLI',
+            self::MALTA => 'MLT',
+            self::MARSHALL_ISLANDS => 'MHL',
+            self::MARTINIQUE => 'MTQ',
+            self::MAURITANIA => 'MRT',
+            self::MAURITIUS => 'MUS',
+            self::MAYOTTE => 'MYT',
+            self::MEXICO => 'MEX',
+            self::MICRONESIA_FEDERATED_STATES_OF => 'FSM',
+            self::MOLDOVA_REPUBLIC_OF => 'MDA',
+            self::MONACO => 'MCO',
+            self::MONGOLIA => 'MNG',
+            self::MONTENEGRO => 'MNE',
+            self::MONTSERRAT => 'MSR',
+            self::MOROCCO => 'MAR',
+            self::MOZAMBIQUE => 'MOZ',
+            self::MYANMAR => 'MMR',
+            self::NAMIBIA => 'NAM',
+            self::NAURU => 'NRU',
+            self::NEPAL => 'NPL',
+            self::NETHERLANDS_KINGDOM_OF_THE => 'NLD',
+            self::NEW_CALEDONIA => 'NCL',
+            self::NEW_ZEALAND => 'NZL',
+            self::NICARAGUA => 'NIC',
+            self::NIGER => 'NER',
+            self::NIGERIA => 'NGA',
+            self::NIUE => 'NIU',
+            self::NORFOLK_ISLAND => 'NFK',
+            self::NORTH_MACEDONIA => 'MKD',
+            self::NORTHERN_MARIANA_ISLANDS => 'MNP',
+            self::NORWAY => 'NOR',
+            self::OMAN => 'OMN',
+            self::PAKISTAN => 'PAK',
+            self::PALAU => 'PLW',
+            self::PALESTINE_STATE_OF => 'PSE',
+            self::PANAMA => 'PAN',
+            self::PAPUA_NEW_GUINEA => 'PNG',
+            self::PARAGUAY => 'PRY',
+            self::PERU => 'PER',
+            self::PHILIPPINES => 'PHL',
+            self::PITCAIRN => 'PCN',
+            self::POLAND => 'POL',
+            self::PORTUGAL => 'PRT',
+            self::PUERTO_RICO => 'PRI',
+            self::QATAR => 'QAT',
+            self::REUNION => 'REU',
+            self::ROMANIA => 'ROU',
+            self::RUSSIAN_FEDERATION => 'RUS',
+            self::RWANDA => 'RWA',
+            self::SAINT_BARTHELEMY => 'BLM',
+            self::SAINT_HELENA_ASCENSION_AND_TRISTAN_DA_CUNHA => 'SHN',
+            self::SAINT_KITTS_AND_NEVIS => 'KNA',
+            self::SAINT_LUCIA => 'LCA',
+            self::SAINT_MARTIN_FRENCH_PART => 'MAF',
+            self::SAINT_PIERRE_AND_MIQUELON => 'SPM',
+            self::SAINT_VINCENT_AND_THE_GRENADINES => 'VCT',
+            self::SAMOA => 'WSM',
+            self::SAN_MARINO => 'SMR',
+            self::SAO_TOME_AND_PRINCIPE => 'STP',
+            self::SAUDI_ARABIA => 'SAU',
+            self::SENEGAL => 'SEN',
+            self::SERBIA => 'SRB',
+            self::SEYCHELLES => 'SYC',
+            self::SIERRA_LEONE => 'SLE',
+            self::SINGAPORE => 'SGP',
+            self::SINT_MAARTEN_DUTCH_PART => 'SXM',
+            self::SLOVAKIA => 'SVK',
+            self::SLOVENIA => 'SVN',
+            self::SOLOMON_ISLANDS => 'SLB',
+            self::SOMALIA => 'SOM',
+            self::SOUTH_AFRICA => 'ZAF',
+            self::SOUTH_GEORGIA_AND_THE_SOUTH_SANDWICH_ISLANDS => 'SGS',
+            self::SOUTH_SUDAN => 'SSD',
+            self::SPAIN => 'ESP',
+            self::SRI_LANKA => 'LKA',
+            self::SUDAN => 'SDN',
+            self::SURINAME => 'SUR',
+            self::SVALBARD_AND_JAN_MAYEN => 'SJM',
+            self::SWEDEN => 'SWE',
+            self::SWITZERLAND => 'CHE',
+            self::SYRIAN_ARAB_REPUBLIC => 'SYR',
+            self::TAIWAN_PROVINCE_OF_CHINA => 'TWN',
+            self::TAJIKISTAN => 'TJK',
+            self::TANZANIA_UNITED_REPUBLIC_OF => 'TZA',
+            self::THAILAND => 'THA',
+            self::TIMOR_LESTE => 'TLS',
+            self::TOGO => 'TGO',
+            self::TOKELAU => 'TKL',
+            self::TONGA => 'TON',
+            self::TRINIDAD_AND_TOBAGO => 'TTO',
+            self::TUNISIA => 'TUN',
+            self::TURKIYE => 'TUR',
+            self::TURKMENISTAN => 'TKM',
+            self::TURKS_AND_CAICOS_ISLANDS => 'TCA',
+            self::TUVALU => 'TUV',
+            self::UGANDA => 'UGA',
+            self::UKRAINE => 'UKR',
+            self::UNITED_ARAB_EMIRATES => 'ARE',
+            self::UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND => 'GBR',
+            self::UNITED_STATES_MINOR_OUTLYING_ISLANDS => 'UMI',
+            self::UNITED_STATES_OF_AMERICA => 'USA',
+            self::URUGUAY => 'URY',
+            self::UZBEKISTAN => 'UZB',
+            self::VANUATU => 'VUT',
+            self::VENEZUELA_BOLIVARIAN_REPUBLIC_OF => 'VEN',
+            self::VIET_NAM => 'VNM',
+            self::VIRGIN_ISLANDS_BRITISH => 'VGB',
+            self::VIRGIN_ISLANDS_US => 'VIR',
+            self::WALLIS_AND_FUTUNA => 'WLF',
+            self::WESTERN_SAHARA => 'ESH',
+            self::YEMEN => 'YEM',
+            self::ZAMBIA => 'ZMB',
+            self::ZIMBABWE => 'ZWE'
+        };
+
+    }
+
+    /**
+     * ### Country's continent or ocean
+     * @since 1.0.0
+     *
+     * @return \FireHub\Core\Type\Geo\Continent|\FireHub\Core\Type\Geo\Ocean Country's continent or ocean.
+     */
+    public function continentOrOcean ():Continent|Ocean {
+
+        return match ($this) {
+            self::AFGHANISTAN, self::BANGLADESH, self::BHUTAN, self::INDIA, self::IRAN_ISLAMIC_REPUBLIC_OF,
+            self::MALDIVES, self::NEPAL, self::PAKISTAN, self::SRI_LANKA, self::ARMENIA, self::AZERBAIJAN,
+            self::BAHRAIN, self::CYPRUS, self::GEORGIA, self::IRAQ, self::ISRAEL, self::JORDAN, self::KUWAIT,
+            self::LEBANON, self::OMAN, self::PALESTINE_STATE_OF, self::QATAR, self::SAUDI_ARABIA,
+            self::SYRIAN_ARAB_REPUBLIC, self::TURKIYE, self::UNITED_ARAB_EMIRATES, self::YEMEN,
+            self::BRUNEI_DARUSSALAM, self::CAMBODIA, self::INDONESIA, self::LAO_PEOPLES_DEMOCRATIC_REPUBLIC,
+            self::MALAYSIA, self::MYANMAR, self::PHILIPPINES, self::SINGAPORE, self::THAILAND, self::TIMOR_LESTE,
+            self::VIET_NAM, self::CHINA, self::HONG_KONG, self::JAPAN, self::KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF,
+            self::KOREA_REPUBLIC_OF, self::MACAO, self::MONGOLIA, self::TAIWAN_PROVINCE_OF_CHINA, self::KAZAKHSTAN,
+            self::KYRGYZSTAN, self::TAJIKISTAN, self::TURKMENISTAN, self::UZBEKISTAN
+                => Continent::ASIA,
+            self::ALAND_ISLANDS, self::DENMARK, self::ESTONIA, self::FAROE_ISLANDS, self::FINLAND, self::GUERNSEY,
+            self::ICELAND, self::IRELAND, self::ISLE_OF_MAN, self::JERSEY, self::LATVIA, self::LITHUANIA, self::NORWAY,
+            self::SVALBARD_AND_JAN_MAYEN, self::SWEDEN, self::UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND,
+            self::ALBANIA, self::ANDORRA, self::BOSNIA_AND_HERZEGOVINA, self::CROATIA, self::GIBRALTAR, self::GREECE,
+            self::HOLY_SEE, self::ITALY, self::KOSOVO, self::MALTA, self::MONTENEGRO, self::NORTH_MACEDONIA,
+            self::PORTUGAL, self::SAN_MARINO, self::SERBIA, self::SLOVENIA, self::SPAIN, self::AUSTRIA,
+            self::BELGIUM, self::FRANCE, self::GERMANY, self::LIECHTENSTEIN, self::LUXEMBOURG, self::MONACO,
+            self::NETHERLANDS_KINGDOM_OF_THE, self::SWITZERLAND, self::BELARUS, self::BULGARIA, self::CZECHIA,
+            self::HUNGARY, self::MOLDOVA_REPUBLIC_OF, self::POLAND, self::ROMANIA, self::RUSSIAN_FEDERATION,
+            self::SLOVAKIA, self::UKRAINE
+                => Continent::EUROPE,
+            self::ALGERIA, self::EGYPT, self::LIBYA, self::MOROCCO, self::SUDAN, self::TUNISIA, self::WESTERN_SAHARA,
+            self::ANGOLA, self::CAMEROON, self::CENTRAL_AFRICAN_REPUBLIC, self::CHAD, self::CONGO,
+            self::CONGO_DEMOCRATIC_REPUBLIC_OF_THE, self::EQUATORIAL_GUINEA, self::GABON, self::SAO_TOME_AND_PRINCIPE,
+            self::BOTSWANA, self::ESWATINI, self::LESOTHO, self::NAMIBIA, self::SOUTH_AFRICA,
+            self::BRITISH_INDIAN_OCEAN_TERRITORY, self::BURUNDI, self::COMOROS, self::DJIBOUTI, self::ERITREA,
+            self::ETHIOPIA, self::FRENCH_SOUTHERN_TERRITORIES, self::KENYA, self::MADAGASCAR, self::MALAWI,
+            self::MAURITIUS, self::MAYOTTE, self::MOZAMBIQUE, self::REUNION, self::RWANDA, self::SEYCHELLES,
+            self::SOMALIA, self::SOUTH_SUDAN, self::TANZANIA_UNITED_REPUBLIC_OF, self::UGANDA, self::ZAMBIA,
+            self::ZIMBABWE, self::BENIN, self::BURKINA_FASO, self::CABO_VERDE, self::COTE_D_IVOIRE, self::GAMBIA,
+            self::GHANA, self::GUINEA, self::GUINEA_BISSAU, self::LIBERIA, self::MALI, self::MAURITANIA, self::NIGER,
+            self::NIGERIA, self::SAINT_HELENA_ASCENSION_AND_TRISTAN_DA_CUNHA, self::SENEGAL, self::SIERRA_LEONE,
+            self::TOGO
+                => Continent::AFRICA,
+            self::AMERICAN_SAMOA, self::COOK_ISLANDS, self::FRENCH_POLYNESIA, self::NIUE, self::PITCAIRN, self::SAMOA,
+            self::TOKELAU, self::TONGA, self::TUVALU, self::WALLIS_AND_FUTUNA, self::FIJI, self::NEW_CALEDONIA,
+            self::PAPUA_NEW_GUINEA, self::SOLOMON_ISLANDS, self::VANUATU, self::GUAM, self::KIRIBATI,
+            self::MARSHALL_ISLANDS, self::MICRONESIA_FEDERATED_STATES_OF, self::NAURU,
+            self::NORTHERN_MARIANA_ISLANDS, self::PALAU, self::UNITED_STATES_MINOR_OUTLYING_ISLANDS,
+            self::CHRISTMAS_ISLAND, self::COCOS_KEELING_ISLANDS, self::HEARD_ISLAND_AND_MCDONALD_ISLANDS,
+            self::NEW_ZEALAND, self::NORFOLK_ISLAND
+                => Ocean::PACIFIC,
+            self::ANGUILLA, self::ANTIGUA_AND_BARBUDA, self::ARUBA, self::BAHAMAS, self::BARBADOS,
+            self::BONAIRE_SINT_EUSTATIUS_AND_SABA, self::CAYMAN_ISLANDS, self::CUBA, self::CURACAO, self::DOMINICA,
+            self::DOMINICAN_REPUBLIC, self::GRENADA, self::GUADELOUPE, self::HAITI, self::JAMAICA, self::MARTINIQUE,
+            self::MONTSERRAT, self::PUERTO_RICO, self::SAINT_BARTHELEMY, self::SAINT_KITTS_AND_NEVIS, self::SAINT_LUCIA,
+            self::SAINT_MARTIN_FRENCH_PART, self::SAINT_VINCENT_AND_THE_GRENADINES, self::SINT_MAARTEN_DUTCH_PART,
+            self::TRINIDAD_AND_TOBAGO, self::TURKS_AND_CAICOS_ISLANDS, self::VIRGIN_ISLANDS_BRITISH,
+            self::VIRGIN_ISLANDS_US, self::BERMUDA, self::CANADA, self::GREENLAND, self::SAINT_PIERRE_AND_MIQUELON,
+            self::UNITED_STATES_OF_AMERICA, self::BELIZE, self::COSTA_RICA, self::EL_SALVADOR, self::GUATEMALA,
+            self::HONDURAS, self::MEXICO, self::NICARAGUA, self::PANAMA
+                => Continent::NORTH_AMERICA,
+            self::ANTARCTICA
+                => Continent::ANTARCTICA,
+            self::ARGENTINA, self::BOLIVIA_PLURINATIONAL_STATE_OF, self::BOUVET_ISLAND, self::BRAZIL, self::CHILE,
+            self::COLOMBIA, self::ECUADOR, self::FALKLAND_ISLANDS_MALVINAS, self::FRENCH_GUIANA, self::GUYANA,
+            self::PARAGUAY, self::PERU, self::SOUTH_GEORGIA_AND_THE_SOUTH_SANDWICH_ISLANDS, self::SURINAME,
+            self::URUGUAY, self::VENEZUELA_BOLIVARIAN_REPUBLIC_OF
+                => Continent::SOUTH_AMERICA,
+            self::AUSTRALIA
+                => Continent::AUSTRALIA
+        };
+
+    }
+
+    /**
+     * ### Checks if the country is independent or not
+     * @since 1.0.0
+     *
+     * @return bool True if country is independent, false otherwise.
+     */
+    public function independent ():bool {
+
+        return match ($this) {
+            self::ALAND_ISLANDS, self::AMERICAN_SAMOA, self::ANGUILLA, self::ANTARCTICA, self::ARUBA, self::BERMUDA,
+            self::BONAIRE_SINT_EUSTATIUS_AND_SABA, self::BOUVET_ISLAND, self::BRITISH_INDIAN_OCEAN_TERRITORY,
+            self::CAYMAN_ISLANDS, self::CHRISTMAS_ISLAND, self::COCOS_KEELING_ISLANDS, self::COOK_ISLANDS, self::CURACAO,
+            self::FALKLAND_ISLANDS_MALVINAS, self::FAROE_ISLANDS, self::FRENCH_GUIANA, self::FRENCH_POLYNESIA,
+            self::FRENCH_SOUTHERN_TERRITORIES, self::GIBRALTAR, self::GREENLAND, self::GUADELOUPE, self::GUAM,
+            self::GUERNSEY, self::HEARD_ISLAND_AND_MCDONALD_ISLANDS, self::HONG_KONG, self::ISLE_OF_MAN,
+            self::JERSEY, self::KOSOVO, self::MACAO, self::MARTINIQUE, self::MAYOTTE, self::MONTSERRAT,
+            self::NEW_CALEDONIA, self::NIUE, self::NORFOLK_ISLAND, self::NORTHERN_MARIANA_ISLANDS,
+            self::PALESTINE_STATE_OF, self::PITCAIRN, self::PUERTO_RICO, self::REUNION, self::SAINT_BARTHELEMY,
+            self::SAINT_HELENA_ASCENSION_AND_TRISTAN_DA_CUNHA, self::SAINT_MARTIN_FRENCH_PART,
+            self::SAINT_PIERRE_AND_MIQUELON, self::SINT_MAARTEN_DUTCH_PART,
+            self::SOUTH_GEORGIA_AND_THE_SOUTH_SANDWICH_ISLANDS, self::SVALBARD_AND_JAN_MAYEN,
+            self::TAIWAN_PROVINCE_OF_CHINA, self::TOKELAU, self::TURKS_AND_CAICOS_ISLANDS,
+            self::UNITED_STATES_MINOR_OUTLYING_ISLANDS, self::VIRGIN_ISLANDS_BRITISH, self::VIRGIN_ISLANDS_US,
+            self::WALLIS_AND_FUTUNA, self::WESTERN_SAHARA => false,
+            default => true
+        };
+
+    }
+
+    /**
+     * ### Check country's region
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Boundary\Type\Geo\M49::parent() To get parent.
+     *
+     * @param \FireHub\Core\Boundary\Type\Geo\M49 $region <p>
+     * The region to check for.
+     * </p>
+     * @param null|\FireHub\Core\Boundary\Type\Geo\M49 $current <p>
+     * Current region.
+     * </p>
+     *
+     * @return bool True if country is a region type, false otherwise.
+     */
+    private function check (M49 $region, ?M49 $current):bool {
+
+        if ($current === null) return false;
+
+        if ($current === $region) return true;
+
+        return $this->check($region, $current->parent());
 
     }
 
