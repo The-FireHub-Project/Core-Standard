@@ -1285,14 +1285,14 @@ enum Country:string implements M49, ISO3166 {
      *
      * @uses \FireHub\Core\Type\Geo\Country::alpha2() To check alpha 2 code for country.
      *
-     * @return self|false Returns country if found or `false` if country not found.
+     * @return null|self Returns country if found or null if country not found.
      */
-    public static function fromAlpha2 (string $code):self|false {
+    public static function fromAlpha2 (string $code):?self {
 
         foreach (self::cases() as $case)
             if ($case->alpha2() === $code) return $case;
 
-        return false;
+        return null;
 
     }
 
@@ -1302,14 +1302,14 @@ enum Country:string implements M49, ISO3166 {
      *
      * @uses \FireHub\Core\Type\Geo\Country::alpha3() To check alpha 3 code for country.
      *
-     * @return self|false Returns country if found or `false` if country not found.
+     * @return null|self Returns country if found or null if country not found.
      */
-    public static function fromAlpha3 (string $code):self|false {
+    public static function fromAlpha3 (string $code):?self {
 
         foreach (self::cases() as $case)
             if ($case->alpha3() === $code) return $case;
 
-        return false;
+        return null;
 
     }
 
