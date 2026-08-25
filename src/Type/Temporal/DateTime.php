@@ -35,11 +35,31 @@ use Stringable;
 abstract readonly class DateTime extends ValueObject implements Stringable {
 
     /**
+     * ### Returns the timezone of the date and time value
+     * @since 1.0.0
+     *
+     * @return \FireHub\Core\Type\Temporal\Timezone The timezone of the date and time value.
+     */
+    abstract public function timezone ():Timezone;
+
+    /**
      * @inheritDoc
      *
      * @since 1.0.0
      */
     abstract public function value ():string;
+
+    /**
+     * ### Returns a new instance with the specified timezone
+     * @since 1.0.0
+     *
+     * @param \FireHub\Core\Type\Temporal\Timezone $timezone <p>
+     * The timezone to set.
+     * </p>
+     *
+     * @return static The new instance with provided timezone.
+     */
+    abstract public function withTimezone (Timezone $timezone):static;
 
     /**
      * ### Returns the string representation of the value
