@@ -38,7 +38,7 @@ abstract readonly class DateTime extends ValueObject implements Stringable {
      * ### Returns the timezone of the date and time value
      * @since 1.0.0
      *
-     * @return \FireHub\Core\Type\Temporal\Timezone The timezone of the date and time value.
+     * @return \FireHub\Core\Type\Temporal\Timezone<non-empty-string> The timezone of the date and time value.
      */
     abstract public function timezone ():Timezone;
 
@@ -53,7 +53,7 @@ abstract readonly class DateTime extends ValueObject implements Stringable {
      * ### Returns a new instance with the specified timezone
      * @since 1.0.0
      *
-     * @param \FireHub\Core\Type\Temporal\Timezone $timezone <p>
+     * @param \FireHub\Core\Type\Temporal\Timezone<non-empty-string> $timezone <p>
      * The timezone to set.
      * </p>
      *
