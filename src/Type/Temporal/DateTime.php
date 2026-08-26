@@ -43,6 +43,14 @@ abstract readonly class DateTime extends ValueObject implements Stringable {
     abstract public function timezone ():Timezone;
 
     /**
+     * ### Returns the timestamp of the date and time value
+     * @since 1.0.0
+     *
+     * @return \FireHub\Core\Type\Temporal\Timestamp<numeric|numeric-string> The timestamp of the date and time value.
+     */
+    abstract public function timestamp ():Timestamp;
+
+    /**
      * @inheritDoc
      *
      * @since 1.0.0
