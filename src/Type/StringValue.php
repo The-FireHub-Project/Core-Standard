@@ -50,18 +50,6 @@ abstract readonly class StringValue extends ValueObject implements Stringable {
     abstract public function encoding ():Encoding;
 
     /**
-     * ### Returns a new instance with the specified encoding
-     * @since 1.0.0
-     *
-     * @param \FireHub\Core\Type\Str\Encoding $encoding<p>
-     * The encoding to set.
-     * </p>
-     *
-     * @return static The new instance with provided encoding.
-     */
-    abstract public function withEncoding (Encoding $encoding):static;
-
-    /**
      * ### Returns the string representation of the value
      *
      * Provides the native PHP string representation of the Value Object.
