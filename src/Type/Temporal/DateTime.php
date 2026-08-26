@@ -50,18 +50,6 @@ abstract readonly class DateTime extends ValueObject implements Stringable {
     abstract public function value ():string;
 
     /**
-     * ### Returns a new instance with the specified timezone
-     * @since 1.0.0
-     *
-     * @param \FireHub\Core\Type\Temporal\Timezone<non-empty-string> $timezone <p>
-     * The timezone to set.
-     * </p>
-     *
-     * @return static The new instance with provided timezone.
-     */
-    abstract public function withTimezone (Timezone $timezone):static;
-
-    /**
      * ### Returns the string representation of the value
      *
      * Provides the native PHP string representation of the Value Object.
