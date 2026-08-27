@@ -89,6 +89,14 @@ enum Unit {
     case WEEK;
 
     /**
+     * ### Week day
+     *
+     * A day of the week.
+     * @since 1.0.0
+     */
+    case WEEKDAY;
+
+    /**
      * ### Day
      *
      * A calendar day.
@@ -150,13 +158,9 @@ enum Unit {
 
         return match ($this) {
             self::MILLENNIUM, self::CENTURY, self::DECADE => self::YEAR,
-            self::FORTNIGHT, self::WEEK => self::DAY,
-            self::DAY => self::HOUR,
-            self::HOUR => self::MINUTE,
-            self::MINUTE => self::SECOND,
-            self::SECOND => self::MILLISECOND,
-            self::MILLISECOND => self::MICROSECOND,
-            self::YEAR, self::QUARTER, self::MONTH, self::MICROSECOND => null
+            self::QUARTER => self::MONTH,
+            self::FORTNIGHT => self::DAY,
+            default => null
         };
 
     }
@@ -174,15 +178,12 @@ enum Unit {
     public function factor ():int {
 
         return match ($this) {
-            self::MILLENNIUM, self::SECOND, self::MILLISECOND => 1000,
+            self::MILLENNIUM => 1000,
             self::CENTURY => 100,
-            self::HOUR, self::MINUTE => 60,
-            self::DAY => 24,
             self::FORTNIGHT => 14,
             self::DECADE => 10,
-            self::WEEK => 7,
             self::QUARTER => 3,
-            self::YEAR, self::MONTH, self::MICROSECOND => 1
+            default => 1
         };
 
     }
