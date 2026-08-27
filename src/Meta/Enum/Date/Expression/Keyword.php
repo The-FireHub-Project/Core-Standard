@@ -14,22 +14,14 @@
 namespace FireHub\Core\Meta\Enum\Date\Expression;
 
 /**
- * ### Defines time-related temporal keywords
+ * ### Defines temporal keywords
  *
- * The TimeKeyword enum defines keywords that identify specific or relative times within a temporal expression.
+ * The Keyword enum defines keywords that identify specific or relative date and time within a temporal expression.
  *
  * These values are commonly used when parsing human-readable date and time expressions.
  * @since 1.0.0
  */
-enum TimeKeyword:string {
-
-    /**
-     * ### Midnight
-     *
-     * The beginning of the calendar day at 00:00:00.
-     * @since 1.0.0
-     */
-    case MIDNIGHT = 'midnight';
+enum Keyword:string {
 
     /**
      * ### Now
