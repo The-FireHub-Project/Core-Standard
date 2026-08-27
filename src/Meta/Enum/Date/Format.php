@@ -13,6 +13,8 @@
 
 namespace FireHub\Core\Meta\Enum\Date;
 
+use FireHub\Core\Meta\Enum\Date\Format\Token;
+
 /**
  * ### Provides predefined date and time formatting standards
  *
@@ -23,7 +25,7 @@ namespace FireHub\Core\Meta\Enum\Date;
  * objects to maintain support for arbitrary custom PHP format strings.
  * @since 1.0.0
  */
-enum Format:string {
+enum Format:string implements Token {
 
     /**
      * ### ISO 8601 calendar date
@@ -189,5 +191,16 @@ enum Format:string {
      * @since 1.0.0
      */
     case RSS = 'D, d M Y H:i:s O';
+
+    /**
+     * @inheritDoc
+     *
+     * @since 1.0.0
+     */
+    public function value ():string {
+
+        return $this->value;
+
+    }
 
 }
