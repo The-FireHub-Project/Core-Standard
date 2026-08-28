@@ -64,9 +64,9 @@ enum ExtendedUnit {
      * The base unit represents the unit to which the current unit can be reduced using its conversion factor.
      * @since 1.0.0
      *
-     * @return null|self The base unit, or null if the unit is not derived from another unit.
+     * @return \FireHub\Core\Meta\Enum\Date\Unit The base unit, or null if the unit is not derived from another unit.
      */
-    public function base ():?Unit {
+    public function base ():Unit {
 
         return match ($this) {
             self::MILLENNIUM, self::CENTURY, self::DECADE => Unit::YEAR,
