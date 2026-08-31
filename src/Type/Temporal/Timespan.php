@@ -13,6 +13,7 @@
 
 namespace FireHub\Core\Type\Temporal;
 
+use FireHub\Core\Type\Temporal\Timespan\Components;
 use FireHub\Core\Type\Number;
 use Stringable;
 
@@ -33,6 +34,20 @@ use Stringable;
  * @extends \FireHub\Core\Type\Number<TValue>
  */
 abstract readonly class Timespan extends Number implements Stringable {
+
+    /**
+     * ### Returns the components of the timespan
+     * @since 1.0.0
+     *
+     * @return \FireHub\Core\Type\Temporal\Timespan\Components<array{
+     *     days: numeric-string,
+     *     hours: int<0,23>,
+     *     minutes: int<0,59>,
+     *     seconds: int<0,59>,
+     *     microseconds: int<0,999999>
+     * }>
+     */
+    abstract public function components ():Components;
 
     /**
      * @inheritDoc
