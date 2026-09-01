@@ -35,6 +35,15 @@ use Stringable;
 abstract readonly class Period extends ValueObject implements Stringable {
 
     /**
+     * ### Returns the duration of the period
+     * @since 1.0.0
+     *
+     * @return \FireHub\Core\Type\Temporal\Timespan<numeric-string> The duration of the period as a Timespan Value
+     * Object.
+     */
+    abstract public function duration ():Timespan;
+
+    /**
      * @inheritDoc
      *
      * @since 1.0.0
