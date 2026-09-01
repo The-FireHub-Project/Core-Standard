@@ -30,6 +30,6 @@ use FireHub\Core\Boundary\Type\DataStructure\Collection;
  *
  * @template TValue
  *
- * @extends Collection<int, TValue>
+ * @extends Collection<TValue>
  */
 interface Vector extends Collection {}
