@@ -13,7 +13,7 @@
 
 namespace FireHub\Core\Boundary\Type;
 
-use IteratorAggregate;
+use IteratorAggregate, Traversable;
 
 /**
  * ### Represents a type whose values can be enumerated sequentially
@@ -30,4 +30,14 @@ use IteratorAggregate;
  *
  * @extends IteratorAggregate<TKey, TValue>
  */
-interface Enumerable extends IteratorAggregate {}
+interface Enumerable extends IteratorAggregate {
+
+    /**
+     * ### Returns an iterator for traversing the values
+     * @since 1.0.0
+     *
+     * @return Traversable<TKey, TValue>
+     */
+    public function getIterator ():Traversable;
+
+}
