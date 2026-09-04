@@ -16,6 +16,12 @@ component_management:
         - "src/Exception/**"
       coverage:
         target: 80%
+    - component_id: module_meta
+      name: meta
+      paths:
+        - "src/Meta/**"
+      coverage:
+        target: 80%
     - component_id: module_type
       name: type
       paths:
