@@ -49,7 +49,7 @@ abstract readonly class ValueObject {
      * class comparison and value equality semantics.
      * @since 1.0.0
      *
-     * @uses \FireHub\Core\Type\ValueObject::value() To compare the VO values.
+     * @uses \FireHub\Core\Type\ValueObject::comparisonValue() To get the comparison value.
      * @uses \FireHub\Core\Type\ValueObject::sameAs() To compare the VO types.
      *
      * @param self<TValue> $other <p>
@@ -61,7 +61,7 @@ abstract readonly class ValueObject {
     final public function equals (self $other):bool {
 
         return $this->sameAs($other)
-            && $this->value() === $other->value();
+            && $this->comparisonValue() === $other->comparisonValue();
 
     }
 
@@ -80,6 +80,20 @@ abstract readonly class ValueObject {
     final public function sameAs (self $other):bool {
 
         return static::class === $other::class;
+
+    }
+
+    /**
+     * ### Returns the value to be used for comparison operations
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Type\ValueObject::value() To get the value.
+     *
+     * @return mixed The value to be compared.
+     */
+    protected function comparisonValue ():mixed {
+
+        return $this->value();
 
     }
 
