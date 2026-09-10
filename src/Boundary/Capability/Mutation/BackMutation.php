@@ -25,7 +25,7 @@ namespace FireHub\Core\Boundary\Capability\Mutation;
  *
  * @template TValue
  *
- * @extends \FireHub\Foundation\DataStructure\Storage\Capability\BackInsertion<TValue>
- * @extends \FireHub\Foundation\DataStructure\Storage\Capability\BackRemoval<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\Mutation\BackInsertion<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\Mutation\BackRemoval<TValue>
  */
 interface BackMutation extends BackInsertion, BackRemoval {}

@@ -25,7 +25,7 @@ namespace FireHub\Core\Boundary\Capability\Mutation;
  *
  * @template TValue
  *
- * @extends \FireHub\Foundation\DataStructure\Storage\Capability\FrontInsertion<TValue>
- * @extends \FireHub\Foundation\DataStructure\Storage\Capability\FrontRemoval<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\Mutation\FrontInsertion<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\Mutation\FrontRemoval<TValue>
  */
 interface FrontMutation extends FrontInsertion, FrontRemoval {}

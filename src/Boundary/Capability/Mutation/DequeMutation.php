@@ -25,7 +25,7 @@ namespace FireHub\Core\Boundary\Capability\Mutation;
  *
  * @template TValue
  *
- * @extends \FireHub\Foundation\DataStructure\Storage\Capability\FrontMutation<TValue>
- * @extends \FireHub\Foundation\DataStructure\Storage\Capability\BackMutation<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\Mutation\FrontMutation<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\Mutation\BackMutation<TValue>
  */
 interface DequeMutation extends FrontMutation, BackMutation {}
