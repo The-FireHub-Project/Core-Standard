@@ -13,7 +13,9 @@
 
 namespace FireHub\Core\Boundary\Type\DataStructure\Collection;
 
-use FireHub\Core\Boundary\Capability\Access\IndexAccess;
+use FireHub\Core\Boundary\Capability\Access\ {
+    BoundaryAccess, IndexAccess
+};
 use FireHub\Core\Boundary\Type\DataStructure\Collection;
 
 /**
@@ -33,6 +35,7 @@ use FireHub\Core\Boundary\Type\DataStructure\Collection;
  * @template TValue
  *
  * @extends \FireHub\Core\Boundary\Type\DataStructure\Collection<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\Access\BoundaryAccess<TValue>
  * @extends \FireHub\Core\Boundary\Capability\Access\IndexAccess<TValue>
  */
-interface Vector extends Collection, IndexAccess {}
+interface Vector extends Collection, BoundaryAccess, IndexAccess {}
