@@ -43,4 +43,12 @@ abstract readonly class Maybe {
      */
     abstract public function isNone ():bool;
 
+    /**
+     * ### Returns the contained value
+     * @since 1.0.0
+     *
+     * @return TValue The contained value.
+     */
+    abstract public function value ():mixed;
+
 }
