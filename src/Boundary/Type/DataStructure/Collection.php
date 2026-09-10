@@ -13,6 +13,7 @@
 
 namespace FireHub\Core\Boundary\Type\DataStructure;
 
+use FireHub\Core\Boundary\Capability\Measurement\Metrics;
 use FireHub\Core\Boundary\Type\ {
     DataStructure, Enumerable
 };
@@ -38,4 +39,4 @@ use FireHub\Core\Boundary\Type\ {
  * @extends \FireHub\Core\Boundary\Type\DataStructure<TValue>
  * @extends \FireHub\Core\Boundary\Type\Enumerable<mixed, TValue>
  */
-interface Collection extends DataStructure, Enumerable {}
+interface Collection extends DataStructure, Enumerable, Metrics {}
