@@ -34,9 +34,10 @@ use FireHub\Core\Boundary\Type\ {
  * contract defined by DataStructure.
  * @since 1.0.0
  *
+ * @template TKey
  * @template TValue
  *
- * @extends \FireHub\Core\Boundary\Type\DataStructure<TValue>
- * @extends \FireHub\Core\Boundary\Type\Enumerable<mixed, TValue>
+ * @extends \FireHub\Core\Boundary\Type\DataStructure<TKey, TValue>
+ * @extends \FireHub\Core\Boundary\Type\Enumerable<TKey, TValue>
  */
 interface Collection extends DataStructure, Enumerable, Metrics {}

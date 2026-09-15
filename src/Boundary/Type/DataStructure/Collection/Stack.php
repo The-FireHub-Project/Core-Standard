@@ -34,7 +34,7 @@ use FireHub\Core\Boundary\Capability\Access\BackAccess;
  *
  * @template TValue
  *
- * @extends \FireHub\Core\Boundary\Type\DataStructure\Collection<TValue>
+ * @extends \FireHub\Core\Boundary\Type\DataStructure\Collection<mixed, TValue>
  * @extends \FireHub\Core\Boundary\Capability\Access\BackAccess<TValue>
  */
 interface Stack extends Linear, Collection, BackAccess {}

@@ -33,7 +33,7 @@ use FireHub\Core\Boundary\Capability\Access\FrontAccess;
  *
  * @template TValue
  *
- * @extends \FireHub\Core\Boundary\Type\DataStructure\Collection<TValue>
+ * @extends \FireHub\Core\Boundary\Type\DataStructure\Collection<mixed, TValue>
  * @extends \FireHub\Core\Boundary\Capability\Access\FrontAccess<TValue>
  */
 interface Queue extends Linear, Collection, FrontAccess {}

@@ -28,6 +28,7 @@ namespace FireHub\Core\Boundary\Type;
  * rather than to represent a domain value identified solely by its value.
  * @since 1.0.0
  *
+ * @template TKey
  * @template TValue
  */
 interface DataStructure {}
