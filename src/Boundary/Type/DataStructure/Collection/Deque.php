@@ -14,8 +14,8 @@
 namespace FireHub\Core\Boundary\Type\DataStructure\Collection;
 
 use FireHub\Core\Boundary\Type\DataStructure\Classification\Linear;
-use FireHub\Core\Boundary\Capability\Access\BoundaryAccess;
 use FireHub\Core\Boundary\Type\DataStructure\Collection;
+use FireHub\Core\Boundary\Capability\Access\BoundaryAccess;
 
 /**
  * ### Represents a linear collection that provides access to both ends of its values

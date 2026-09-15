@@ -14,10 +14,10 @@
 namespace FireHub\Core\Boundary\Type\DataStructure\Collection;
 
 use FireHub\Core\Boundary\Type\DataStructure\Classification\Linear;
+use FireHub\Core\Boundary\Type\DataStructure\Collection;
 use FireHub\Core\Boundary\Capability\Access\ {
     BoundaryAccess, IndexAccess
 };
-use FireHub\Core\Boundary\Type\DataStructure\Collection;
 
 /**
  * ### Represents a linear collection that provides indexed access to its values
