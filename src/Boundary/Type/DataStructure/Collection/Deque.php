@@ -34,6 +34,6 @@ use FireHub\Core\Boundary\Type\DataStructure\Collection;
  * @template TValue
  *
  * @extends \FireHub\Core\Boundary\Type\DataStructure\Collection<TValue>
- * @extends \FireHub\Core\Boundary\Capability\Access\IndexAccess<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\Access\BoundaryAccess<TValue>
  */
 interface Deque extends Linear, Collection, BoundaryAccess {}
