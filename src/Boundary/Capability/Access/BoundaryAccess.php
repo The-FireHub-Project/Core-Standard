@@ -7,13 +7,11 @@
  * @copyright 2026-present The FireHub Project - All rights reserved
  * @license https://opensource.org/license/Apache-2-0 Apache License, Version 2.0
  *
- * @php-version >=7.4
+ * @php-version >=7.0
  * @package Core
  */
 
 namespace FireHub\Core\Boundary\Capability\Access;
-
-use FireHub\Core\Type\Maybe;
 
 /**
  * ### Defines access to boundary values
@@ -25,27 +23,8 @@ use FireHub\Core\Type\Maybe;
  * @since 1.0.0
  *
  * @template TValue
+ *
+ * @extends \FireHub\Core\Boundary\Capability\Access\FrontAccess<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\Access\BackAccess<TValue>
  */
-interface BoundaryAccess {
-
-    /**
-     * ### Returns the first value
-     *
-     * Returns the value at the beginning of the sequence when it exists.
-     * @since 1.0.0
-     *
-     * @return \FireHub\Core\Type\Maybe<TValue|mixed> The first value, or an empty Maybe if no value exists.
-     */
-    public function first ():Maybe;
-
-    /**
-     * ### Returns the last value
-     *
-     * Returns the value at the end of the sequence when it exists.
-     * @since 1.0.0
-     *
-     * @return \FireHub\Core\Type\Maybe<TValue|mixed> The last value, or an empty Maybe if no value exists.
-     */
-    public function last ():Maybe;
-
-}
+interface BoundaryAccess extends FrontAccess, BackAccess {}
