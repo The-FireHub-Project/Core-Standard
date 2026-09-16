@@ -35,7 +35,6 @@ use FireHub\Core\Boundary\Capability\Access\KeyAccess;
  * @template TValue
  *
  * @extends \FireHub\Core\Boundary\Type\DataStructure\Collection<TKey, TValue>
- * @extends \FireHub\Core\Boundary\Capability\Access\BoundaryAccess<TValue>
  * @extends \FireHub\Core\Boundary\Capability\Access\KeyAccess<TKey, TValue>
  */
 interface Map extends Associative, Collection, KeyAccess {}
