@@ -34,6 +34,12 @@ enum MutationOutcome {
     case UPDATED;
 
     /**
+     * ### Entry Already Exists
+     * @since 1.0.0
+     */
+    case ALREADY_EXISTS;
+
+    /**
      * ### Entry Removed
      * @since 1.0.0
      */
