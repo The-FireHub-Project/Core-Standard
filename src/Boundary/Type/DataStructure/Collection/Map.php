@@ -15,9 +15,7 @@ namespace FireHub\Core\Boundary\Type\DataStructure\Collection;
 
 use FireHub\Core\Boundary\Type\DataStructure\Classification\Associative;
 use FireHub\Core\Boundary\Type\DataStructure\Collection;
-use FireHub\Core\Boundary\Capability\Access\ {
-    BoundaryAccess, KeyAccess
-};
+use FireHub\Core\Boundary\Capability\Access\KeyAccess;
 
 /**
  * ### Represents a collection that associates keys with values
@@ -40,4 +38,4 @@ use FireHub\Core\Boundary\Capability\Access\ {
  * @extends \FireHub\Core\Boundary\Capability\Access\BoundaryAccess<TValue>
  * @extends \FireHub\Core\Boundary\Capability\Access\KeyAccess<TKey, TValue>
  */
-interface Map extends Associative, Collection, BoundaryAccess, KeyAccess {}
+interface Map extends Associative, Collection, KeyAccess {}
