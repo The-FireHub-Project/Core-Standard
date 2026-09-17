@@ -37,7 +37,6 @@ use FireHub\Core\Boundary\Capability\Access\ {
  * @template TValue
  *
  * @extends \FireHub\Core\Boundary\Type\DataStructure\Record<int, TValue>
- * @extends \FireHub\Core\Boundary\Type\DataStructure\Classification\Linear<int, TValue>
  * @extends \FireHub\Core\Boundary\Capability\Access\BoundaryAccess<TValue>
  * @extends \FireHub\Core\Boundary\Capability\Access\IndexAccess<TValue>
  */

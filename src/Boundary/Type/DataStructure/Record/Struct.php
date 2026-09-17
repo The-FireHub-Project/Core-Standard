@@ -13,6 +13,7 @@
 
 namespace FireHub\Core\Boundary\Type\DataStructure\Record;
 
+use FireHub\Core\Boundary\Type\DataStructure\Classification\Unordered;
 use FireHub\Core\Boundary\Type\DataStructure\Record;
 use FireHub\Core\Boundary\Capability\Access\KeyAccess;
 
@@ -37,4 +38,4 @@ use FireHub\Core\Boundary\Capability\Access\KeyAccess;
  * @extends \FireHub\Core\Boundary\Type\DataStructure\Record<TKey, TValue>
  * @extends \FireHub\Core\Boundary\Capability\Access\KeyAccess<TKey, TValue>
  */
-interface Struct extends Record, KeyAccess {}
+interface Struct extends Unordered, Record, KeyAccess {}
