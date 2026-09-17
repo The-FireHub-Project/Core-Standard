@@ -42,7 +42,7 @@ interface MultiplicityMutation {
      * </p>
      *
      * @return \FireHub\Core\Meta\Enum\MutationOutcome The outcome of the mutation: CREATED if a new value was created,
-     * or ALREADY_EXISTS if the value already exists.
+     * or UPDATED if the value already exists a new occurrence was added.
      */
     public function add (mixed $value, int $count = 1):MutationOutcome;
 
