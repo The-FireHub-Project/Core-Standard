@@ -13,6 +13,8 @@
 
 namespace FireHub\Core\Boundary\Capability\Mutation;
 
+use FireHub\Core\Meta\Enum\MutationOutcome;
+
 /**
  * ### Defines multiplicity-based value mutation
  *
@@ -38,8 +40,11 @@ interface MultiplicityMutation {
      * @param positive-int $count <p>
      * The number of occurrences to add.
      * </p>
+     *
+     * @return \FireHub\Core\Meta\Enum\MutationOutcome The outcome of the mutation: CREATED if a new value was created,
+     * or ALREADY_EXISTS if the value already exists.
      */
-    public function add (mixed $value, int $count = 1):void;
+    public function add (mixed $value, int $count = 1):MutationOutcome;
 
     /**
      * ### Removes occurrences of a value
@@ -55,9 +60,10 @@ interface MultiplicityMutation {
      * The maximum number of occurrences to remove.
      * </p>
      *
-     * @return non-negative-int The number of occurrences actually removed.
+     * @return \FireHub\Core\Meta\Enum\MutationOutcome The outcome of the mutation: REMOVED if last value was removed,
+     * UPDATED if value was removed but some are still left, or NOT_FOUND if the value does not exist.
      */
-    public function remove (mixed $value, int $count = 1):int;
+    public function remove (mixed $value, int $count = 1):MutationOutcome;
 
     /**
      * ### Removes all occurrences of a value
@@ -67,8 +73,9 @@ interface MultiplicityMutation {
      * The value whose occurrences should be removed.
      * </p>
      *
-     * @return non-negative-int The number of occurrences removed.
+     * @return \FireHub\Core\Meta\Enum\MutationOutcome The outcome of the mutation: REMOVED if all values were removed,
+     * or NOT_FOUND if the value does not exist.
      */
-    public function removeAll (mixed $value):int;
+    public function removeAll (mixed $value):MutationOutcome;
 
 }
