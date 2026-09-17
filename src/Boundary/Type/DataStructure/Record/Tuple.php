@@ -15,9 +15,7 @@ namespace FireHub\Core\Boundary\Type\DataStructure\Record;
 
 use FireHub\Core\Boundary\Type\DataStructure\Classification\Linear;
 use FireHub\Core\Boundary\Type\DataStructure\Record;
-use FireHub\Core\Boundary\Capability\Access\ {
-    BoundaryAccess, IndexAccess
-};
+use FireHub\Core\Boundary\Capability\Access\IndexAccess;
 
 /**
  * ### Defines the Tuple data structure
@@ -37,7 +35,6 @@ use FireHub\Core\Boundary\Capability\Access\ {
  * @template TValue
  *
  * @extends \FireHub\Core\Boundary\Type\DataStructure\Record<int, TValue>
- * @extends \FireHub\Core\Boundary\Capability\Access\BoundaryAccess<TValue>
  * @extends \FireHub\Core\Boundary\Capability\Access\IndexAccess<TValue>
  */
-interface Tuple extends Linear, Record, BoundaryAccess, IndexAccess {}
+interface Tuple extends Linear, Record, IndexAccess {}
