@@ -36,13 +36,11 @@ interface Mappable {
      * Applies the specified mapping operation to each value.
      * @since 1.0.0
      *
-     * @template TMapped
-     *
-     * @param callable(TValue, TKey=):TMapped $callback <p>
+     * @param callable(TValue, TKey=):TValue $callback <p>
      * Mapping operation to apply to each value.
      * </p>
      *
-     * @return static<TKey, TMapped> The resulting structure containing the mapped values.
+     * @return static<TKey, TValue> The resulting structure containing the mapped values.
      */
     public function map (callable $callback):static;
 
