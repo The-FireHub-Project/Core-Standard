@@ -13,13 +13,15 @@
 
 namespace FireHub\Core\Boundary\Capability\Transformation;
 
+use FireHub\Core\Meta\Enum\Order;
+
 /**
  * ### Sortable capability
  *
- * Defines a capability for producing an ordered representation of a data structure.
+ * Defines a capability for producing an ordered representation of an instance according to its values.
  *
- * Implementations may provide specialized sorting strategies appropriate to their underlying representation,
- * including optimized paths for natural ascending and descending ordering.
+ * Implementations may provide specialized sorting strategies appropriate to their underlying representation while
+ * preserving the semantics of the requested comparison mode or comparison callback.
  *
  * Sorting does not mutate the source instance. Instead, a new instance of the same concrete type is returned.
  * @since 1.0.0
@@ -27,6 +29,20 @@ namespace FireHub\Core\Boundary\Capability\Transformation;
  * @template TValue
  */
 interface Sortable {
+
+    /**
+     * ### Sorts values
+     *
+     * Produces a new instance whose values are arranged according to the specified ordering mode.
+     * @since 1.0.0
+     *
+     * @param \FireHub\Core\Meta\Enum\Order $order [optional] <p>
+     * Direction in which the values are ordered.
+     * </p>
+     *
+     * @return static The sorted instance.
+     */
+    public function sort (Order $order = Order::ASC):static;
 
     /**
      * ### Sorts values using a comparator
