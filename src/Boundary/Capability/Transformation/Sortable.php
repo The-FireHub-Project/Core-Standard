@@ -13,6 +13,7 @@
 
 namespace FireHub\Core\Boundary\Capability\Transformation;
 
+use FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm;
 use FireHub\Core\Meta\Enum\Order;
 
 /**
@@ -39,10 +40,13 @@ interface Sortable {
      * @param \FireHub\Core\Meta\Enum\Order $order [optional] <p>
      * Direction in which the values are ordered.
      * </p>
+     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TValue> $algorithm <p>
+     * Sorting algorithm to use, or null to use the implementation's default sorting strategy.
+     * </p>
      *
      * @return static The sorted instance.
      */
-    public function sort (Order $order = Order::ASC):static;
+    public function sort (Order $order = Order::ASC, ?SortAlgorithm $algorithm = null):static;
 
     /**
      * ### Sorts values using a comparator
@@ -56,9 +60,12 @@ interface Sortable {
      * @param callable(TValue, TValue):int<-1, 1> $comparator <p>
      * Callback used to compare two values.
      * </p>
+     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TValue> $algorithm <p>
+     * Sorting algorithm to use, or null to use the implementation's default sorting strategy.
+     * </p>
      *
      * @return static The sorted instance.
      */
-    public function sortWith (callable $comparator):static;
+    public function sortWith (callable $comparator, ?SortAlgorithm $algorithm = null):static;
 
 }

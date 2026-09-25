@@ -13,6 +13,7 @@
 
 namespace FireHub\Core\Boundary\Capability\Transformation;
 
+use FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm;
 use FireHub\Core\Meta\Enum\Order;
 
 /**
@@ -39,10 +40,13 @@ interface KeySortable {
      * @param \FireHub\Core\Meta\Enum\Order $order [optional] <p>
      * Direction in which the keys are ordered.
      * </p>
+     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TKey> $algorithm <p>
+     * Sorting algorithm to use, or null to use the implementation's default sorting strategy.
+     * </p>
      *
      * @return static The sorted instance.
      */
-    public function sortKeys (Order $order = Order::ASC):static;
+    public function sortKeys (Order $order = Order::ASC, ?SortAlgorithm $algorithm = null):static;
 
     /**
      * ### Sorts keys using a comparator
@@ -56,9 +60,12 @@ interface KeySortable {
      * @param callable(TKey, TKey):int<-1, 1> $comparator <p>
      * Callback used to compare two keys.
      * </p>
+     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TKey> $algorithm <p>
+     * Sorting algorithm to use, or null to use the implementation's default sorting strategy.
+     * </p>
      *
      * @return static The key-sorted instance.
      */
-    public function sortKeysWith (callable $comparator):static;
+    public function sortKeysWith (callable $comparator, ?SortAlgorithm $algorithm = null):static;
 
 }
