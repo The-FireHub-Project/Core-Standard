@@ -44,6 +44,9 @@ interface SortAlgorithm {
      * @param callable(non-negative-int):TElement $element <p>
      * Callback used to retrieve an element by its internal position.
      * </p>
+     * @param callable(non-negative-int, TElement):void $set <p>
+     * Callback used to replace an element at its sequential position.
+     * </p>
      * @param callable(non-negative-int, non-negative-int):void $swap <p>
      * Callback used to exchange two elements by their internal positions.
      * </p>
@@ -53,6 +56,6 @@ interface SortAlgorithm {
      *
      * @return void
      */
-    public function sort (int $size, callable $element, callable $swap, callable $comparator):void;
+    public function sort (int $size, callable $element, callable $set, callable $swap, callable $comparator):void;
 
 }
