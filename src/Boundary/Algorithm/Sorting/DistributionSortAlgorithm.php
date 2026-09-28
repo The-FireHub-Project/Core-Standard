@@ -14,20 +14,18 @@
 namespace FireHub\Core\Boundary\Algorithm\Sorting;
 
 /**
- * ### Defines a distribution sorting algorithm
+ *  ### Defines a distribution sorting algorithm
  *
- * Defines the contract for non-comparison sorting algorithms that distribute elements according to integer keys
+ * Defines the contract for non-comparison sorting algorithms that distribute elements according to numeric keys
  * extracted from their values.
  *
  * Unlike comparison-based sorting algorithms, distribution sorting algorithms do not determine ordering by repeatedly
- * comparing pairs of elements. Instead, they use the structure of the extracted integer keys to distribute elements
- * into their resulting order.
- *
- * Implementations may impose additional requirements on the extracted keys, such as restrictions on the supported
- * key range, representation, or distribution.
+ * comparing pairs of elements. Instead, they use the structure or distribution of extracted numeric keys to place
+ * elements into their resulting order.
  * @since 1.0.0
  *
  * @template TElement
+ * @template TKey of int|float
  */
 interface DistributionSortAlgorithm {
 
@@ -46,7 +44,7 @@ interface DistributionSortAlgorithm {
      * @param callable(non-negative-int, TElement):void $set <p>
      * Callback used to replace an element at its sequential position.
      * </p>
-     * @param callable(TElement):int $key <p>
+     * @param callable(TElement):TKey $key <p>
      * Callback used to extract the integer distribution key from an element.
      * </p>
      *

@@ -39,7 +39,9 @@ interface DistributionSortable {
      * supplied key extractor.
      * @since 1.0.0
      *
-     * @param \FireHub\Core\Boundary\Algorithm\Sorting\DistributionSortAlgorithm<TValue> $algorithm <p>
+     * @template TKey of int|float
+     *
+     * @param \FireHub\Core\Boundary\Algorithm\Sorting\DistributionSortAlgorithm<TValue, TKey> $algorithm <p>
      * Distribution sorting algorithm used to order the values.
      * </p>
      * @param callable(TValue):int $key <p>
