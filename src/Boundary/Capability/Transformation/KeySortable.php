@@ -40,7 +40,7 @@ interface KeySortable {
      * @param \FireHub\Core\Meta\Enum\Order $order [optional] <p>
      * Direction in which the keys are ordered.
      * </p>
-     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TKey> $algorithm <p>
+     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TKey> $algorithm [optional] <p>
      * Sorting algorithm to use, or null to use the implementation's default sorting strategy.
      * </p>
      *
@@ -60,7 +60,7 @@ interface KeySortable {
      * @param callable(TKey, TKey):int<-1, 1> $comparator <p>
      * Callback used to compare two keys.
      * </p>
-     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TKey> $algorithm <p>
+     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TKey> $algorithm [optional] <p>
      * Sorting algorithm to use, or null to use the implementation's default sorting strategy.
      * </p>
      *

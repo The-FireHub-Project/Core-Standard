@@ -40,7 +40,7 @@ interface Sortable {
      * @param \FireHub\Core\Meta\Enum\Order $order [optional] <p>
      * Direction in which the values are ordered.
      * </p>
-     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TValue> $algorithm <p>
+     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TValue> $algorithm [optional] <p>
      * Sorting algorithm to use, or null to use the implementation's default sorting strategy.
      * </p>
      *
@@ -60,7 +60,7 @@ interface Sortable {
      * @param callable(TValue, TValue):int<-1, 1> $comparator <p>
      * Callback used to compare two values.
      * </p>
-     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TValue> $algorithm <p>
+     * @param null|\FireHub\Core\Boundary\Algorithm\Sorting\SortAlgorithm<TValue> $algorithm [optional] <p>
      * Sorting algorithm to use, or null to use the implementation's default sorting strategy.
      * </p>
      *
