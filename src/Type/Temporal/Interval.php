@@ -13,6 +13,7 @@
 
 namespace FireHub\Core\Type\Temporal;
 
+use FireHub\Core\Boundary\Type\Enumerable;
 use FireHub\Core\Type\ValueObject;
 
 /**
@@ -27,11 +28,12 @@ use FireHub\Core\Type\ValueObject;
  * belong to higher-level layers such as Foundation.
  * @since 1.0.0
  *
- * @template TValue of array<array-key, mixed>
+ * @template TValue of array{period: non-empty-string, timespan: numeric-string, start_inclusive: bool, end_inclusive: bool}
  *
  * @extends \FireHub\Core\Type\ValueObject<TValue>
+ * @implements \FireHub\Core\Boundary\Type\Enumerable<int, \FireHub\Core\Type\Temporal\DateTime<non-empty-string>>
  */
-abstract readonly class Interval extends ValueObject {
+abstract readonly class Interval extends ValueObject implements Enumerable {
 
     /**
      * @inheritDoc
