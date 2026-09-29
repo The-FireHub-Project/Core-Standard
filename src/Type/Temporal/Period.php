@@ -35,6 +35,22 @@ use Stringable;
 abstract readonly class Period extends ValueObject implements Stringable {
 
     /**
+     * ### Gets the start of the period
+     * @since 1.0.0
+     *
+     * @return \FireHub\Core\Type\Temporal\DateTime<non-empty-string> The start of the period.
+     */
+    abstract public function start ():DateTime;
+
+    /**
+     * ### Gets the end of the period
+     * @since 1.0.0
+     *
+     * @return \FireHub\Core\Type\Temporal\DateTime<non-empty-string> The end of the period.
+     */
+    abstract public function end ():DateTime;
+
+    /**
      * ### Returns the duration of the period
      * @since 1.0.0
      *
