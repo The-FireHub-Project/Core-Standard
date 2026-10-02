@@ -16,7 +16,7 @@ namespace FireHub\Core\Boundary\Capability\Transformation;
 /**
  * ### Defines key mapping transformation
  *
- * Key mapping provides the ability to transform the keys of a data structure while preserving their associated
+ * Key mapping provides the ability to transform the keys of a structure while preserving their associated
  * values.
  *
  * Implementations define how collisions are handled when multiple keys are transformed into the same key.
