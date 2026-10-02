@@ -35,7 +35,7 @@ interface RandomSelectable {
      * Selects and returns one randomly chosen value from the data structure without modifying its contents.
      * @since 1.0.0
      *
-     * @return \FireHub\Core\Type\Maybe<TValue> The selected value, or none if no value can be selected.
+     * @return \FireHub\Core\Type\Maybe<TValue|mixed> The selected value, or none if no value can be selected.
      */
     public function random ():Maybe;
 
