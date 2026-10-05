@@ -17,7 +17,7 @@ use FireHub\Core\Boundary\Type\DataStructure\Classification\Hierarchical;
 use FireHub\Core\Boundary\Type\DataStructure\Collection;
 use FireHub\Core\Boundary\Capability\ {
     Access\ChildAccess, Access\RootAccess,
-    AncestorIteration, DescendantIteration,
+    AncestorIteration, DescendantIteration
 };
 
 /**
