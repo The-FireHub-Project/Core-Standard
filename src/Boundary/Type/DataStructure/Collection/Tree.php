@@ -15,6 +15,10 @@ namespace FireHub\Core\Boundary\Type\DataStructure\Collection;
 
 use FireHub\Core\Boundary\Type\DataStructure\Classification\Hierarchical;
 use FireHub\Core\Boundary\Type\DataStructure\Collection;
+use FireHub\Core\Boundary\Capability\ {
+    Access\ChildAccess, Access\RootAccess,
+    AncestorIteration, DescendantIteration,
+};
 
 /**
  * ### Defines a tree data structure
@@ -36,5 +40,9 @@ use FireHub\Core\Boundary\Type\DataStructure\Collection;
  * @template TValue
  *
  * @extends \FireHub\Core\Boundary\Type\DataStructure\Collection<TKey, TValue>
+ * @extends \FireHub\Core\Boundary\Capability\AncestorIteration<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\DescendantIteration<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\Access\RootAccess<TValue>
+ * @extends \FireHub\Core\Boundary\Capability\Access\ChildAccess<TValue>
  */
-interface Tree extends Hierarchical, Collection {}
+interface Tree extends Hierarchical, Collection, AncestorIteration, DescendantIteration, RootAccess, ChildAccess {}
