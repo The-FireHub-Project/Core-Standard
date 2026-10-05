@@ -38,8 +38,8 @@ interface DescendantIteration {
      * Element whose descendants to iterate over.
      * </p>
      *
-     * @return iterable<int, \FireHub\Core\Boundary\Type\DataStructure\Collection\Tree\Node<TValue>> Descendant nodes in pre-order
-     * depth-first traversal order.
+     * @return iterable<int, \FireHub\Core\Boundary\Type\DataStructure\Collection\Tree\Node<TValue>> Descendant nodes
+     * in pre-order depth-first traversal order.
      */
     public function descendants (Node $node):iterable;
 
