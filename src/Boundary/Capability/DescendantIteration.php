@@ -13,6 +13,8 @@
 
 namespace FireHub\Core\Boundary\Capability;
 
+use FireHub\Core\Boundary\Type\DataStructure\Collection\Tree\Node;
+
 /**
  * ### Defines descendant iteration
  *
@@ -39,6 +41,6 @@ interface DescendantIteration {
      * @return iterable<int, \FireHub\Core\Boundary\Type\DataStructure\Collection\Tree\Node<TValue>> Descendant nodes in pre-order
      * depth-first traversal order.
      */
-    public function descendants (mixed $node):iterable;
+    public function descendants (Node $node):iterable;
 
 }

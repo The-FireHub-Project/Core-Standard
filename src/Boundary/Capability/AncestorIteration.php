@@ -13,6 +13,8 @@
 
 namespace FireHub\Core\Boundary\Capability;
 
+use FireHub\Core\Boundary\Type\DataStructure\Collection\Tree\Node;
+
 /**
  * ### Defines ancestor iteration
  *
@@ -39,6 +41,6 @@ interface AncestorIteration {
      * @return iterable<int, \FireHub\Core\Boundary\Type\DataStructure\Collection\Tree\Node<TValue>> Ancestors
      * ordered from the immediate parent toward the root.
      */
-    public function ancestors (mixed $node):iterable;
+    public function ancestors (Node $node):iterable;
 
 }
