@@ -17,6 +17,7 @@ use FireHub\Core\Boundary\Type\DataStructure\Classification\Hierarchical;
 use FireHub\Core\Boundary\Type\DataStructure\Collection;
 use FireHub\Core\Boundary\Capability\ {
     Access\ChildAccess, Access\RootAccess,
+    Measurement\Depth, Measurement\Height,
     AncestorIteration, DescendantIteration
 };
 
@@ -45,4 +46,5 @@ use FireHub\Core\Boundary\Capability\ {
  * @extends \FireHub\Core\Boundary\Capability\Access\RootAccess<TValue>
  * @extends \FireHub\Core\Boundary\Capability\Access\ChildAccess<TValue>
  */
-interface Tree extends Hierarchical, Collection, AncestorIteration, DescendantIteration, RootAccess, ChildAccess {}
+interface Tree extends Hierarchical, Collection, AncestorIteration, DescendantIteration, RootAccess, ChildAccess, Depth,
+    Height {}
