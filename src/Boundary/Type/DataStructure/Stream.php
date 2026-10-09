@@ -13,10 +13,10 @@
 
 namespace FireHub\Core\Boundary\Type\DataStructure;
 
-use FireHub\Core\Boundary\Type\DataStructure\Classification\Linear;
 use FireHub\Core\Boundary\Type\ {
     DataStructure, Enumerable
 };
+use FireHub\Core\Boundary\Type\DataStructure\Classification\Linear;
 
 /**
  * ### Defines the Stream data structure
