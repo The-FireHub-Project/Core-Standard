@@ -13,6 +13,7 @@
 
 namespace FireHub\Core\Boundary\Type\DataStructure;
 
+use FireHub\Core\Boundary\Type\DataStructure\Classification\Linear;
 use FireHub\Core\Boundary\Type\ {
     DataStructure, Enumerable
 };
@@ -36,4 +37,4 @@ use FireHub\Core\Boundary\Type\ {
  * @extends \FireHub\Core\Boundary\Type\DataStructure<TKey, TValue>
  * @extends \FireHub\Core\Boundary\Type\Enumerable<TKey, TValue>
  */
-interface Stream extends DataStructure, Enumerable {}
+interface Stream extends DataStructure, Enumerable, Linear {}
