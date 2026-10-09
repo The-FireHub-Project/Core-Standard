@@ -13,6 +13,8 @@
 
 namespace FireHub\Core\Type;
 
+use FireHub\Core\Boundary\Capability\Conversion\Charable;
+
 /**
  * ### Defines the base string Value Object type within the FireHub ecosystem
  *
@@ -29,14 +31,4 @@ namespace FireHub\Core\Type;
  *
  * @extends \FireHub\Core\Type\StringValue<TValue>
  */
-abstract readonly class Str extends StringValue {
-
-    /**
-     * ### Converts the string to the list of Chars
-     * @since 1.0.0
-     *
-     * @return list<\FireHub\Core\Type\Char<non-empty-string>>
-     */
-    abstract public function toChars ():array;
-
-}
+abstract readonly class Str extends StringValue implements Charable {}
