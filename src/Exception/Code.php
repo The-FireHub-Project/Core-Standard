@@ -24,7 +24,7 @@ use FireHub\Core\Exception\Runtime\System\Invariant\InvalidCodeValueException;
  *
  * @extends \FireHub\Core\Type\ValueObject<TValue>
  */
-final readonly class Code extends ValueObject {
+readonly class Code extends ValueObject {
 
     /**
      * ### Constructor
