@@ -63,11 +63,19 @@ enum State {
     case TERMINATED;
 
     /**
-     * ### Failed
+     * ### Boot Failed
      *
-     * The kernel encountered a failure during initialization or shutdown and cannot continue its normal lifecycle.
+     * The kernel failed to initialize its components and cannot continue its normal lifecycle.
      * @since 1.0.0
      */
-    case FAILED;
+    case BOOT_FAILED;
+
+    /**
+     * ### Shutdown Failed
+     *
+     * The kernel failed to terminate its managed components and cannot continue its normal lifecycle.
+     * @since 1.0.0
+     */
+    case SHUTDOWN_FAILED;
 
 }
