@@ -13,44 +13,30 @@
 
 namespace FireHub\Core\Boundary;
 
+use FireHub\Core\Boundary\Container\Scope;
+
 /**
  * ### Defines dependency injection container capabilities
  *
- * Provides access to registered service objects without exposing their registration, construction, or lifetime
- * management.
+ * Provides dependency resolution capabilities and manages the creation of isolated dependency resolution scopes.
+ *
+ * Singleton service instances are shared across scopes originating from the same container, while scoped service
+ * instances remain isolated within their respective scopes.
  * @since 1.0.0
  */
-interface Container {
+interface Container extends Resolver {
 
     /**
-     * ### Gets a registered service
+     * ### Creates a dependency resolution scope
      *
-     * Returns the service instance associated with the specified identifier. The instance may be created during
-     * resolution according to its configured lifetime.
+     * Creates a new isolated resolution context with its own scoped service instances.
+     *
+     * The created scope shares singleton service instances with the originating container but maintains an
+     * independent cache of scoped service instances.
      * @since 1.0.0
      *
-     * @template TService of object
-     *
-     * @param class-string<TService> $id <p>
-     * Service identifier.
-     * </p>
-     *
-     * @return TService Resolved service instance.
+     * @return \FireHub\Core\Boundary\Container\Scope Newly created dependency resolution scope.
      */
-    public function get (string $id):object;
-
-    /**
-     * ### Checks whether a service is registered
-     *
-     * Determines whether a service definition exists for the specified identifier without resolving the service.
-     * @since 1.0.0
-     *
-     * @param class-string $id <p>
-     * Service identifier.
-     * </p>
-     *
-     * @return bool True if the service is registered.
-     */
-    public function has (string $id):bool;
+    public function createScope ():Scope;
 
 }
