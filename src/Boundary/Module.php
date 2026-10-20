@@ -22,16 +22,4 @@ namespace FireHub\Core\Boundary;
  * The module's fully qualified class name serves as its unique identifier.
  * @since 1.0.0
  */
-interface Module {
-
-    /**
-     * ### Gets the module identifier
-     *
-     * Returns a stable identifier used to register and reference the module.
-     * @since 1.0.0
-     *
-     * @return class-string<\FireHub\Core\Boundary\Module> Module identifier.
-     */
-    public function id ():string;
-
-}
+interface Module {}
