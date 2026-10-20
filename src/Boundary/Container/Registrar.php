@@ -13,6 +13,9 @@
 
 namespace FireHub\Core\Boundary\Container;
 
+use FireHub\Core\Meta\Enum\Container\Lifetime;
+use Closure;
+
 /**
  * ### Defines service registration capabilities
  *
@@ -23,9 +26,59 @@ namespace FireHub\Core\Boundary\Container;
 interface Registrar {
 
     /**
+     * ### Registers a class-based service
+     *
+     * Associates a service identifier with a concrete implementation class.
+     *
+     * The service is instantiated lazily according to the specified lifetime.
+     * @since 1.0.0
+     *
+     * @template TService of object
+     *
+     * @param class-string<TService> $id <p>
+     * Service identifier.
+     * </p>
+     * @param class-string<TService> $class <p>
+     * Concrete implementation class.
+     * </p>
+     * @param \FireHub\Core\Meta\Enum\Container\Lifetime $lifetime [optional] <p>
+     * Service lifetime.
+     * </p>
+     *
+     * @return static Registrar instance.
+     */
+    public function bind (string $id, string $class, Lifetime $lifetime = Lifetime::TRANSIENT):static;
+
+    /**
+     * ### Registers a factory-based service
+     *
+     * Registers a factory responsible for creating the requested service.
+     *
+     * The factory receives a contextual resolver to resolve dependencies within the current resolution context.
+     * @since 1.0.0
+     *
+     * @template TService of object
+     *
+     * @param class-string<TService> $id <p>
+     * Service identifier.
+     * </p>
+     * @param Closure(\FireHub\Core\Boundary\Resolver):TService $factory <p>
+     * Service factory.
+     * </p>
+     * @param \FireHub\Core\Meta\Enum\Container\Lifetime $lifetime [optional] <p>
+     * Service lifetime.
+     * </p>
+     *
+     * @return static Registrar instance.
+     */
+    public function factory (string $id, Closure $factory, Lifetime $lifetime = Lifetime::TRANSIENT):static;
+
+    /**
      * ### Registers an existing service instance
      *
-     * Associates the specified service identifier with an existing object.
+     * Registers an already constructed object as a singleton service.
+     *
+     * The provided instance is returned directly during resolution.
      * @since 1.0.0
      *
      * @template TService of object
@@ -34,11 +87,32 @@ interface Registrar {
      * Service identifier.
      * </p>
      * @param TService $instance <p>
-     * Service instance.
+     * Existing service instance.
      * </p>
      *
-     * @return void
+     * @return static Registrar instance.
      */
-    public function instance (string $id, object $instance):void;
+    public function instance (string $id, object $instance):static;
+
+    /**
+     * ### Registers a service alias
+     *
+     * Associates an additional identifier with another registered service.
+     *
+     * Aliases preserve the lifetime and identity of the target service.
+     * @since 1.0.0
+     *
+     * @template TService of object
+     *
+     * @param class-string<TService> $id <p>
+     * Alias identifier.
+     * </p>
+     * @param class-string<TService> $target <p>
+     * Target service identifier.
+     * </p>
+     *
+     * @return static Registrar instance.
+     */
+    public function alias (string $id, string $target):static;
 
 }
