@@ -45,9 +45,9 @@ interface Registrar {
      * Service lifetime.
      * </p>
      *
-     * @return static Registrar instance.
+     * @return $this Registrar instance.
      */
-    public function bind (string $id, string $class, Lifetime $lifetime = Lifetime::TRANSIENT):static;
+    public function bind (string $id, string $class, Lifetime $lifetime = Lifetime::TRANSIENT):self;
 
     /**
      * ### Registers a factory-based service
@@ -69,9 +69,9 @@ interface Registrar {
      * Service lifetime.
      * </p>
      *
-     * @return static Registrar instance.
+     * @return $this Registrar instance.
      */
-    public function factory (string $id, Closure $factory, Lifetime $lifetime = Lifetime::TRANSIENT):static;
+    public function factory (string $id, Closure $factory, Lifetime $lifetime = Lifetime::TRANSIENT):self;
 
     /**
      * ### Registers an existing service instance
@@ -90,9 +90,9 @@ interface Registrar {
      * Existing service instance.
      * </p>
      *
-     * @return static Registrar instance.
+     * @return $this Registrar instance.
      */
-    public function instance (string $id, object $instance):static;
+    public function instance (string $id, object $instance):self;
 
     /**
      * ### Registers a service alias
@@ -111,8 +111,8 @@ interface Registrar {
      * Target service identifier.
      * </p>
      *
-     * @return static Registrar instance.
+     * @return $this Registrar instance.
      */
-    public function alias (string $id, string $target):static;
+    public function alias (string $id, string $target):self;
 
 }
