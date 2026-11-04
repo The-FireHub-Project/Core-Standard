@@ -13,6 +13,8 @@
 
 namespace FireHub\Core\Boundary\IO\Stream;
 
+use FireHub\Core\Boundary\IO\Stream;
+
 /**
  * ### Readable Stream Contract
  *
@@ -21,7 +23,7 @@ namespace FireHub\Core\Boundary\IO\Stream;
  * Reading may advance the current stream position and consume data that cannot be read again.
  * @since 1.0.0
  */
-interface Readable {
+interface Readable extends Stream {
 
     /**
      * ### Reads data from the stream

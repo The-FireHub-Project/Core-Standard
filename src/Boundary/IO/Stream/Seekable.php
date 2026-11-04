@@ -13,6 +13,7 @@
 
 namespace FireHub\Core\Boundary\IO\Stream;
 
+use FireHub\Core\Boundary\IO\Stream;
 use FireHub\Core\Type\IO\SeekOrigin;
 
 /**
@@ -21,7 +22,7 @@ use FireHub\Core\Type\IO\SeekOrigin;
  * Defines operations for inspecting and modifying the current position within a seekable stream.
  * @since 1.0.0
  */
-interface Seekable {
+interface Seekable extends Stream {
 
     /**
      * ### Gets the current stream position

@@ -13,6 +13,8 @@
 
 namespace FireHub\Core\Boundary\IO\Stream;
 
+use FireHub\Core\Boundary\IO\Stream;
+
 /**
  * ### Writable Stream Contract
  *
@@ -21,7 +23,7 @@ namespace FireHub\Core\Boundary\IO\Stream;
  * Writing may modify the stream contents and advance its current position.
  * @since 1.0.0
  */
-interface Writable {
+interface Writable extends Stream {
 
     /**
      * ### Writes data to the stream
