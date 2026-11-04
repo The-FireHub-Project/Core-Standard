@@ -40,14 +40,6 @@ enum LockMode:int {
     case EXCLUSIVE = LOCK_EX;
 
     /**
-     * ### Non-blocking lock
-     *
-     * Must be combined with SHARED or EXCLUSIVE.
-     * @since 1.0.0
-     */
-    case NON_BLOCKING = LOCK_NB;
-
-    /**
      * ### Unlock
      *
      * Releases an existing lock.
