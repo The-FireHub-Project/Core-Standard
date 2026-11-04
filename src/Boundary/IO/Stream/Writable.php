@@ -26,6 +26,14 @@ use FireHub\Core\Boundary\IO\Stream;
 interface Writable extends Stream {
 
     /**
+     * ### Determines whether the stream supports writing
+     * @since 1.0.0
+     *
+     * @return bool True if the stream is writable.
+     */
+    public function isWritable ():bool;
+
+    /**
      * ### Writes data to the stream
      *
      * Writes the supplied data and returns the number of bytes written.

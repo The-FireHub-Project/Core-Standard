@@ -27,30 +27,6 @@ namespace FireHub\Core\Boundary\IO;
 interface Stream {
 
     /**
-     * ### Determines whether the stream supports reading
-     * @since 1.0.0
-     *
-     * @return bool True if the stream is readable.
-     */
-    public function isReadable ():bool;
-
-    /**
-     * ### Determines whether the stream supports writing
-     * @since 1.0.0
-     *
-     * @return bool True if the stream is writable.
-     */
-    public function isWritable ():bool;
-
-    /**
-     * ### Determines whether the stream supports seeking
-     * @since 1.0.0
-     *
-     * @return bool True if the stream supports seeking.
-     */
-    public function isSeekable ():bool;
-
-    /**
      * ### Determines whether the stream is closed
      * @since 1.0.0
      *

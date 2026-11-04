@@ -25,12 +25,12 @@ use FireHub\Core\Type\IO\SeekOrigin;
 interface Seekable extends Stream {
 
     /**
-     * ### Gets the current stream position
+     * ### Determines whether the stream supports seeking
      * @since 1.0.0
      *
-     * @return non-negative-int Current position in bytes.
+     * @return bool True if the stream supports seeking.
      */
-    public function tell ():int;
+    public function isSeekable ():bool;
 
     /**
      * ### Moves the current stream position

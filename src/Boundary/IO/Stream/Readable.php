@@ -26,6 +26,14 @@ use FireHub\Core\Boundary\IO\Stream;
 interface Readable extends Stream {
 
     /**
+     * ### Determines whether the stream supports reading
+     * @since 1.0.0
+     *
+     * @return bool True if the stream is readable.
+     */
+    public function isReadable ():bool;
+
+    /**
      * ### Reads data from the stream
      *
      * Reads up to the specified number of bytes.
