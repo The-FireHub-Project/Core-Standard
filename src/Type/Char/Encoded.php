@@ -13,7 +13,7 @@
 
 namespace FireHub\Core\Type\Char;
 
-use FireHub\Core\Type\Char;
+use FireHub\Core\Type\StringValue;
 use FireHub\Core\Type\Str\Encoding;
 
 /**
@@ -30,9 +30,9 @@ use FireHub\Core\Type\Str\Encoding;
  *
  * @template TValue of non-empty-string
  *
- * @extends \FireHub\Core\Type\Char<TValue>
+ * @extends \FireHub\Core\Type\StringValue<TValue>
  */
-abstract readonly class Encoded extends Char {
+abstract readonly class Encoded extends StringValue {
 
     /**
      * ### Returns the character encoding of the character value
@@ -41,5 +41,13 @@ abstract readonly class Encoded extends Char {
      * @return \FireHub\Core\Type\Str\Encoding The character encoding.
      */
     abstract public function encoding ():Encoding;
+
+    /**
+     * ### Returns the Unicode code point for the character
+     * @since 1.0.0
+     *
+     * @return \FireHub\Core\Type\Char\Codepoint<non-negative-int> The Unicode code point for the character.
+     */
+    abstract public function codepoint ():Codepoint;
 
 }

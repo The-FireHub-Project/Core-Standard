@@ -13,7 +13,7 @@
 
 namespace FireHub\Core\Type;
 
-use FireHub\Core\Type\Char\Codepoint;
+use FireHub\Core\Type\Char\Ordinal;
 
 /**
  * ### Defines the base character Value Object type within the FireHub ecosystem
@@ -34,11 +34,11 @@ use FireHub\Core\Type\Char\Codepoint;
 abstract readonly class Char extends StringValue {
 
     /**
-     * ### Returns the Unicode code point for the character
+     * ### Returns the ordinal value of the character
      * @since 1.0.0
      *
-     * @return \FireHub\Core\Type\Char\Codepoint<non-negative-int> The Unicode code point for the character.
+     * @return \FireHub\Core\Type\Char\Ordinal<int<0,255>> The ordinal value.
      */
-    abstract public function codepoint ():Codepoint;
+    abstract public function ordinal ():Ordinal;
 
 }
