@@ -13,7 +13,6 @@
 
 namespace FireHub\Core\Type;
 
-use FireHub\Core\Type\Str\Encoding;
 use Stringable;
 
 /**
@@ -40,14 +39,6 @@ abstract readonly class StringValue extends ValueObject implements Stringable {
      * @since 1.0.0
      */
     abstract public function value ():string;
-
-    /**
-     * ### Returns the encoding of the string value
-     * @since 1.0.0
-     *
-     * @return \FireHub\Core\Type\Str\Encoding The encoding of the string value.
-     */
-    abstract public function encoding ():Encoding;
 
     /**
      * ### Returns the string representation of the value

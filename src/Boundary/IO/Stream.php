@@ -35,14 +35,6 @@ interface Stream {
     public function isClosed ():bool;
 
     /**
-     * ### Determines whether the stream has reached its end
-     * @since 1.0.0
-     *
-     * @return bool True if the end of the stream has been reached.
-     */
-    public function eof ():bool;
-
-    /**
      * ### Gets the stream size
      *
      * Returns null when the stream size cannot be determined.
