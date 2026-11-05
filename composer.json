@@ -58,7 +58,10 @@
       "layer": "core",
       "edition": "standard",
       "role": "foundation",
-      "criticality": "critical"
+      "criticality": "critical",
+      "ci": {
+        "php-versions": ["8.5"]
+      }
     }
   }
 }
