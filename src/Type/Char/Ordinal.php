@@ -30,7 +30,7 @@ use FireHub\Core\Exception\Runtime\System\Invariant\InvalidOrdinalException;
  *
  * @extends \FireHub\Core\Type\Number\Integer<TValue>
  */
-abstract readonly class Ordinal extends Integer {
+readonly class Ordinal extends Integer {
 
     /**
      * ### Constructor
