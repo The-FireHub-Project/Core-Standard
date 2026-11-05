@@ -35,7 +35,8 @@ interface Charable {
      * Returns an ordered list of FireHub character Value Objects representing the object's character sequence.
      * @since 1.0.0
      *
-     * @return list<\FireHub\Core\Type\Char<non-empty-string>> The resulting character Value Objects.
+     * @return list<\FireHub\Core\Type\Char<non-empty-string>>|list<\FireHub\Core\Type\Char\Encoded<non-empty-string>>
+     * The resulting character Value Objects.
      */
     public function toChars ():array;
 
