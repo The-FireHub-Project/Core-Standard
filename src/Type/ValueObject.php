@@ -15,6 +15,7 @@ namespace FireHub\Core\Type;
 
 use FireHub\Core\Exception\FireHubException;
 use FireHub\Core\Type\Exception\ValueObjectException;
+use ArrayIterator;
 
 /**
  * ### Base Value Object
@@ -45,12 +46,13 @@ abstract readonly class ValueObject {
     /**
      * ### Determines structural equality between two Value Objects
      *
-     * Compares this Value Object with another instance of the same type using strict
-     * class comparison and value equality semantics.
+     * Compares this Value Object with another instance of the same type using strict class comparison and value
+     * equality semantics.
      * @since 1.0.0
      *
      * @uses \FireHub\Core\Type\ValueObject::comparisonValue() To get the comparison value.
      * @uses \FireHub\Core\Type\ValueObject::sameAs() To compare the VO types.
+     * @uses \FireHub\Core\Type\ValueObject::compare() To compare the VO values.
      *
      * @param self<TValue> $other <p>
      * The Value Object to compare against.
@@ -61,7 +63,10 @@ abstract readonly class ValueObject {
     final public function equals (self $other):bool {
 
         return $this->sameAs($other)
-            && $this->comparisonValue() === $other->comparisonValue();
+            && self::compare(
+                $this->comparisonValue(),
+                $other->comparisonValue()
+            );
 
     }
 
@@ -127,6 +132,60 @@ abstract readonly class ValueObject {
             throw $e;
 
         }
+
+    }
+
+    /**
+     * ### Compares Values Recursively
+     *
+     * Performs semantic comparison of nested Value Objects and arrays.
+     *
+     * Value Objects are compared using their equals() method. Arrays are compared recursively using strict key and
+     * value comparison. Scalar values are compared using strict equality.
+     * @since 1.0.0
+     *
+     * @uses \FireHub\Core\Type\ValueObject::equals() To compare Value Objects.
+     * @uses \FireHub\Core\Type\ValueObject::compare() To compare arrays.
+     *
+     * @param mixed $first <p>
+     * First value to compare.
+     * </p>
+     * @param mixed $second <p>
+     * Second value to compare.
+     * </p>
+     *
+     * @return bool True if both values are semantically equal.
+     */
+    private static function compare (mixed $first, mixed $second):bool {
+
+        if ($first instanceof self || $second instanceof self)
+            return $first instanceof self
+                && $second instanceof self
+                && $first->equals($second);
+
+        if (is_array($first) && is_array($second)) {
+
+            $firstIterator = new ArrayIterator($first);
+            $secondIterator = new ArrayIterator($second);
+
+            while ($firstIterator->valid() && $secondIterator->valid()) {
+
+                if ($firstIterator->key() !== $secondIterator->key())
+                    return false;
+
+                if (!self::compare($firstIterator->current(), $secondIterator->current()))
+                    return false;
+
+                $firstIterator->next();
+                $secondIterator->next();
+
+            }
+
+            return !$firstIterator->valid() && !$secondIterator->valid();
+
+        }
+
+        return $first === $second;
 
     }
 
