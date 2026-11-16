@@ -209,6 +209,12 @@ enum Encoding:string {
     case ISO_8859_16 = 'ISO-8859-16';
 
     /**
+     * ### Windows-1250 encoding
+     * @since 1.0.0
+     */
+    case WINDOWS_1250 = 'Windows-1250';
+
+    /**
      * ### Windows-1251 encoding
      * @since 1.0.0
      */
