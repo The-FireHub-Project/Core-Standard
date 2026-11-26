@@ -34,7 +34,7 @@ interface Readable extends Driver {
      * Logical path of the stored object.
      * </p>
      *
-     * @return non-empty-string Complete contents of the stored object.
+     * @return string Complete contents of the stored object.
      */
     public function get (Path $path):string;
 
