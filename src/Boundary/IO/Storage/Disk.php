@@ -54,7 +54,7 @@ interface Disk {
      * ### Determines whether a stored object exists
      * @since 1.0.0
      *
-     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
      * Logical path of the stored object.
      * </p>
      *
@@ -66,7 +66,7 @@ interface Disk {
      * ### Determines whether a stored object is missing
      * @since 1.0.0
      *
-     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
      * Logical path of the stored object.
      * </p>
      *
@@ -78,7 +78,7 @@ interface Disk {
      * ### Gets the contents of a stored object
      * @since 1.0.0
      *
-     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
      * Logical path of the stored object.
      * </p>
      *
@@ -92,7 +92,7 @@ interface Disk {
      * Creates a new stored object or replaces the contents of an existing one.
      * @since 1.0.0
      *
-     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
      * Logical path of the stored object.
      * </p>
      * @param string $contents <p>
@@ -109,7 +109,7 @@ interface Disk {
      * This operation has no effect if the stored object does not exist.
      * @since 1.0.0
      *
-     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
      * Logical path of the stored object.
      * </p>
      *
@@ -123,7 +123,7 @@ interface Disk {
      * The caller is responsible for closing the returned stream.
      * @since 1.0.0
      *
-     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
      * Logical path of the stored object.
      * </p>
      *
@@ -139,7 +139,7 @@ interface Disk {
      * caller.
      * @since 1.0.0
      *
-     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
      * Logical path of the stored object.
      * </p>
      * @param \FireHub\Core\Boundary\IO\Stream\Readable $stream <p>
@@ -154,7 +154,7 @@ interface Disk {
      * ### Resolves the physical path of a stored object
      * @since 1.0.0
      *
-     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
      * Logical path of the stored object.
      * </p>
      *
