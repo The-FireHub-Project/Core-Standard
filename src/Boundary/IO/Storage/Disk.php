@@ -363,4 +363,181 @@ interface Disk {
      */
     public function isListable ():bool;
 
+    /**
+     * ### Determines whether a storage directory exists
+     *
+     * Determines whether the specified logical path identifies an existing storage directory.
+     *
+     * If no directory is specified, the storage root is inspected. A path identifying a stored object produces false.
+     * @since 1.0.0
+     *
+     * @param null|non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $directory [optional] <p>
+     * Logical directory path or null to inspect the storage root.
+     * </p>
+     *
+     * @return bool True if the specified storage directory exists.
+     */
+    public function directoryExists (null|string|Path $directory = null):bool;
+
+    /**
+     * ### Determines whether a storage directory is missing
+     *
+     * Determines whether the specified logical path does not identify an existing storage directory.
+     *
+     * If no directory is specified, the storage root is inspected. A path identifying a stored object produces true.
+     * @since 1.0.0
+     *
+     * @param null|non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $directory [optional] <p>
+     * Logical directory path or null to inspect the storage root.
+     * </p>
+     *
+     * @return bool True if the specified storage directory does not exist.
+     */
+    public function directoryMissing (null|string|Path $directory = null):bool;
+
+    /**
+     * ### Creates a storage directory
+     *
+     * Creates a directory at the specified logical storage path.
+     *
+     * Creating an existing directory has no effect. Recursive creation includes all missing parent directories.
+     *
+     * If recursive creation is disabled, the parent directory must already exist.
+     * @since 1.0.0
+     *
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $directory <p>
+     * Logical path of the directory to create.
+     * </p>
+     * @param bool $recursive [optional] <p>
+     * Whether missing parent directories should also be created.
+     * </p>
+     *
+     * @return void
+     */
+    public function makeDirectory (string|Path $directory, bool $recursive = false):void;
+
+    /**
+     * ### Deletes a storage directory
+     *
+     * Deletes the directory at the specified logical storage path.
+     *
+     * Deleting a nonexistent directory has no effect. Recursive deletion includes all descendant objects and
+     * directories.
+     *
+     * If recursive deletion is disabled, the directory must be empty.
+     *
+     * Recursive deletion is not guaranteed to be atomic. The storage root cannot be deleted through this operation.
+     * @since 1.0.0
+     *
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $directory <p>
+     * Logical path of the directory to delete.
+     * </p>
+     * @param bool $recursive [optional] <p>
+     * Whether descendant objects and directories should also be deleted.
+     * </p>
+     *
+     * @return void
+     */
+    public function deleteDirectory (string|Path $directory, bool $recursive = false):void;
+
+    /**
+     * ### Copies a storage directory
+     *
+     * Recursively copies the source directory and its descendant objects and directories to the specified destination.
+     *
+     * Empty directories are preserved. The destination parent directory must already exist. The destination path
+     * must not identify an existing object or directory.
+     *
+     * Copying an existing directory to itself has no effect. Copying a directory into one of its descendants is not
+     * permitted.
+     *
+     * Metadata preservation depends on the storage driver. Directory copying is not guaranteed to be atomic.
+     * @since 1.0.0
+     *
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $source <p>
+     * Logical path of the source directory.
+     * </p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $destination <p>
+     * Logical path of the destination directory.
+     * </p>
+     *
+     * @return void
+     */
+    public function copyDirectory (string|Path $source, string|Path $destination):void;
+
+    /**
+     * ### Moves a storage directory
+     *
+     * Moves the source directory and its descendant objects and directories to the specified destination.
+     *
+     * Empty directories are preserved. The destination parent directory must already exist. The destination path
+     * must not identify an existing object or directory.
+     *
+     * Moving an existing directory to itself has no effect. Moving a directory into one of its descendants is not
+     * permitted.
+     *
+     * After a successful move, the source directory no longer exists unless both paths identify the same directory.
+     *
+     * Metadata preservation and atomicity depend on the storage driver.
+     * @since 1.0.0
+     *
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $source <p>
+     * Logical path of the source directory.
+     * </p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $destination <p>
+     * Logical path of the destination directory.
+     * </p>
+     *
+     * @return void
+     */
+    public function moveDirectory (string|Path $source, string|Path $destination):void;
+
+    /**
+     * ### Determines whether the disk supports directory awareness
+     *
+     * Indicates whether the disk supports determining the existence of physical or logical storage directories.
+     *
+     * This method indicates capabilities rather than actual storage access permissions.
+     * @since 1.0.0
+     *
+     * @return bool True if directory awareness is supported.
+     */
+    public function isDirectoryAware ():bool;
+
+    /**
+     * ### Determines whether the disk supports directory modification
+     *
+     * Indicates whether the disk supports creating and deleting storage directories.
+     *
+     * This method indicates capabilities rather than actual storage access permissions.
+     * @since 1.0.0
+     *
+     * @return bool True if directory modification is supported.
+     */
+    public function isDirectoryWritable ():bool;
+
+    /**
+     * ### Determines whether the disk supports copying storage directories
+     *
+     * Indicates whether the disk supports copying complete storage directory trees.
+     *
+     * This method indicates capabilities rather than actual storage access permissions.
+     * @since 1.0.0
+     *
+     * @return bool True if directory copying is supported.
+     */
+    public function isDirectoryCopyable ():bool;
+
+    /**
+     * ### Determines whether the disk supports moving storage directories
+     *
+     * Indicates whether the disk supports moving complete storage directory trees.
+     *
+     * This method indicates capabilities rather than actual storage access permissions.
+     * @since 1.0.0
+     *
+     * @return bool True if directory moving is supported.
+     */
+    public function isDirectoryMovable ():bool;
+
 }
