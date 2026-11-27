@@ -293,4 +293,74 @@ interface Disk {
      */
     public function isMovable ():bool;
 
+    /**
+     * ### Lists stored objects within a directory
+     *
+     * Lists only objects directly contained within the specified directory.
+     * @since 1.0.0
+     *
+     * @param null|non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $directory [optional] <p>
+     * Logical directory path or null to list from the storage root.
+     * </p>
+     *
+     * @return iterable<int, \FireHub\Core\Boundary\IO\Storage\Path> Logical paths of stored objects relative to the
+     * storage root.
+     */
+    public function files (null|string|Path $directory = null):iterable;
+
+    /**
+     * ### Recursively lists stored objects within a directory
+     *
+     * Includes objects directly contained within the specified directory and objects within all descendant directories.
+     * @since 1.0.0
+     *
+     * @param null|non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $directory [optional] <p>
+     * Logical directory path or null to list from the storage root.
+     * </p>
+     *
+     * @return iterable<int, \FireHub\Core\Boundary\IO\Storage\Path> Logical paths of stored objects relative to the
+     * storage root.
+     */
+    public function allFiles (null|string|Path $directory = null):iterable;
+
+    /**
+     * ### Lists storage directories
+     *
+     * Lists only directories directly contained within the specified directory.
+     * @since 1.0.0
+     *
+     * @param null|non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $directory [optional] <p>
+     * Logical directory path or null to list from the storage root.
+     * </p>
+     *
+     * @return iterable<int, \FireHub\Core\Boundary\IO\Storage\Path> Logical paths of storage directories relative to
+     * the storage root.
+     */
+    public function directories (null|string|Path $directory = null):iterable;
+
+    /**
+     * ### Recursively lists storage directories
+     *
+     * Includes all descendant directories of the specified directory. The specified directory itself is not included.
+     * @since 1.0.0
+     *
+     * @param null|non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $directory [optional] <p>
+     * Logical directory path or null to list from the storage root.
+     * </p>
+     *
+     * @return iterable<int, \FireHub\Core\Boundary\IO\Storage\Path> Logical paths of storage directories relative to
+     * the storage root.
+     */
+    public function allDirectories (null|string|Path $directory = null):iterable;
+
+    /**
+     * ### Determines whether the disk supports listing stored objects and directories
+     *
+     * Indicates storage driver capability rather than actual access permissions.
+     * @since 1.0.0
+     *
+     * @return bool True if listing stored objects and directories is supported.
+     */
+    public function isListable ():bool;
+
 }
