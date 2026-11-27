@@ -225,4 +225,72 @@ interface Disk {
      */
     public function isAppendable ():bool;
 
+    /**
+     * ### Copies a stored object
+     *
+     * Copies the contents of an existing stored object to another logical path within the same storage disk.
+     *
+     * If the destination object already exists, it is replaced.
+     *
+     * Copying an existing object to itself has no effect.
+     * @since 1.0.0
+     *
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $source <p>
+     * Logical path of the source object.
+     * </p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $destination <p>
+     * Logical path of the destination object.
+     * </p>
+     *
+     * @return void
+     */
+    public function copy (string|Path $source, string|Path $destination):void;
+
+    /**
+     * ### Moves a stored object
+     *
+     * Moves an existing stored object to another logical path within the same storage disk.
+     *
+     * If the destination object already exists, it is replaced.
+     *
+     * Moving an existing object to itself has no effect.
+     * @since 1.0.0
+     *
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $source <p>
+     * Logical path of the source object.
+     * </p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $destination <p>
+     * Logical path of the destination object.
+     * </p>
+     *
+     * @return void
+     */
+    public function move (string|Path $source, string|Path $destination):void;
+
+    /**
+     * ### Determines whether the disk supports copying stored objects
+     *
+     * Indicates whether copying is supported directly by the storage driver or through an alternative storage
+     * implementation.
+     *
+     * Does not guarantee that a particular object can be copied.
+     * @since 1.0.0
+     *
+     * @return bool True if copying stored objects is supported.
+     */
+    public function isCopyable ():bool;
+
+    /**
+     * ### Determines whether the disk supports moving stored objects
+     *
+     * Indicates whether moving is supported directly by the storage driver or through an alternative storage
+     * implementation.
+     *
+     * Does not guarantee that a particular object can be moved.
+     * @since 1.0.0
+     *
+     * @return bool True if moving stored objects is supported.
+     */
+    public function isMovable ():bool;
+
 }
