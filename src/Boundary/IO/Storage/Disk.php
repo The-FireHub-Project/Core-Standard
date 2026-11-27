@@ -168,7 +168,7 @@ interface Disk {
      * Creates the object if it does not exist.
      * @since 1.0.0
      *
-     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
      * Logical path of the stored object.
      * </p>
      * @param string $contents <p>
@@ -185,7 +185,7 @@ interface Disk {
      * Creates the object if it does not exist.
      * @since 1.0.0
      *
-     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
      * Logical path of the stored object.
      * </p>
      * @param string $contents <p>
@@ -204,7 +204,7 @@ interface Disk {
      * The supplied stream remains owned by the caller.
      * @since 1.0.0
      *
-     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
      * Logical path of the stored object.
      * </p>
      * @param \FireHub\Core\Boundary\IO\Stream\Readable $stream <p>
