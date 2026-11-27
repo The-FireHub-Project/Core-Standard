@@ -14,6 +14,7 @@
 namespace FireHub\Core\Boundary\IO\Storage;
 
 use FireHub\Core\Boundary\IO\Stream\Readable;
+use FireHub\Core\Type\Temporal\DateTime;
 
 /**
  * ### Storage disk
@@ -539,5 +540,55 @@ interface Disk {
      * @return bool True if directory moving is supported.
      */
     public function isDirectoryMovable ():bool;
+
+    /**
+     * ### Retrieves stored object metadata
+     * @since 1.0.0
+     *
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * Logical path of the stored object.
+     * </p>
+     *
+     * @return \FireHub\Core\Boundary\IO\Storage\Metadata Stored object metadata.
+     */
+    public function metadata (string|Path $path):Metadata;
+
+    /**
+     * ### Retrieves the stored object size
+     * @since 1.0.0
+     *
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * Logical path of the stored object.
+     * </p>
+     *
+     * @return non-negative-int Stored object size in bytes.
+     */
+    public function size (string|Path $path):int;
+
+    /**
+     * ### Retrieves the stored object last modification time
+     *
+     * Returns null if the underlying storage driver supports metadata retrieval but cannot provide the last
+     * modification time.
+     * @since 1.0.0
+     *
+     * @param non-empty-string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * Logical path of the stored object.
+     * </p>
+     *
+     * @return null|\FireHub\Core\Type\Temporal\DateTime<non-empty-string> Last modification time or null if
+     * unavailable.
+     */
+    public function lastModified (string|Path $path):?DateTime;
+
+    /**
+     * ### Determines whether the disk supports metadata retrieval
+     *
+     * Determines whether the underlying storage driver implements the metadata retrieval capability.
+     * @since 1.0.0
+     *
+     * @return bool True if metadata retrieval is supported.
+     */
+    public function isMetadataAware ():bool;
 
 }
