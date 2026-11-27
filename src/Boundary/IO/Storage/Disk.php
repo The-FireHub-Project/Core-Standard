@@ -162,4 +162,67 @@ interface Disk {
      */
     public function locate (string|Path $path):string;
 
+    /**
+     * ### Appends contents to a stored object
+     *
+     * Creates the object if it does not exist.
+     * @since 1.0.0
+     *
+     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * Logical path of the stored object.
+     * </p>
+     * @param string $contents <p>
+     * Contents to append.
+     * </p>
+     *
+     * @return void
+     */
+    public function append (string|Path $path, string $contents):void;
+
+    /**
+     * ### Prepends contents to a stored object
+     *
+     * Creates the object if it does not exist.
+     * @since 1.0.0
+     *
+     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * Logical path of the stored object.
+     * </p>
+     * @param string $contents <p>
+     * Contents to prepend.
+     * </p>
+     *
+     * @return void
+     */
+    public function prepend (string|Path $path, string $contents):void;
+
+    /**
+     * ### Appends stream contents to a stored object
+     *
+     * Creates the object if it does not exist.
+     *
+     * The supplied stream remains owned by the caller.
+     * @since 1.0.0
+     *
+     * @param string|\FireHub\Core\Boundary\IO\Storage\Path $path <p>
+     * Logical path of the stored object.
+     * </p>
+     * @param \FireHub\Core\Boundary\IO\Stream\Readable $stream <p>
+     * Source stream.
+     * </p>
+     *
+     * @return void
+     */
+    public function appendStream (string|Path $path, Readable $stream):void;
+
+    /**
+     * ### Determines whether the disk supports extending stored contents
+     *
+     * Indicates driver capability rather than filesystem access permissions.
+     * @since 1.0.0
+     *
+     * @return bool True if the disk supports append and prepend operations.
+     */
+    public function isAppendable ():bool;
+
 }
